@@ -1,0 +1,83 @@
+.heading {
+  &__text {
+    min-width: max-content;
+  }
+  &__decor {
+    // container holding heading tag and decor divs
+    display: flex;
+    align-items: center;
+    &--line {
+      &-left {
+        // div before heading tag
+        display: none;
+        @include respond(biggerThanPhone) {
+          display: block;
+          width: 100%;
+          height: 2px;
+          margin-right: 2rem;
+        }
+      }
+      &-right {
+        // div after heading tag
+        display: none;
+        @include respond(biggerThanPhone) {
+          display: block;
+          width: 100%;
+          height: 2px;
+          margin-left: 2rem;
+        }
+      }
+    }
+    &--lines {
+      // heading tag itself
+      position: relative;
+      &::before {
+        display: none;
+        @include respond(biggerThanPhone) {
+          content: '';
+          display: block;
+          position: absolute;
+          bottom: 0;
+          left: -40%;
+          width: 175%;
+          height: 2px;
+          background-color: $color-black-50;
+        }
+      }
+      &::after {
+        display: none;
+        @include respond(biggerThanPhone) {
+          content: '';
+          display: block;
+          position: absolute;
+          bottom: -7.5px;
+          left: -30%;
+          width: 175%;
+          height: 2px;
+          background-color: $color-black-50;
+        }
+      }
+    }
+  }
+}
+
+.decor {
+  // default underline for all decors
+  &::after {
+    content: '';
+    display: block;
+    background-color: $color-accent-mediumLM;
+    height: 3px;
+    width: 75%;
+    margin: 0 auto;
+    @include respond(biggerThanPhone) {
+      display: none;
+    }
+  }
+  &__text {
+    margin: 0 auto;
+    @include respond(biggerThanPhone) {
+      margin: auto;
+    }
+  }
+}
