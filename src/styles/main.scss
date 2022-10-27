@@ -2,8 +2,13 @@
 @import 'abstracts/variables';
 
 @import 'base/bg-colors';
+@import 'base/border-colors';
 @import 'base/colors';
 @import 'base/font-sizes';
 @import 'base/reset';
 
 @import 'components/heading';
+@import 'components/text';
+@import 'components/textbox';
+
+@import 'utilities/text-align';
