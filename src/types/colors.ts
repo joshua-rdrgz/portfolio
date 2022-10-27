@@ -1,4 +1,4 @@
-type colors =
+export type colors =
   | 'color--black'
   | 'color--black-90'
   | 'color--black-75'
@@ -22,4 +22,53 @@ type colors =
   | 'color__light--gradient-project'
   | 'color__dark--gradient-hero'
   | 'color__dark--gradient-project';
-export default colors;
+
+export type backgroundColors =
+  | 'bg-color--black'
+  | 'bg-color--black-90'
+  | 'bg-color--black-75'
+  | 'bg-color--black-75-opaque'
+  | 'bg-color--black-50'
+  | 'bg-color--black-25'
+  | 'bg-color--black-15'
+  | 'bg-color--black-10'
+  | 'bg-color--black-5'
+  | 'bg-color--white'
+  | 'bg-color__light--accent'
+  | 'bg-color__light--accent-medium'
+  | 'bg-color__light--accent-medium-opaque'
+  | 'bg-color__light--accent-dark'
+  | 'bg-color__dark--accent'
+  | 'bg-color__dark--accent-opaque'
+  | 'bg-color__dark--accent-medium'
+  | 'bg-color__dark--accent-medium-opaque'
+  | 'bg-color__dark--accent-dark'
+  | 'bg-color__light--gradient-hero'
+  | 'bg-color__light--gradient-project'
+  | 'bg-color__dark--gradient-hero'
+  | 'bg-color__dark--gradient-project';
+
+export type borderColors =
+  | 'border-color--black'
+  | 'border-color--black-90'
+  | 'border-color--black-75'
+  | 'border-color--black-75-opaque'
+  | 'border-color--black-50'
+  | 'border-color--black-25'
+  | 'border-color--black-15'
+  | 'border-color--black-10'
+  | 'border-color--black-5'
+  | 'border-color--white'
+  | 'border-color__light--accent'
+  | 'border-color__light--accent-medium'
+  | 'border-color__light--accent-medium-opaque'
+  | 'border-color__light--accent-dark'
+  | 'border-color__dark--accent'
+  | 'border-color__dark--accent-opaque'
+  | 'border-color__dark--accent-medium'
+  | 'border-color__dark--accent-medium-opaque'
+  | 'border-color__dark--accent-dark'
+  | 'border-color__light--gradient-hero'
+  | 'border-color__light--gradient-project'
+  | 'border-color__dark--gradient-hero'
+  | 'border-color__dark--gradient-project';

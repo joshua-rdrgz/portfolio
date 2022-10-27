@@ -1,4 +1,4 @@
-import colors from '../../../types/colors';
+import { colors } from '../../../types/colors';
 import headingSize from '../../../types/heading-size';
 import textSize from '../../../types/text-size';
 
