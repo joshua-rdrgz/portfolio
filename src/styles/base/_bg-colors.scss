@@ -1,0 +1,84 @@
+.bg-color {
+  &--black {
+    background-color: $color-black;
+    &-90 {
+      background-color: $color-black-90;
+    }
+    &-75 {
+      background-color: $color-black-75;
+      &-opaque {
+        background-color: $color-black-75-opaque;
+      }
+    }
+    &-50 {
+      background-color: $color-black-50;
+    }
+    &-25 {
+      background-color: $color-black-25;
+    }
+    &-15 {
+      background-color: $color-black-15;
+    }
+    &-10 {
+      background-color: $color-black-10;
+    }
+    &-5 {
+      background-color: $color-black-5;
+    }
+  }
+  &--white {
+    background-color: $color-white;
+  }
+  &__light {
+    &--accent {
+      background-color: $color-accentLM;
+      &-medium {
+        background-color: $color-accent-mediumLM;
+        &-opaque {
+          background-color: $color-accent-medium-opaqueLM;
+        }
+      }
+      &-dark {
+        background-color: $color-accent-darkLM;
+      }
+    }
+    &--gradient {
+      &-hero {
+        background-color: $color-black-10;
+        background: $color-gradient-heroLM;
+      }
+      &-project {
+        background-color: $color-black-15;
+        background: $color-gradient-projectLM;
+      }
+    }
+  }
+
+  &__dark {
+    &--accent {
+      background-color: $color-accentDM;
+      &-opaque {
+        background-color: $color-accent-opaqueDM;
+      }
+      &-medium {
+        background-color: $color-accent-mediumDM;
+        &-opaque {
+          background-color: $color-accent-medium-opaqueDM;
+        }
+      }
+      &-dark {
+        background-color: $color-accent-darkDM;
+      }
+    }
+    &--gradient {
+      &-hero {
+        background-color: $color-black-90;
+        background: $color-gradient-heroDM;
+      }
+      &-project {
+        background-color: $color-black-90;
+        background: $color-gradient-projectDM;
+      }
+    }
+  }
+}

@@ -1,0 +1,46 @@
+.heading-size {
+  &__1 {
+    @include addFontProperties($font-heading-1);
+  }
+  &__2 {
+    @include addFontProperties($font-heading-2);
+  }
+  &__3 {
+    &--regular {
+      @include addFontProperties($font-heading-3, $font-weight-heading-reg);
+    }
+    &--bold {
+      @include addFontProperties($font-heading-3);
+    }
+  }
+  &__4 {
+    @include addFontProperties($font-heading-4);
+  }
+  &__5 {
+    @include addFontProperties($font-heading-5);
+  }
+  &__6 {
+    @include addFontProperties($font-heading-6);
+  }
+}
+
+.text-size {
+  &--small {
+    @include addFontProperties($font-body-sm);
+  }
+  &--regular {
+    @include addFontProperties($font-body-reg);
+  }
+  &--medium {
+    @include addFontProperties($font-body-med);
+  }
+  &--large {
+    @include addFontProperties($font-body-lg);
+  }
+  &--xlarge {
+    @include addFontProperties($font-body-xlg);
+  }
+  &--xxlarge {
+    @include addFontProperties($font-body-xxlg);
+  }
+}

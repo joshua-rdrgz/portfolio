@@ -1,0 +1,31 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  font-size: 50%; // sets 1rem = 8px
+  @include respond(biggerThanPhone) { // width > 600px
+    font-size: 56.25%; // sets 1rem = 9px
+  }
+  @include respond(biggerThanTablet) { // width > 1200px
+    font-size: 62.5%; // sets 1rem = 10px
+  }
+  @include respond(biggerThanDesktop) { // width > 1800px
+    font-size: 75%; // sets 1rem = 12px
+  }
+}
+
+body {
+  box-sizing: border-box;
+  font-family: $font-family-body;
+  font-weight: $font-weight-body;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: $font-family-heading;
+  font-weight: $font-weight-heading-bold;
+}

@@ -1,11 +1,8 @@
 import React from 'react';
+import './styles/main.scss';
 
 function App() {
-  return (
-    <div>
-      hello, world!
-    </div>
-  );
+  return <div>hello, world!</div>;
 }
 
 export default App;

@@ -1,0 +1,84 @@
+.color {
+  &--black {
+    color: $color-black;
+    &-90 {
+      color: $color-black-90;
+    }
+    &-75 {
+      color: $color-black-75;
+      &-opaque {
+        color: $color-black-75-opaque;
+      }
+    }
+    &-50 {
+      color: $color-black-50;
+    }
+    &-25 {
+      color: $color-black-25;
+    }
+    &-15 {
+      color: $color-black-15;
+    }
+    &-10 {
+      color: $color-black-10;
+    }
+    &-5 {
+      color: $color-black-5;
+    }
+  }
+  &--white {
+    color: $color-white;
+  }
+  &__light {
+    &--accent {
+      color: $color-accentLM;
+      &-medium {
+        color: $color-accent-mediumLM;
+        &-opaque {
+          color: $color-accent-medium-opaqueLM;
+        }
+      }
+      &-dark {
+        color: $color-accent-darkLM;
+      }
+    }
+    &--gradient {
+      &-hero {
+        color: $color-black-10;
+        background: $color-gradient-heroLM;
+      }
+      &-project {
+        color: $color-black-15;
+        background: $color-gradient-projectLM;
+      }
+    }
+  }
+
+  &__dark {
+    &--accent {
+      color: $color-accentDM;
+      &-opaque {
+        color: $color-accent-opaqueDM;
+      }
+      &-medium {
+        color: $color-accent-mediumDM;
+        &-opaque {
+          color: $color-accent-medium-opaqueDM;
+        }
+      }
+      &-dark {
+        color: $color-accent-darkDM;
+      }
+    }
+    &--gradient {
+      &-hero {
+        color: $color-black-90;
+        background: $color-gradient-heroDM;
+      }
+      &-project {
+        color: $color-black-90;
+        background: $color-gradient-projectDM;
+      }
+    }
+  }
+}

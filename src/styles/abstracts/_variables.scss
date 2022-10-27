@@ -1,0 +1,45 @@
+// COLORS
+$color-black: #070a0a;
+$color-black-90: #1F2222;
+$color-black-75: #444747;
+$color-black-75-opaque: rgba($color-black-75, 0.8);
+$color-black-50: #818585;
+$color-black-25: #BDC2C2;
+$color-black-15: #D6DADA;
+$color-black-10: #E2E7E7;
+$color-black-5: #EEF3F3;
+$color-white: #FAFFFF;
+$color-accentLM: #008337;
+$color-accent-mediumLM: #00662B;
+$color-accent-medium-opaqueLM: rgba(0, 77, 32, 0.6);
+$color-accent-darkLM: #003315;
+$color-accentDM: #00DDDD;
+$color-accent-opaqueDM: rgba($color-accentDM, 0.7);
+$color-accent-mediumDM: #008080;
+$color-accent-medium-opaqueDM: rgba(0, 153, 153, 0.6);
+$color-accent-darkDM: #003333;
+$color-gradient-heroLM: linear-gradient(90deg, $color-white, $color-black-50);
+$color-gradient-projectLM: linear-gradient(90deg, $color-black-15, $color-black-75);
+$color-gradient-heroDM: linear-gradient(90deg, $color-black, $color-black-50);
+$color-gradient-projectDM: linear-gradient(90deg, $color-black-90, $color-black-25);
+
+// FONT SIZES
+$font-heading-1: 11.3rem;
+$font-heading-2: 8rem;
+$font-heading-3: 5.7rem;
+$font-heading-4: 4rem;
+$font-heading-5: 2.9rem;
+$font-heading-6: 2rem;
+$font-body-xxlg: 3rem;
+$font-body-xlg: 2.4rem;
+$font-body-lg: 2.1rem;
+$font-body-med: 1.8rem;
+$font-body-reg: 1.5rem;
+$font-body-sm: 1.1rem;
+
+// FONT FAMILY / WEIGHT
+$font-family-heading: 'Source Sans Pro', sans-serif;
+$font-family-body: 'Montserrat', sans-serif;
+$font-weight-heading-bold: 700;
+$font-weight-heading-reg: 400;
+$font-weight-body: 500;
