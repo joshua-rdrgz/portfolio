@@ -9,6 +9,7 @@ const Textbox: React.FC<TextboxType> = ({
   return (
     <figure
       className={`textbox ${backgroundColor} ${borderColor}`}
+      data-testid='textbox-figure'
     >
       {children}
     </figure>
