@@ -1,6 +1,6 @@
-import colors from '../types/colors';
-import headingSize from '../types/heading-size';
-import textSize from '../types/text-size';
+import colors from '../../../types/colors';
+import headingSize from '../../../types/heading-size';
+import textSize from '../../../types/text-size';
 
 interface SubHeadingBoth {
   type: 'both';
@@ -23,7 +23,7 @@ interface SubHeading {
   textColor: colors;
 }
 
-export default interface HeadingProps {
+export default interface HeadingType {
   Tag: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6';
   children?: string;
   headingSize: headingSize;

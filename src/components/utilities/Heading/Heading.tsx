@@ -1,7 +1,7 @@
 import React from 'react';
-import HeadingProps from '../../types/Heading';
+import HeadingType from './HeadingType';
 
-const Heading: React.FC<HeadingProps> = ({
+const Heading: React.FC<HeadingType> = ({
   Tag,
   headingSize,
   subHeading,
@@ -34,7 +34,10 @@ const Heading: React.FC<HeadingProps> = ({
       )}
       <div className="heading__decor">
         {hasLeftDecorLine && (
-          <div className="heading__decor--line-left bg-color__light--accent-medium" />
+          <div
+            className="heading__decor--line-left bg-color__light--accent-medium"
+            data-testid="heading__left-decor"
+          />
         )}
         <Tag
           className={
@@ -46,7 +49,10 @@ const Heading: React.FC<HeadingProps> = ({
           {children}
         </Tag>
         {hasRightDecorLine && (
-          <div className="heading__decor--line-right bg-color__light--accent-medium" />
+          <div
+            className="heading__decor--line-right bg-color__light--accent-medium"
+            data-testid="heading__right-decor"
+          />
         )}
       </div>
       {hasBothSubHeadings && (
