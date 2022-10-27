@@ -1,0 +1,64 @@
+.border-color {
+  &--black {
+    border-color: $color-black;
+    &-90 {
+      border-color: $color-black-90;
+    }
+    &-75 {
+      border-color: $color-black-75;
+      &-opaque {
+        border-color: $color-black-75-opaque;
+      }
+    }
+    &-50 {
+      border-color: $color-black-50;
+    }
+    &-25 {
+      border-color: $color-black-25;
+    }
+    &-15 {
+      border-color: $color-black-15;
+    }
+    &-10 {
+      border-color: $color-black-10;
+    }
+    &-5 {
+      border-color: $color-black-5;
+    }
+  }
+  &--white {
+    border-color: $color-white;
+  }
+  &__light {
+    &--accent {
+      border-color: $color-accentLM;
+      &-medium {
+        border-color: $color-accent-mediumLM;
+        &-opaque {
+          border-color: $color-accent-medium-opaqueLM;
+        }
+      }
+      &-dark {
+        border-color: $color-accent-darkLM;
+      }
+    }
+  }
+
+  &__dark {
+    &--accent {
+      border-color: $color-accentDM;
+      &-opaque {
+        border-color: $color-accent-opaqueDM;
+      }
+      &-medium {
+        border-color: $color-accent-mediumDM;
+        &-opaque {
+          border-color: $color-accent-medium-opaqueDM;
+        }
+      }
+      &-dark {
+        border-color: $color-accent-darkDM;
+      }
+    }
+  }
+}
