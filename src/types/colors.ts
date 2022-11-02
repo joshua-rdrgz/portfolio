@@ -72,3 +72,9 @@ export type borderColors =
   | 'border-color__light--gradient-project'
   | 'border-color__dark--gradient-hero'
   | 'border-color__dark--gradient-project';
+
+export type hoverBgColors =
+  | 'hover-bg-color__light--accent'
+  | 'hover-bg-color__dark--accent'
+  | 'hover-bg-color__light--accent-medium'
+  | 'hover-bg-color__dark--accent-medium';

@@ -1,0 +1,35 @@
+.hover {
+  &-bg-color {
+    &__light {
+      &--accent {
+        &:hover {
+          background-color: $color-accentLM;
+        }
+        &-medium {
+          &:hover {
+            background-color: $color-accent-mediumLM;
+          }
+        }
+      }
+    }
+    &__dark {
+      &--accent {
+        &:hover {
+          background-color: $color-accentDM;
+        }
+        &-medium {
+          &:hover {
+            background-color: $color-accent-mediumDM;
+          }
+        }
+      }
+    }
+  }
+  &-color {
+    &--black-90 {
+      &:hover {
+        color: $color-black-90;
+      }
+    }
+  }
+}

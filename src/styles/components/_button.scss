@@ -1,0 +1,42 @@
+.btn {
+  padding: 1rem 2rem;
+  margin: 1rem;
+  border-radius: 0.5rem;
+  font-family: $font-family-heading;
+  font-weight: $font-weight-heading-bold;
+  font-size: $font-heading-6;
+  box-shadow: $box-shadow;
+  transition: all 0.1s;
+  &:hover {
+    transform: translateY(-1px);
+  }
+  &--primary {
+    border: none;
+    padding: calc(1rem + 2px) 2rem;
+  }
+  &--secondary {
+    background: none;
+    border-style: solid;
+    border-width: 2px;
+    &:hover {
+      color: $color-black-90;
+    }
+  }
+  &--menu {
+    background: none;
+    color: $color-black-5;
+    border: 2px solid $color-white;
+    border-radius: 1.5rem;
+    padding: 0.5rem 2rem;
+    box-shadow: none;
+    &:hover {
+      background-color: $color-black-5;
+      color: $color-black-90;
+    }
+  }
+  &--main {
+    font-size: $font-heading-5;
+    padding: 1.5rem 2.5rem;
+    margin: 2rem;
+  }
+}
