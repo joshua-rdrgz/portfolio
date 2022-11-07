@@ -1,0 +1,17 @@
+.header {
+  height: 10rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  &__logo {
+    min-width: max-content;
+    margin-left: 5.5%;
+    font-family: $font-family-heading;
+    font-size: $font-heading-6;
+    font-weight: $font-weight-heading-bold;
+    color: $color-white;
+    @include respond(biggerThanSmallPhone) {
+      font-size: $font-heading-5;
+    }
+  }
+}
