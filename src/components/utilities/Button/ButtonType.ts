@@ -20,12 +20,8 @@ interface SecondaryBtn {
   hoverBgColor: hoverBgColors;
 }
 
-interface MenuBtn {
-  type: 'menu';
-}
-
 export default interface BtnType {
   onClickFn(): void;
   children?: string;
-  btnInfo: PrimaryBtn | SecondaryBtn | MenuBtn;
+  btnInfo: PrimaryBtn | SecondaryBtn;
 }

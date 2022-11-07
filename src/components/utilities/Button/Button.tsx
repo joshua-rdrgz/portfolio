@@ -7,7 +7,7 @@ const Button: React.FC<BtnType> = ({ btnInfo, onClickFn, children }) => {
     type === 'primary'
       ? `btn--primary ${btnInfo.main ? 'btn--main' : ''} ${btnInfo.textColor} ${
           btnInfo.btnColor
-        }  ${btnInfo.hoverBgColor ? btnInfo.hoverBgColor : ''}`
+        } ${btnInfo.hoverBgColor ? btnInfo.hoverBgColor : ''}`
       : '';
   const secondaryClasses =
     type === 'secondary'
@@ -15,11 +15,10 @@ const Button: React.FC<BtnType> = ({ btnInfo, onClickFn, children }) => {
           btnInfo.hoverBgColor ? btnInfo.hoverBgColor : ''
         }`
       : '';
-  const menuClasses = type === 'menu' ? 'btn--menu' : '';
 
   return (
     <button
-      className={`btn ${primaryClasses} ${secondaryClasses} ${menuClasses}`}
+      className={`btn ${primaryClasses} ${secondaryClasses}`}
       onClick={onClickFn}
     >
       {children}

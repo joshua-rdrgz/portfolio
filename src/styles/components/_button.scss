@@ -22,18 +22,6 @@
       color: $color-black-90;
     }
   }
-  &--menu {
-    background: none;
-    color: $color-black-5;
-    border: 2px solid $color-white;
-    border-radius: 1.5rem;
-    padding: 0.5rem 2rem;
-    box-shadow: none;
-    &:hover {
-      background-color: $color-black-5;
-      color: $color-black-90;
-    }
-  }
   &--main {
     font-size: $font-heading-5;
     padding: 1.5rem 2.5rem;

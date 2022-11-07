@@ -75,26 +75,6 @@ describe('Button Utility Component', () => {
     expect(btn).toHaveClass('hover-bg-color__light--accent-medium');
   });
 
-  test('renders menu button correctly', () => {
-    render(
-      <Button
-        btnInfo={{
-          type: 'menu',
-        }}
-        onClickFn={() => {}}
-      >
-        Menu Button
-      </Button>
-    );
-
-    const btn = screen.getByText('Menu Button');
-
-    expect(btn).toHaveClass('btn--menu');
-    expect(btn).not.toHaveClass('color--black-5');
-    expect(btn).not.toHaveClass('border-color__light--accent');
-    expect(btn).not.toHaveClass('hover-bg-color__light--accent-medium');
-  });
-
   test('correctly fires function when clicked', () => {
     const mockFn = jest.fn();
 
