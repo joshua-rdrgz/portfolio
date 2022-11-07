@@ -32,4 +32,16 @@
       }
     }
   }
+  &-underline {
+    &__light {
+      &--accent {
+        border-bottom-color: $color-accentLM;
+      }
+    }
+    &__dark {
+      &--accent {
+        border-bottom-color: $color-accentDM;
+      }
+    }
+  }
 }

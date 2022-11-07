@@ -1,0 +1,182 @@
+.header {
+  &-nav {
+    height: 0;
+    transform: scale(1, 0);
+    transform-origin: top;
+    transition: all 0.4s ease-in-out;
+    @include respond(biggerThanVertTablet) {
+      height: auto;
+    }
+    &__ul {
+      flex-direction: column;
+      gap: 1rem;
+      &:first-of-type {
+        padding-top: 2rem;
+      }
+      &:last-of-type {
+        padding-bottom: 2rem;
+      }
+      @include respond(biggerThanVertTablet) {
+        flex-direction: row;
+        justify-content: flex-end !important;
+        &:first-of-type {
+          padding-top: 0;
+          gap: 5rem;
+        }
+        &:last-of-type {
+          padding-bottom: 1rem;
+          padding-right: 5.5%;
+        }
+      }
+    }
+    &__link {
+      opacity: 0;
+      transition: opacity 0.15s ease-in-out;
+      &:hover {
+        transform: none !important;
+      }
+      @include respond(biggerThanVertTablet) {
+        opacity: 1;
+      }
+    }
+    &__checkbox {
+      display: none;
+      &:checked ~ .header-nav {
+        transform: scale(1, 1);
+      }
+      &:checked ~ .header-nav a {
+        opacity: 1;
+        transition: opacity 0.15s ease-in-out 0.15s;
+      }
+      &:checked + .header-nav__icon-container .header-nav__icon {
+        background-color: transparent;
+      }
+      &:checked + .header-nav__icon-container .header-nav__icon::before {
+        transform: rotate(135deg);
+        top: 0;
+      }
+      &:checked + .header-nav__icon-container .header-nav__icon::after {
+        transform: rotate(45deg);
+        top: 0;
+      }
+      @include respond(biggerThanVertTablet) {
+        &:not(:checked) ~ .header-nav {
+          transform: scale(1, 1);
+        }
+      }
+    }
+    &__icon {
+      margin: 2.25rem auto;
+      visibility: visible;
+      &,
+      &::before,
+      &::after {
+        display: block;
+        background: $color-white;
+        width: 3rem;
+        height: 2.5px;
+        border-radius: 2px;
+        position: relative;
+      }
+      &::before,
+      &::after {
+        content: '';
+        position: absolute;
+        transition: all 0.2s;
+      }
+      &::before {
+        bottom: 0.9rem;
+      }
+      &::after {
+        top: 0.9rem;
+      }
+      @include respond(biggerThanVertTablet) {
+        visibility: hidden;
+      }
+
+      &-container {
+        visibility: visible;
+        width: 5rem;
+        height: 5rem;
+        position: absolute;
+        right: 0;
+        margin-right: 3rem;
+        z-index: 10;
+        transition: all 0.2s;
+        &:hover .header-nav__icon::before {
+          bottom: 1rem;
+        }
+        &:hover .header-nav__icon::after {
+          top: 1rem;
+        }
+        @include respond(biggerThanVertTablet) {
+          visibility: hidden;
+        }
+      }
+    }
+  }
+}
+
+.footer {
+  &-nav {
+    &__ul {
+      flex-wrap: wrap;
+      flex-direction: row;
+      gap: 1.5rem;
+      @include respond(biggerThanPhone) {
+        gap: 3rem;
+      }
+      @include respond(biggerThanTablet) {
+        gap: 4rem;
+      }
+      @include respond(biggerThanDesktop) {
+        gap: 5rem;
+      }
+      &:last-of-type {
+        padding-bottom: 1rem;
+      }
+    }
+  }
+}
+
+.nav {
+  font-family: $font-family-heading;
+  font-weight: $font-weight-heading-bold;
+  font-size: $font-heading-6;
+  &__ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  &__item {
+    list-style: none;
+    @include respond(biggerThanVertTablet) {
+      margin: 1rem 0;
+    }
+  }
+  &__link {
+    display: block;
+    text-decoration: none;
+    color: $color-white;
+    transition: all 0.1s;
+    &:hover {
+      border-bottom-width: 2px;
+      border-bottom-style: solid;
+      color: $color-black-25;
+      transform: translateY(-1px);
+    }
+    &--CTA {
+      text-decoration: none;
+      background: none;
+      color: $color-black-5;
+      border: 2px solid $color-white;
+      border-radius: 1.5rem;
+      padding: 0.5rem 2rem;
+      box-shadow: none;
+      &:hover {
+        background-color: $color-black-5;
+        color: $color-black-90;
+      }
+    }
+  }
+}
