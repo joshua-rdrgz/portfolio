@@ -20,10 +20,8 @@ type IconType = SkillSocialType | MemojiType;
 const Icon: React.FC<IconType> = ({ type, svg, alt, caption, testId }) => {
   if (type !== 'memoji') {
     return (
-      <figure className='icon__figure'>
-        <div className={`icon__figure--${type}`} data-testid={testId}>
+      <figure className={`icon__figure icon__figure--${type}`} data-testid={testId}>
           <img src={svg} alt={alt} className='icon' />
-        </div>
         {caption && <p className='icon__caption'>{caption}</p>}
       </figure>
     );
