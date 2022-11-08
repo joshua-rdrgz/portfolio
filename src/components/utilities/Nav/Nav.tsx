@@ -31,8 +31,8 @@ const Nav: React.FC<NavType> = ({ type, backgroundColor }) => {
         </>
       )}
       <nav className={`nav ${type}-nav`}>
+        <Socials type='hf' backgroundColor={backgroundColor} />
         <ul className={`nav__ul ${type}-nav__ul ${backgroundColor}`}>
-          <Socials type='hf' backgroundColor={backgroundColor} />
           <li className={`nav__item`}>
             <a
               href='#skills'
