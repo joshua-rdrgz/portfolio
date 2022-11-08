@@ -1,24 +1,16 @@
-import React, { useState, useEffect } from 'react';
 import { backgroundColors } from '../../../types/colors';
 import Nav from '../../utilities/Nav/Nav';
+import useMQuery from '../../../hooks/useMQuery';
 
 interface HeaderType {
   backgroundColor: backgroundColors;
 }
 
 const Header: React.FC<HeaderType> = ({ backgroundColor }) => {
-  const [useSolidColor, setUseSolidColor] = useState({
-    matches: window.innerWidth >= 800 ? true : false,
+  const mQuery = useMQuery({
+    initMatch: window.innerWidth >= 800 ? true : false,
+    mediaQueryExp: '(min-width: 50em)',
   });
-
-  useEffect(() => {
-    let mediaQuery = window.matchMedia('(min-width: 50em');
-    mediaQuery.addListener(setUseSolidColor);
-
-    return () => {
-      mediaQuery.removeListener(setUseSolidColor);
-    };
-  }, []);
 
   return (
     <header className={`header ${backgroundColor}`} data-testid='header'>
@@ -26,9 +18,7 @@ const Header: React.FC<HeaderType> = ({ backgroundColor }) => {
       <Nav
         type='header'
         backgroundColor={`${
-          useSolidColor.matches
-            ? backgroundColor
-            : 'bg-color__light--accent-medium-opaque'
+          mQuery ? backgroundColor : 'bg-color__light--accent-medium-opaque'
         }`}
       />
     </header>
