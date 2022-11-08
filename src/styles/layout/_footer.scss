@@ -1,0 +1,17 @@
+.footer {
+  text-align: center;
+  color: $color-black-5;
+  &__logo {
+    font-family: $font-family-heading;
+    font-size: $font-heading-5;
+    font-weight: $font-weight-heading-bold;
+    display: block;
+    padding-top: 3rem;
+    padding-bottom: 1rem;
+  }
+  &__copyright {
+    font-size: $font-body-sm;
+    padding-top: 1rem;
+    padding-bottom: 3rem;
+  }
+}
