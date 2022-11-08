@@ -1,8 +1,9 @@
 .hf-socials {
   &__ul {
     display: flex;
+    justify-content: center;
     gap: 4rem;
-    margin-bottom: 2rem;
+    padding: 2rem 0;
   }
   &__icon {
     list-style: none;

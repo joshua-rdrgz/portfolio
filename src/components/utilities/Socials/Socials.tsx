@@ -23,7 +23,7 @@ const Socials: React.FC<SocialsType> = ({ type, backgroundColor }) => {
   if (mQuery) {
     return (
       <figure
-        className={`${type}-socials ${type === 'hf' ? '' : backgroundColor}`}
+        className={`${type}-socials ${backgroundColor}`}
       >
         <ul className={`${type}-socials__ul`}>
           <li className={`${type}-socials__icon`}>
