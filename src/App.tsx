@@ -2,12 +2,14 @@ import React from 'react';
 import './styles/main.scss';
 import Header from './components/layout/Header/Header';
 import Socials from './components/utilities/Socials/Socials';
+import Footer from './components/layout/Footer/Footer';
 
 function App() {
   return (
     <>
       <Header backgroundColor='bg-color__light--accent-dark' />
       <Socials type='sticky' backgroundColor='bg-color__light--accent-dark' />
+      <Footer backgroundColor='bg-color__light--accent-dark' />
     </>
   );
 }
