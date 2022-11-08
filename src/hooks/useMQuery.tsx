@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 
 interface UseMQueryProps {
   initMatch: boolean;
@@ -17,7 +17,7 @@ const useMQuery = ({ initMatch, mediaQueryExp }: UseMQueryProps) => {
     return () => {
       mediaQuery.removeEventListener('change', setMQuery);
     };
-  }, []);
+  }, [mediaQueryExp]);
 
   return mQuery.matches;
 };
