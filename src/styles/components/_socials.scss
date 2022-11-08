@@ -1,0 +1,31 @@
+.hf-socials {
+  &__ul {
+    display: flex;
+    gap: 4rem;
+    margin-bottom: 2rem;
+  }
+  &__icon {
+    list-style: none;
+    cursor: pointer;
+  }
+}
+
+.sticky-socials {
+  position: sticky;
+  top: 17rem;
+  left: 0;
+  max-width: max-content;
+  padding: 1rem;
+  padding-left: 0.5rem;
+  border-top-right-radius: 1rem;
+  border-bottom-right-radius: 1rem;
+  &__ul {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  &__icon {
+    list-style: none;
+    cursor: pointer;
+  }
+}
