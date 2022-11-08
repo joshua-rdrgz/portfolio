@@ -1,5 +1,6 @@
 import React, { useRef } from 'react';
 import { backgroundColors } from '../../../types/colors';
+import Socials from '../Socials/Socials';
 
 interface NavType {
   type: 'header' | 'footer';
@@ -31,6 +32,7 @@ const Nav: React.FC<NavType> = ({ type, backgroundColor }) => {
       )}
       <nav className={`nav ${type}-nav`}>
         <ul className={`nav__ul ${type}-nav__ul ${backgroundColor}`}>
+          <Socials type='hf' backgroundColor={backgroundColor} />
           <li className={`nav__item`}>
             <a
               href='#skills'

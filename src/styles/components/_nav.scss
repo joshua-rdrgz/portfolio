@@ -10,6 +10,8 @@
     @include respond(biggerThanVertTablet) {
       height: auto;
       position: inherit;
+      top: 0;
+      transform: scale(1, 1);
     }
     &__ul {
       flex-direction: column;
@@ -66,11 +68,6 @@
         transform: rotate(45deg);
         top: 0;
       }
-      @include respond(biggerThanVertTablet) {
-        &:not(:checked) ~ .header-nav {
-          transform: scale(1, 1);
-        }
-      }
     }
     &__icon {
       margin: 2.25rem auto;
@@ -102,7 +99,7 @@
       }
 
       &-container {
-        visibility: visible;
+        display: block;
         width: 5rem;
         height: 5rem;
         margin-right: 3rem;
@@ -115,7 +112,7 @@
           top: 1rem;
         }
         @include respond(biggerThanVertTablet) {
-          visibility: hidden;
+          display: none;
         }
       }
     }
