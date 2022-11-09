@@ -35,12 +35,16 @@
   &-underline {
     &__light {
       &--accent {
-        border-bottom-color: $color-accentLM;
+        &-medium {
+          border-bottom-color: $color-accent-mediumLM;
+        }
       }
     }
     &__dark {
       &--accent {
-        border-bottom-color: $color-accentDM;
+        &-medium {
+          border-bottom-color: $color-accent-mediumDM;
+        }
       }
     }
   }

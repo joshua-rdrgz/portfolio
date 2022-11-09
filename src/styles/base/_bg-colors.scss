@@ -68,6 +68,9 @@
       }
       &-dark {
         background-color: $color-accent-darkDM;
+        &-opaque {
+          background-color: $color-accent-dark-opaqueDM;
+        }
       }
     }
     &--gradient {

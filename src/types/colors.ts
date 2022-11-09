@@ -43,6 +43,7 @@ export type backgroundColors =
   | 'bg-color__dark--accent-medium'
   | 'bg-color__dark--accent-medium-opaque'
   | 'bg-color__dark--accent-dark'
+  | 'bg-color__dark--accent-dark-opaque'
   | 'bg-color__light--gradient-hero'
   | 'bg-color__light--gradient-project'
   | 'bg-color__dark--gradient-hero'
