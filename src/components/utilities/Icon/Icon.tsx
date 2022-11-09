@@ -1,40 +1,27 @@
 import React from 'react';
+import IconType from './IconType';
 
-interface IconBase {
-  svg: `./assets/${string}.svg`;
-  alt: string;
-  testId?: string;
-}
-interface SkillSocialType extends IconBase {
-  type: 'social' | 'skill';
-  caption?: string;
-}
-
-interface MemojiType extends IconBase {
-  type: 'memoji';
-  caption?: null;
-}
-
-type IconType = SkillSocialType | MemojiType;
-
-const Icon: React.FC<IconType> = ({ type, svg, alt, caption, testId }) => {
-  if (type !== 'memoji') {
-    return (
-      <figure className={`icon__figure icon__figure--${type}`} data-testid={testId}>
-          <img src={svg} alt={alt} className='icon' />
-        {caption && <p className='icon__caption'>{caption}</p>}
-      </figure>
-    );
-  } else {
-    return (
-      <figure
-        className='icon__figure icon__figure--memoji'
-        data-testid={testId}
-      >
-        <img src={svg} alt={alt} className='icon' />
-      </figure>
-    );
-  }
+const Icon: React.FC<IconType> = ({
+  type,
+  svg,
+  alt,
+  caption,
+  testId,
+  backgroundColor,
+  onClickFn,
+}) => {
+  const WrappingTag = type === 'switch' ? 'button' : 'figure';
+  return (
+    <WrappingTag
+      className={`icon__figure icon__figure--${type} ${
+        backgroundColor ? backgroundColor : ''
+      }`}
+      data-testid={testId}
+    >
+      <img src={svg} alt={alt} className='icon' onClick={onClickFn} />
+      {caption && <p className='icon__caption'>{caption}</p>}
+    </WrappingTag>
+  );
 };
 
 export default Icon;
