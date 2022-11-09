@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import ThemeContext from '../../../store/theme-context';
 import HeadingType from './HeadingType';
 
 const Heading: React.FC<HeadingType> = ({
@@ -9,6 +10,8 @@ const Heading: React.FC<HeadingType> = ({
   headingColor,
   children,
 }) => {
+  const { isDarkMode } = useContext(ThemeContext);
+
   const hasBothSubHeadings = subHeading?.type === 'both';
   const hasUpperSubHeading = subHeading?.type === 'upper';
   const hasLowerSubHeading = subHeading?.type === 'lower';
@@ -32,11 +35,13 @@ const Heading: React.FC<HeadingType> = ({
           {subHeading.content}
         </span>
       )}
-      <div className="heading__decor">
+      <div className='heading__decor'>
         {hasLeftDecorLine && (
           <div
-            className="heading__decor--line-left bg-color__light--accent-medium"
-            data-testid="heading__left-decor"
+            className={`heading__decor--line-left bg-color__${
+              isDarkMode ? 'dark' : 'light'
+            }--accent-medium`}
+            data-testid='heading__left-decor'
           />
         )}
         <Tag
@@ -50,8 +55,10 @@ const Heading: React.FC<HeadingType> = ({
         </Tag>
         {hasRightDecorLine && (
           <div
-            className="heading__decor--line-right bg-color__light--accent-medium"
-            data-testid="heading__right-decor"
+            className={`heading__decor--line-right bg-color__${
+              isDarkMode ? 'dark' : 'light'
+            }--accent-medium`}
+            data-testid='heading__right-decor'
           />
         )}
       </div>
