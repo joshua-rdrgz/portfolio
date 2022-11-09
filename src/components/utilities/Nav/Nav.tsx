@@ -1,4 +1,5 @@
-import React, { useRef } from 'react';
+import React, { useContext, useRef } from 'react';
+import ThemeContext from '../../../store/theme-context';
 import { backgroundColors } from '../../../types/colors';
 import Socials from '../Socials/Socials';
 
@@ -8,6 +9,7 @@ interface NavType {
 }
 
 const Nav: React.FC<NavType> = ({ type, backgroundColor }) => {
+  const { isDarkMode } = useContext(ThemeContext);
   const checkboxRef = useRef<HTMLInputElement | null>(null);
 
   const onClickHandler = () => {
@@ -38,7 +40,9 @@ const Nav: React.FC<NavType> = ({ type, backgroundColor }) => {
               href='#skills'
               className={`nav__link ${
                 type === 'header' ? 'header-nav__link' : ''
-              } hover-underline__light--accent`}
+              } hover-underline__${
+                isDarkMode ? 'dark' : 'light'
+              }--accent-medium`}
               onClick={onClickHandler}
             >
               SKILLS
@@ -49,7 +53,9 @@ const Nav: React.FC<NavType> = ({ type, backgroundColor }) => {
               href='#projects'
               className={`nav__link ${
                 type === 'header' ? 'header-nav__link' : ''
-              } hover-underline__light--accent`}
+              } hover-underline__${
+                isDarkMode ? 'dark' : 'light'
+              }--accent-medium`}
               onClick={onClickHandler}
             >
               PROJECTS
@@ -60,7 +66,9 @@ const Nav: React.FC<NavType> = ({ type, backgroundColor }) => {
               href='#about'
               className={`nav__link ${
                 type === 'header' ? 'header-nav__link' : ''
-              } hover-underline__light--accent`}
+              } hover-underline__${
+                isDarkMode ? 'dark' : 'light'
+              }--accent-medium`}
               onClick={onClickHandler}
             >
               ABOUT
