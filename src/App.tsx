@@ -5,6 +5,7 @@ import Header from './components/layout/Header/Header';
 import Socials from './components/utilities/Socials/Socials';
 import Footer from './components/layout/Footer/Footer';
 import Switch from './components/utilities/Switch/Switch';
+import Herobox from './components/layout/Herobox/Herobox';
 
 function App() {
   const { isDarkMode } = useContext(ThemeContext);
@@ -17,6 +18,9 @@ function App() {
     <>
       <Header backgroundColor={headerFooterBGColor} />
       <Socials type='sticky' backgroundColor={headerFooterBGColor} />
+      <main>
+        <Herobox />
+      </main>
       <Switch />
       <Footer backgroundColor={headerFooterBGColor} />
     </>

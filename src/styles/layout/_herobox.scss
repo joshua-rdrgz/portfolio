@@ -1,0 +1,53 @@
+.herobox {
+  height: 80vh;
+  // display: flex;
+  position: relative;
+  flex-direction: column;
+  text-align: center;
+  z-index: -1;
+  overflow: hidden;
+  @include respond(biggerThanVertTablet) {
+    flex-direction: row;
+    text-align: left;
+  }
+  @media screen and (min-height: 50em) {
+    height: 65vh;
+  }
+  @media screen and (max-width: 75em) and (min-height: 75em) {
+    height: 60vh;
+  }
+  &__content {
+    max-width: min-content;
+    margin: 0 auto;
+    margin-top: 2.5rem;
+    @include respond(biggerThanSmallPhone) {
+      margin-top: 5rem;
+    }
+    @include respond(biggerThanVertTablet) {
+      margin: 0;
+      margin-top: 20vh;
+      margin-left: 10%;
+    }
+  }
+  &__memoji {
+    overflow: hidden;
+    position: absolute;
+    width: 40rem;
+    bottom: 0;   
+    translate: -50%;
+    @media screen and (max-width: 62.5em) {
+      left: 50%;
+    }
+    @include respond(biggerThanVertTablet) {
+      right: 0;
+      bottom: 50%;
+      translate: 0 50%;
+      rotate: 270deg;
+    }
+    &-img {
+      translate: 0 3.6rem;
+      @include respond(biggerThanVertTablet) {
+      }
+    }
+  }
+}
