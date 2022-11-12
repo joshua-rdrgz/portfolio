@@ -4,6 +4,8 @@ interface IconBase {
   svg: `./assets/${string}.svg`;
   alt: string;
   testId?: string;
+  wrappingClassName?: string;
+  imgClassName?: string;
 }
 interface SkillSocialType extends IconBase {
   type: 'social' | 'skill';

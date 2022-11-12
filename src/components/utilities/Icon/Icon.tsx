@@ -8,6 +8,8 @@ const Icon: React.FC<IconType> = ({
   caption,
   testId,
   backgroundColor,
+  wrappingClassName,
+  imgClassName,
   onClickFn,
 }) => {
   const WrappingTag = type === 'switch' ? 'button' : 'figure';
@@ -15,10 +17,10 @@ const Icon: React.FC<IconType> = ({
     <WrappingTag
       className={`icon__figure icon__figure--${type} ${
         backgroundColor ? backgroundColor : ''
-      }`}
+      } ${wrappingClassName}`}
       data-testid={testId}
     >
-      <img src={svg} alt={alt} className='icon' onClick={onClickFn} />
+      <img src={svg} alt={alt} className={`icon ${imgClassName}`} onClick={onClickFn} />
       {caption && <p className='icon__caption'>{caption}</p>}
     </WrappingTag>
   );
