@@ -9,13 +9,13 @@ interface SocialsType {
 
 const Socials: React.FC<SocialsType> = ({ type, backgroundColor }) => {
   const stickyMatch = {
-    initMatch: window.innerWidth >= 800 ? true : false,
-    mediaQueryExp: '(min-width: 50em)',
+    initMatch: window.innerWidth >= 950 ? true : false,
+    mediaQueryExp: '(min-width: 62.5em)',
   };
 
   const hfMatch = {
-    initMatch: window.innerWidth <= 800 ? true : false,
-    mediaQueryExp: '(max-width: 50em)',
+    initMatch: window.innerWidth <= 950 ? true : false,
+    mediaQueryExp: '(max-width: 62.5em)',
   };
 
   const mQuery = useMQuery(type === 'sticky' ? stickyMatch : hfMatch);
