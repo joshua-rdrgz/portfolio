@@ -6,7 +6,7 @@ interface SubHeadingBoth {
   type: 'both';
   textUpper: {
     content: string;
-    textSize: textSize;
+    headingSize: headingSize;
     textColor: colors;
   };
   textLower: {
@@ -28,6 +28,8 @@ export default interface HeadingType {
   children?: string;
   headingSize: headingSize;
   headingColor: colors;
+  headingClassName?: string;
+  wrapperClassName?: string;
   decor?:
     | 'line-left'
     | 'line-center'

@@ -7,6 +7,8 @@ const Heading: React.FC<HeadingType> = ({
   headingSize,
   subHeading,
   decor,
+  headingClassName,
+  wrapperClassName,
   headingColor,
   children,
 }) => {
@@ -22,10 +24,14 @@ const Heading: React.FC<HeadingType> = ({
   const hasDecorDoubleLines = decor?.includes('lines');
 
   return (
-    <header className={`heading${decor ? ' decor' : ''}`}>
+    <header
+      className={`heading${decor ? ' decor' : ''}${
+        wrapperClassName ? ' ' + wrapperClassName : ''
+      }`}
+    >
       {hasBothSubHeadings && (
         <span
-          className={`${subHeading.textUpper.textSize} ${subHeading.textUpper.textColor}`}
+          className={`${subHeading.textUpper.headingSize} ${subHeading.textUpper.textColor}`}
         >
           {subHeading.textUpper.content}
         </span>
@@ -48,7 +54,8 @@ const Heading: React.FC<HeadingType> = ({
           className={
             `heading__text ${headingSize} ${headingColor}` +
             `${hasDecorDoubleLines ? ' heading__decor--lines' : ''}` +
-            `${decor ? ' decor__text' : ''}`
+            `${decor ? ' decor__text' : ''}` +
+            (headingClassName ? ' ' + headingClassName : '')
           }
         >
           {children}

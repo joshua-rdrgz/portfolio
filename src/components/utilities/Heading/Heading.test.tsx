@@ -34,7 +34,7 @@ describe('Heading Utility Component', () => {
       type: 'both',
       textUpper: {
         content: 'upper subheading',
-        textSize: 'text-size--large',
+        headingSize: 'heading-size__5',
         textColor: 'color--black',
       },
       textLower: {
@@ -50,7 +50,7 @@ describe('Heading Utility Component', () => {
 
     expect(upperSubHeading).toHaveTextContent('upper subheading');
     expect(lowerSubHeading).toHaveTextContent('lower subheading');
-    expect(upperSubHeading).toHaveClass('text-size--large');
+    expect(upperSubHeading).toHaveClass('heading-size__5');
     expect(upperSubHeading).toHaveClass('color--black');
     expect(lowerSubHeading).toHaveClass('text-size--xxlarge');
     expect(lowerSubHeading).toHaveClass('color--black-50');
