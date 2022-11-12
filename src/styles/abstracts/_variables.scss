@@ -19,13 +19,13 @@ $color-accent-mediumDM: #008080;
 $color-accent-medium-opaqueDM: rgba(0, 153, 153, 0.6);
 $color-accent-darkDM: #003333;
 $color-accent-dark-opaqueDM: rgba($color-accent-darkDM, 0.9);
-$color-gradient-heroLM: linear-gradient(90deg, $color-white, $color-black-50);
+$color-gradient-heroLM: linear-gradient(180deg, $color-white, $color-black-50);
 $color-gradient-projectLM: linear-gradient(
   90deg,
   $color-black-15,
   $color-black-75
 );
-$color-gradient-heroDM: linear-gradient(90deg, $color-black, $color-black-50);
+$color-gradient-heroDM: linear-gradient(180deg, $color-black, $color-black-50);
 $color-gradient-projectDM: linear-gradient(
   90deg,
   $color-black-90,
@@ -54,4 +54,4 @@ $font-weight-heading-reg: 400;
 $font-weight-body: 500;
 
 // BOX SHADOW
-$box-shadow: 2px 7px 10px $color-black-15;
+$box-shadow: 2px 7px 10px $color-black-50;
