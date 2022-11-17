@@ -1,5 +1,5 @@
 import React, { useContext } from 'react';
-import useMQuery from '../../../hooks/useMQuery';
+import useStandardMQueries from '../../../hooks/useStandardMQueries';
 import ThemeContext from '../../../store/theme-context';
 import Heading from '../../utilities/Heading/Heading';
 import Icon from '../../utilities/Icon/Icon';
@@ -11,20 +11,11 @@ const Herobox: React.FC = () => {
   const { isDarkMode } = useContext(ThemeContext);
   
 
-  const biggerThanSmallPhone = useMQuery({
-    initMatch: window.innerWidth >= 450 ? true : false,
-    mediaQueryExp: '(min-width: 28.125em)',
-  });
-
-  const biggerThanPhone = useMQuery({
-    initMatch: window.innerWidth >= 600 ? true : false,
-    mediaQueryExp: '(min-width: 40.625em)', // 650px
-  });
-
-  const biggerThanTablet = useMQuery({
-    initMatch: window.innerWidth >= 2000 ? true : false,
-    mediaQueryExp: '(min-width: 125em)',
-  });
+  const {
+    biggerThanSmallPhone,
+    biggerThanPhone,
+    biggerThanTablet,
+  } = useStandardMQueries();
 
 
   const HEADING_COLOR = isDarkMode
