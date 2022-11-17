@@ -25,19 +25,19 @@ const Heading: React.FC<HeadingType> = ({
 
   return (
     <header
-      className={`heading${decor ? ' decor' : ''}${
-        wrapperClassName ? ' ' + wrapperClassName : ''
-      }`}
+      className={`heading${wrapperClassName ? ' ' + wrapperClassName : ''}`}
     >
       {hasBothSubHeadings && (
         <span
-          className={`${subHeading.textUpper.headingSize} ${subHeading.textUpper.textColor}`}
+          className={`${subHeading.textUpper.headingSize} ${subHeading.textUpper.textColor} ${subHeading.textUpper?.className}`}
         >
           {subHeading.textUpper.content}
         </span>
       )}
       {hasUpperSubHeading && (
-        <span className={`${subHeading.textSize} ${subHeading.textColor}`}>
+        <span
+          className={`${subHeading.textSize} ${subHeading.textColor} ${subHeading?.className}`}
+        >
           {subHeading.content}
         </span>
       )}
@@ -52,7 +52,9 @@ const Heading: React.FC<HeadingType> = ({
         )}
         <Tag
           className={
-            `heading__text ${headingSize} ${headingColor}` +
+            `heading__text${
+              decor ? ' decor' : ''
+            } ${headingSize} ${headingColor}` +
             `${hasDecorDoubleLines ? ' heading__decor--lines' : ''}` +
             `${decor ? ' decor__text' : ''}` +
             (headingClassName ? ' ' + headingClassName : '')
@@ -71,13 +73,15 @@ const Heading: React.FC<HeadingType> = ({
       </div>
       {hasBothSubHeadings && (
         <span
-          className={`${subHeading.textLower.textSize} ${subHeading.textLower.textColor}`}
+          className={`${subHeading.textLower.textSize} ${subHeading.textLower.textColor} ${subHeading.textLower?.className}`}
         >
           {subHeading.textLower.content}
         </span>
       )}
       {hasLowerSubHeading && (
-        <span className={`${subHeading.textSize} ${subHeading.textColor}`}>
+        <span
+          className={`${subHeading.textSize} ${subHeading.textColor} ${subHeading?.className}`}
+        >
           {subHeading.content}
         </span>
       )}

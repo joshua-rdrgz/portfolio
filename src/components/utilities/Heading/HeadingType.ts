@@ -5,11 +5,13 @@ import textSize from '../../../types/text-size';
 interface SubHeadingBoth {
   type: 'both';
   textUpper: {
+    className?: string;
     content: string;
     headingSize: headingSize;
     textColor: colors;
   };
   textLower: {
+    className?: string;
     content: string | React.ReactNode;
     textSize: textSize;
     textColor: colors;
@@ -17,6 +19,7 @@ interface SubHeadingBoth {
 }
 
 interface SubHeading {
+  className?: string;
   type: 'upper' | 'lower';
   content: string;
   textSize: textSize;
