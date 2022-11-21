@@ -84,19 +84,19 @@ const Skills = () => {
           );
         })}
       </Skill>
-        <Skill
-          heading='Other'
-          classExtension='other'
-          containerClassExtension='other'
-        >
-          {OTHER_SKILLS.map((skill) => {
-            return (
-              <p className='icon__caption' key={skill}>
-                {skill}
-              </p>
-            );
-          })}
-        </Skill>
+      <Skill
+        heading='Other'
+        classExtension='other'
+        containerClassExtension='other'
+      >
+        {OTHER_SKILLS.map((skill) => {
+          return (
+            <p className='icon__caption' key={skill}>
+              {skill}
+            </p>
+          );
+        })}
+      </Skill>
     </section>
   );
 };
