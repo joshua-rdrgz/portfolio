@@ -15,12 +15,17 @@ const Icon: React.FC<IconType> = ({
   const WrappingTag = type === 'switch' ? 'button' : 'figure';
   return (
     <WrappingTag
-      className={`icon__figure icon__figure--${type} ${
-        backgroundColor ? backgroundColor : ''
-      } ${wrappingClassName}`}
+      className={`icon__figure icon__figure--${type}${
+        backgroundColor ? ` ${backgroundColor}` : ''
+      }${wrappingClassName ? ` ${wrappingClassName}` : ''}`}
       data-testid={testId}
     >
-      <img src={svg} alt={alt} className={`icon ${imgClassName}`} onClick={onClickFn} />
+      <img
+        src={svg}
+        alt={alt}
+        className={`icon${imgClassName ? ` ${imgClassName}` : ''}`}
+        onClick={onClickFn}
+      />
       {caption && <p className='icon__caption'>{caption}</p>}
     </WrappingTag>
   );

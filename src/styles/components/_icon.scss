@@ -11,10 +11,6 @@
       width: 5rem;
       height: 5rem;
     }
-    &--skill {
-      width: 12rem;
-      height: 12rem;
-    }
     &--memoji {
       max-width: 45rem;
     }
@@ -39,7 +35,6 @@
     color: $color-black-50;
     font-size: $font-body-reg;
     text-align: center;
-    max-width: min-content;
     margin: 0 auto;
   }
 }
