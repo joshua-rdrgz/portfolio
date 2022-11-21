@@ -1,0 +1,44 @@
+.skill {
+  border-radius: 1rem;
+  padding: 1rem;
+  &--front-end {
+    grid-area: front;
+  }
+  &--tools {
+    grid-area: tools;
+    @include respond(biggerThanSmallTablet) {
+      justify-self: start;
+    }
+  }
+  &--other {
+    position: relative;
+    grid-area: other;
+    @include respond(biggerThanSmallTablet) {
+      width: 20rem;
+      justify-self: end;
+    }
+  }
+  &__container {
+    @include respond(biggerThanSmallTablet) {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+  }
+  &__heading {
+    margin: 0 auto;
+    text-align: center;
+    padding-bottom: 1.5rem;
+  }
+  &__items {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));
+    gap: 2rem;
+    &--other {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+  }
+}
