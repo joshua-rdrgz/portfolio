@@ -9,6 +9,11 @@
       @content;
     } // 600px
   }
+  @if $breakpoint == biggerThanSmallTablet {
+    @media screen and (min-width: 50em) {
+      @content;
+    } // 800px
+  }
   @if $breakpoint == biggerThanVertTablet {
     @media screen and (min-width: 62.5em) {
       @content;
