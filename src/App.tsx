@@ -6,6 +6,7 @@ import Socials from './components/utilities/Socials/Socials';
 import Footer from './components/layout/Footer/Footer';
 import Switch from './components/utilities/Switch/Switch';
 import Herobox from './components/layout/Herobox/Herobox';
+import Skills from './components/layout/Skills/Skills';
 
 function App() {
   const { isDarkMode } = useContext(ThemeContext);
@@ -18,8 +19,9 @@ function App() {
     <>
       <Header backgroundColor={headerFooterBGColor} />
       <Socials type='sticky' backgroundColor={headerFooterBGColor} />
-      <main>
+      <main className={isDarkMode ? 'bg-color--black-90' : 'bg-color--black-15'}>
         <Herobox />
+        <Skills />
       </main>
       <Switch />
       <Footer backgroundColor={headerFooterBGColor} />

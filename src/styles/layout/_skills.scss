@@ -1,0 +1,35 @@
+.skills {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  padding: 0 10%;
+  padding-bottom: 4rem;
+  @include respond(biggerThanSmallTablet) {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-areas: 
+      'title title'
+      'front front'
+      'tools other';
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 95%);
+    padding-bottom: 14rem;
+  }
+  &__title {
+    width: 70%;
+    margin: 3rem auto;
+    grid-area: title;
+    @include respond(biggerThanPhone) {
+      margin-right: 0;
+    }
+    &--text {
+      min-width: max-content;
+    }
+  }
+  &__subtitle {
+    display: block;
+    text-align: center;
+    @include respond(biggerThanPhone) {
+      text-align: right;
+    }
+  }
+}
