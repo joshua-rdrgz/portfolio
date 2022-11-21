@@ -52,9 +52,7 @@ const Heading: React.FC<HeadingType> = ({
         )}
         <Tag
           className={
-            `heading__text${
-              decor ? ' decor' : ''
-            } ${headingSize} ${headingColor}` +
+            `${decor ? ' decor' : ''} ${headingSize} ${headingColor}` +
             `${hasDecorDoubleLines ? ' heading__decor--lines' : ''}` +
             `${decor ? ' decor__text' : ''}` +
             (headingClassName ? ' ' + headingClassName : '')
