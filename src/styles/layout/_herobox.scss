@@ -4,11 +4,12 @@
   position: relative;
   flex-direction: column;
   text-align: center;
-  z-index: -1;
   overflow: hidden;
+  padding-top: 2rem;
   @include respond(biggerThanVertTablet) {
     flex-direction: row;
     text-align: left;
+    padding-top: 0;
   }
   @media screen and (min-height: 50em) {
     height: 65vh;
@@ -17,16 +18,22 @@
     height: 60vh;
   }
   &__content {
-    max-width: min-content;
     margin: 0 auto;
     margin-top: 2.5rem;
     @include respond(biggerThanSmallPhone) {
       margin-top: 5rem;
     }
     @include respond(biggerThanVertTablet) {
+      max-width: 70rem;
       margin: 0;
       margin-top: 20vh;
       margin-left: 10%;
+    }
+  }
+  &__header {
+    margin: 0 auto;
+    @include respond(biggerThanVertTablet) {
+      margin: 0;
     }
   }
   &__memoji {
