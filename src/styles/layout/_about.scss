@@ -1,0 +1,59 @@
+.about {
+  display: grid;
+  grid-template-areas: 
+    'icon'
+    'title'
+    'text';
+  padding: 0 10%;
+  overflow: hidden;
+  @include respond(biggerThanSmallPhone) {
+    grid-template-columns: 70% 30%;
+    grid-template-areas: 
+    'title icon'
+    'text text';
+  }
+  @include respond(biggerThanSmallTablet) {
+    grid-template-columns: 60% 50%;
+    grid-template-areas:
+      'title icon'
+      'text icon';
+    clip-path: polygon(0 0, 100% 0, 100% 90%, 0 100%);
+    padding-bottom: 5rem;
+  }
+  &__icon {
+    grid-area: icon;
+    rotate: 15deg;
+    min-width: 10rem;
+    @include respond(biggerThanSmallPhone) {
+      min-width: 20rem;
+    }
+    @include respond(biggerThanPhone) {
+      translate: 2.5rem;
+    }
+    @include respond(biggerThanSmallTablet) {
+      translate: 0;
+      rotate: 0deg;
+      justify-self: flex-end;
+    }
+  }
+  &__title {
+    grid-area: title;
+    width: 100%;
+    @include respond(biggerThanSmallPhone) {
+      align-self: center;
+      justify-self: flex-start;
+    }
+    &-text {     
+      min-width: max-content;
+    }
+  }
+  &__text {
+    text-align: center;
+    @include respond(biggerThanSmallTablet) {
+      text-align: left;
+    }
+    &-container {
+      grid-area: text;
+    }
+  }
+}

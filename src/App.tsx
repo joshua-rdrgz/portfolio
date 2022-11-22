@@ -7,6 +7,7 @@ import Footer from './components/layout/Footer/Footer';
 import Switch from './components/utilities/Switch/Switch';
 import Herobox from './components/layout/Herobox/Herobox';
 import Skills from './components/layout/Skills/Skills';
+import About from './components/layout/About/About';
 
 function App() {
   const { isDarkMode } = useContext(ThemeContext);
@@ -22,6 +23,7 @@ function App() {
       <main className={isDarkMode ? 'bg-color--black-90' : 'bg-color--black-15'}>
         <Herobox />
         <Skills />
+        <About />
       </main>
       <Switch />
       <Footer backgroundColor={headerFooterBGColor} />
