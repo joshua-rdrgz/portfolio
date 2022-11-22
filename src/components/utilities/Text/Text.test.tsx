@@ -9,7 +9,7 @@ describe('Text Utility Component', () => {
       </Text>
     );
     render(
-      <Text fontSize='text-size--small' color='color__light--accent' textAlign='text-align--center'>
+      <Text fontSize='text-size--small' color='color__light--accent' textClass='text-align--center'>
         Sample Text 2
       </Text>
     );
