@@ -55,6 +55,7 @@ const Heading: React.FC<HeadingType> = ({
             `${decor ? ' decor' : ''} ${headingSize} ${headingColor}` +
             `${hasDecorDoubleLines ? ' heading__decor--lines' : ''}` +
             `${decor ? ' decor__text' : ''}` +
+            ` decor-after-bg-color-${isDarkMode ? 'dark' : 'light'}` +
             (headingClassName ? ' ' + headingClassName : '')
           }
         >
