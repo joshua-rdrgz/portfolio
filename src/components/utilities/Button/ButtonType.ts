@@ -21,7 +21,11 @@ interface SecondaryBtn {
 }
 
 export default interface BtnType {
-  onClickFn(): void;
   children?: string;
+  Tag: 'a' | 'button';
+  href?: string;
+  ref?: React.MutableRefObject<HTMLButtonElement | null>;
+  customClasses?: string;
   btnInfo: PrimaryBtn | SecondaryBtn;
+  isDisabled?: boolean;
 }

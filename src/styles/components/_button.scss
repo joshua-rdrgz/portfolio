@@ -1,3 +1,26 @@
+a.btn {
+  display: inline-block;
+  text-decoration: none;
+}
+
+button.btn {
+  display: block;
+}
+
+button:disabled {
+  cursor: not-allowed;
+  background-color: $color-black-90;
+  color: $color-black-5;
+  &:hover {
+    transform: none;
+    background-color: $color-black-90;
+    color: $color-black-5;
+  }
+  &:active {
+    transform: none;
+  }
+}
+
 .btn {
   padding: 1rem 2rem;
   margin: 1rem;
@@ -7,8 +30,12 @@
   font-size: $font-heading-6;
   box-shadow: $box-shadow;
   transition: all 0.1s;
+  cursor: pointer;
   &:hover {
     transform: translateY(-1px);
+  }
+  &:active {
+    transform: translateY(0);
   }
   &--primary {
     border: none;

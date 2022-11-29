@@ -1,29 +1,39 @@
-import React from 'react';
+import React, { forwardRef } from 'react';
 import BtnType from './ButtonType';
 
-const Button: React.FC<BtnType> = ({ btnInfo, onClickFn, children }) => {
-  const { type } = btnInfo;
-  const primaryClasses =
-    type === 'primary'
-      ? `btn--primary ${btnInfo.main ? 'btn--main' : ''} ${btnInfo.textColor} ${
-          btnInfo.btnColor
-        } ${btnInfo.hoverBgColor ? btnInfo.hoverBgColor : ''}`
-      : '';
-  const secondaryClasses =
-    type === 'secondary'
-      ? `btn--secondary ${btnInfo.textColor} ${btnInfo.btnColor} ${
-          btnInfo.hoverBgColor ? btnInfo.hoverBgColor : ''
-        }`
-      : '';
+type RefType = HTMLAnchorElement | HTMLButtonElement;
 
-  return (
-    <button
-      className={`btn ${primaryClasses} ${secondaryClasses}`}
-      onClick={onClickFn}
-    >
-      {children}
-    </button>
-  );
-};
+const Button = forwardRef<RefType, BtnType>(
+  ({ btnInfo, Tag, href, customClasses, children, isDisabled }, ref) => {
+    const { type } = btnInfo;
+    const primaryClasses =
+      type === 'primary'
+        ? ` btn--primary ${btnInfo.main ? 'btn--main' : ''} ${
+            btnInfo.textColor
+          } ${btnInfo.btnColor} ${
+            btnInfo.hoverBgColor ? btnInfo.hoverBgColor : ''
+          }`
+        : '';
+    const secondaryClasses =
+      type === 'secondary'
+        ? ` btn--secondary ${btnInfo.textColor} ${btnInfo.btnColor} ${
+            btnInfo.hoverBgColor ? btnInfo.hoverBgColor : ''
+          }`
+        : '';
+
+    return (
+      <Tag
+        href={href}
+        className={`btn${primaryClasses}${secondaryClasses}${
+          customClasses ? ' ' + customClasses : ''
+        }`}
+        ref={ref as any}
+        disabled={isDisabled ? true : false}
+      >
+        {children}
+      </Tag>
+    );
+  }
+);
 
 export default Button;

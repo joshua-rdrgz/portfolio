@@ -1,11 +1,11 @@
 import { screen, render } from '@testing-library/react';
-import userEvent from '@testing-library/user-event';
 import Button from './Button';
 
 describe('Button Utility Component', () => {
   test('renders primary button correctly', () => {
     render(
       <Button
+        Tag='button'
         btnInfo={{
           type: 'primary',
           textColor: 'color--black-5',
@@ -13,20 +13,19 @@ describe('Button Utility Component', () => {
           hoverBgColor: 'hover-bg-color__light--accent-medium',
           main: true,
         }}
-        onClickFn={() => {}}
       >
         Primary Main Button
       </Button>
     );
     render(
       <Button
+        Tag='button'
         btnInfo={{
           type: 'primary',
           textColor: 'color--white',
           btnColor: 'bg-color__light--accent-medium',
           hoverBgColor: 'hover-bg-color__light--accent',
         }}
-        onClickFn={() => {}}
       >
         Primary Button
       </Button>
@@ -55,13 +54,13 @@ describe('Button Utility Component', () => {
   test('renders secondary button correctly', () => {
     render(
       <Button
+        Tag='button'
         btnInfo={{
           type: 'secondary',
           textColor: 'color--black-5',
           btnColor: 'border-color__light--accent',
           hoverBgColor: 'hover-bg-color__light--accent-medium',
         }}
-        onClickFn={() => {}}
       >
         Secondary Button
       </Button>
@@ -73,30 +72,5 @@ describe('Button Utility Component', () => {
     expect(btn).toHaveClass('color--black-5');
     expect(btn).toHaveClass('border-color__light--accent');
     expect(btn).toHaveClass('hover-bg-color__light--accent-medium');
-  });
-
-  test('correctly fires function when clicked', () => {
-    const mockFn = jest.fn();
-
-    render(
-      <Button
-        btnInfo={{
-          type: 'primary',
-          textColor: 'color--black-5',
-          btnColor: 'bg-color__light--accent',
-          hoverBgColor: 'hover-bg-color__light--accent-medium',
-          main: true,
-        }}
-        onClickFn={mockFn}
-      >
-        Primary Main Button
-      </Button>
-    );
-
-    const btn = screen.getByText('Primary Main Button');
-
-    userEvent.click(btn);
-
-    expect(mockFn.mock.calls.length).toEqual(1);
   });
 });
