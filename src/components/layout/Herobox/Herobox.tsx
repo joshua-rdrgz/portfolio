@@ -82,7 +82,8 @@ const Herobox: React.FC = () => {
           Joshua Rodriguez.
         </Heading>
         <Button
-          onClickFn={() => {}}
+          Tag='a'
+          href='#projects'
           btnInfo={{
             type: 'primary',
             textColor: isDarkMode ? 'color--black-75' : 'color--black-5',
