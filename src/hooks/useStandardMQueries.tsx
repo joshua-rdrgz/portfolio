@@ -2,8 +2,8 @@ import useMQuery from "./useMQuery";
 
 const useStandardMQueries = () => {
   const biggerThanSmallPhone = useMQuery({
-    initMatch: window.innerWidth >= 450 ? true : false,
-    mediaQueryExp: '(min-width: 28.125em)',
+    initMatch: window.innerWidth >= 350 ? true : false,
+    mediaQueryExp: '(min-width: 21.875em)',
   });
 
   const biggerThanPhone = useMQuery({
