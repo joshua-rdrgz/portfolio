@@ -8,6 +8,7 @@ import Switch from './components/utilities/Switch/Switch';
 import Herobox from './components/layout/Herobox/Herobox';
 import Skills from './components/layout/Skills/Skills';
 import About from './components/layout/About/About';
+import Contact from './components/layout/Contact/Contact';
 
 function App() {
   const { isDarkMode } = useContext(ThemeContext);
@@ -24,6 +25,7 @@ function App() {
         <Herobox />
         <Skills />
         <About />
+        <Contact />
       </main>
       <Switch />
       <Footer backgroundColor={headerFooterBGColor} />

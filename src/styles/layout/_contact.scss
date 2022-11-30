@@ -1,0 +1,36 @@
+.contact {
+  display: flex;
+  flex-direction: column;
+  @include respond(biggerThanSmallTablet) {
+    flex-direction: row-reverse;
+    justify-content: space-between;
+  }
+  &__content {
+    @include respond(biggerThanSmallTablet) {
+      flex: 1;
+      margin-right: 10%;
+    }
+  }
+  &__heading {
+    padding: 2.5rem 0;
+    margin: 0 auto;
+    @include respond(biggerThanVertTablet) {
+      margin-right: 0;
+      padding-right: 2rem;
+    }
+  }
+  &__form {
+    margin: 0 2rem;
+  }
+  &__icon {
+    translate: 0 1.25rem;
+    @include respond(biggerThanSmallTablet) {
+      translate: -5rem 15rem;
+      width: 50rem;
+    }
+    &-wrapper {
+      margin: 0 auto;
+      overflow: hidden;
+    }
+  }
+}
