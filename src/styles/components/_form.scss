@@ -1,0 +1,74 @@
+.form {
+  &__input {
+    display: block;
+    width: 100%;
+    margin-bottom: 2rem;
+    background-color: $color-white;
+    padding: 1rem;
+    font-family: inherit;
+    border-radius: 0.5rem;
+    &--light {
+      border: 2px solid $color-accent-darkLM;
+      &:focus {
+        outline: none !important;
+        border-color: $color-accentLM;
+      }
+      &::placeholder {
+        color: $color-accent-medium-opaqueLM;
+      }
+    }
+    &--dark {
+      border: 2px solid $color-accent-mediumDM;
+      &:focus {
+        outline: none !important;
+        border-color: $color-accentDM;
+      }
+      &::placeholder {
+        color: $color-accent-mediumDM;
+      }
+    }
+  }
+  &__textarea {
+    resize: none;
+    height: 20rem;
+  }
+  &__button {
+    margin-left: auto;
+    margin-right: auto;
+    @include respond(biggerThanVertTablet) {
+      margin-right: 0;
+    }
+  }
+  &__required {
+    text-align: right;
+    font-size: 1.2rem;
+  }
+  &__status-message {
+    text-align: center;
+    font-size: 2.5rem;
+  }
+  &__error-text {
+    color: red;
+    font-size: 2rem;
+  }
+  &__success {
+    color: green;
+    animation: submit 0.3s linear;
+  }
+  &__failure {
+    color: red;
+    animation: submit 0.3s linear;
+  }
+}
+
+@keyframes submit {
+  0% {
+    transform: scale(0);
+  }
+  50% {
+    transform: scale(0.5);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
