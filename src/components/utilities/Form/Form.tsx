@@ -5,7 +5,11 @@ import useStandardMQueries from '../../../hooks/useStandardMQueries';
 import Button from '../Button/Button';
 import ButtonType from '../Button/ButtonType';
 
-const Form = () => {
+interface FormProps {
+  formClassName?: string;
+}
+
+const Form: React.FC<FormProps> = ({ formClassName }) => {
   const { isDarkMode } = useContext(ThemeContext);
   const { biggerThanSmallPhone } = useStandardMQueries();
   const buttonRef = useRef<HTMLButtonElement | null>(null);
@@ -37,7 +41,7 @@ const Form = () => {
 
   const FORM_CLASSES = `form text-size--${
     biggerThanSmallPhone ? 'large' : 'medium'
-  }`;
+  }${formClassName ? ' ' + formClassName : ''}`;
 
   const LABEL_CLASSES = `color__${isDarkMode ? 'dark' : 'light'}--accent-${
     isDarkMode ? 'medium-opaque' : 'dark'
@@ -51,7 +55,13 @@ const Form = () => {
 
   return (
     <form onSubmit={onSubmitHandler} className={FORM_CLASSES} ref={formRef}>
-      <p className='form__required'>(*)Required</p>
+      <p
+        className={`form__required ${
+          isDarkMode ? 'color--black-5' : 'color--black-90'
+        }`}
+      >
+        (*)Required
+      </p>
       <label className={LABEL_CLASSES}>
         Name*
         <input
