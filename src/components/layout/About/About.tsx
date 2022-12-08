@@ -10,11 +10,11 @@ import TextType from '../../utilities/Text/TextType';
 const About = () => {
   const { isDarkMode } = useContext(ThemeContext);
 
-  const { biggerThanTablet } = useStandardMQueries();
+  const { biggerThanBigDesktop } = useStandardMQueries();
 
   const HEADING_PROPS: HeadingType = {
     Tag: 'h2',
-    headingSize: biggerThanTablet ? 'heading-size__2' : 'heading-size__3--bold',
+    headingSize: biggerThanBigDesktop ? 'heading-size__2' : 'heading-size__3--bold',
     headingColor: `color__${isDarkMode ? 'dark' : 'light'}--accent${
       isDarkMode ? '-medium' : ''
     }`,
@@ -24,7 +24,7 @@ const About = () => {
   };
 
   const TEXT_PROPS: TextType = {
-    fontSize: biggerThanTablet ? 'text-size--large' : 'text-size--regular',
+    fontSize: biggerThanBigDesktop ? 'text-size--large' : 'text-size--regular',
     color: isDarkMode ? 'color--black-90' : 'color--black-5',
     textClass: 'about__text',
   };

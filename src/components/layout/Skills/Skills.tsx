@@ -14,14 +14,14 @@ import {
 const Skills = () => {
   const { isDarkMode } = useContext(ThemeContext);
 
-  const { biggerThanSmallPhone, biggerThanPhone, biggerThanTablet } =
+  const { biggerThanSmallPhone, biggerThanBigPhone, biggerThanBigDesktop } =
     useStandardMQueries();
 
   const BG_COLOR = isDarkMode ? 'bg-color--black-15' : 'bg-color--black-90';
 
   const HEADING_SIZE = biggerThanSmallPhone
-    ? biggerThanPhone
-      ? biggerThanTablet
+    ? biggerThanBigPhone
+      ? biggerThanBigDesktop
         ? 'heading-size__2'
         : 'heading-size__3--bold'
       : 'heading-size__4'
@@ -40,8 +40,8 @@ const Skills = () => {
       type: 'lower',
       content: `Building new things and learning along the way is a big part of why I do what I do.  Here's the skills I've gathered in my journey so far:`,
       className: 'skills__subtitle',
-      textSize: biggerThanPhone
-        ? biggerThanTablet
+      textSize: biggerThanBigPhone
+        ? biggerThanBigDesktop
           ? 'text-size--xxlarge'
           : 'text-size--large'
         : 'text-size--regular',

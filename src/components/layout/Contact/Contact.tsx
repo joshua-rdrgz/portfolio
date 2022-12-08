@@ -9,11 +9,11 @@ import IconType from '../../utilities/Icon/IconType';
 
 const Contact = () => {
   const { isDarkMode } = useContext(ThemeContext);
-  const { biggerThanTablet } = useStandardMQueries();
+  const { biggerThanBigDesktop } = useStandardMQueries();
 
   const HEADING_PROPS: HeadingType = {
     Tag: 'h2',
-    headingSize: biggerThanTablet ? 'heading-size__2' : 'heading-size__3--bold',
+    headingSize: biggerThanBigDesktop ? 'heading-size__2' : 'heading-size__3--bold',
     headingColor: `color__${isDarkMode ? 'dark' : 'light'}--accent`,
     headingClassName: 'contact__heading',
   };

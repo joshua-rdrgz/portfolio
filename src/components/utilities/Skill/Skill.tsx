@@ -20,11 +20,11 @@ const Skill: React.FC<SkillProps> = ({
 }) => {
   const { isDarkMode } = useContext(ThemeContext);
 
-  const { biggerThanTablet } = useStandardMQueries();
+  const { biggerThanBigDesktop } = useStandardMQueries();
 
   const HEADING_PROPS: HeadingType = {
     Tag: 'h3',
-    headingSize: biggerThanTablet
+    headingSize: biggerThanBigDesktop
       ? 'heading-size__3--regular'
       : 'heading-size__4',
     headingColor: `color__${isDarkMode ? 'dark' : 'light'}--accent`,

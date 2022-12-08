@@ -9,22 +9,17 @@ import HeadingType from '../../utilities/Heading/HeadingType';
 
 const Herobox: React.FC = () => {
   const { isDarkMode } = useContext(ThemeContext);
-  
 
-  const {
-    biggerThanSmallPhone,
-    biggerThanPhone,
-    biggerThanTablet,
-  } = useStandardMQueries();
-
+  const { biggerThanSmallPhone, biggerThanBigPhone, biggerThanBigDesktop } =
+    useStandardMQueries();
 
   const HEADING_COLOR = isDarkMode
     ? 'color__dark--accent'
     : 'color__light--accent-medium';
 
   const HEADING_SIZE = biggerThanSmallPhone
-    ? biggerThanPhone
-      ? biggerThanTablet
+    ? biggerThanBigPhone
+      ? biggerThanBigDesktop
         ? 'heading-size__1'
         : 'heading-size__2'
       : 'heading-size__3--bold'
@@ -34,8 +29,8 @@ const Herobox: React.FC = () => {
     type: 'both',
     textUpper: {
       content: `Hi 👋🏽 I'm`,
-      headingSize: biggerThanPhone
-        ? biggerThanTablet
+      headingSize: biggerThanBigPhone
+        ? biggerThanBigDesktop
           ? 'heading-size__4'
           : 'heading-size__5'
         : 'heading-size__6',
@@ -59,11 +54,12 @@ const Herobox: React.FC = () => {
           .
         </Wrapper>
       ),
-      textSize: biggerThanTablet ? 'text-size--xxlarge' : 'text-size--large',
+      textSize: biggerThanBigDesktop
+        ? 'text-size--xxlarge'
+        : 'text-size--large',
       textColor: isDarkMode ? 'color--black-15' : 'color--black-75',
     },
   };
-
 
   return (
     <section
