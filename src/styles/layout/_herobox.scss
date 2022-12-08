@@ -1,60 +1,60 @@
 .herobox {
-  height: 80vh;
-  // display: flex;
-  position: relative;
+  display: flex;
   flex-direction: column;
-  text-align: center;
   overflow: hidden;
-  padding-top: 2rem;
   @include respond(biggerThanVertTablet) {
     flex-direction: row;
-    text-align: left;
-    padding-top: 0;
-  }
-  @media screen and (min-height: 50em) {
-    height: 65vh;
-  }
-  @media screen and (max-width: 75em) and (min-height: 75em) {
-    height: 60vh;
   }
   &__content {
-    margin: 0 auto;
-    margin-top: 2.5rem;
+    margin: 3rem 2.5rem 0;
+    text-align: center;
     @include respond(biggerThanSmallPhone) {
-      margin-top: 5rem;
+      margin-top: 4rem;
     }
     @include respond(biggerThanVertTablet) {
-      max-width: 70rem;
-      margin: 0;
-      margin-top: 20vh;
-      margin-left: 10%;
+      text-align: left;
+      margin: 8rem 0;
+      margin-left: 10rem;
+    }
+    @include respond(biggerThanTablet) {
+      margin-top: 15rem;
+      margin-bottom: 15rem;
+    }
+    @include respond(biggerThanDesktop) {
+      margin-top: 20rem;
+      margin-bottom: 20rem;
     }
   }
-  &__header {
+  &__title { // heading wrapper 
+    @include respond(biggerThanPhone) {
+      max-width: 70rem;
+      margin: 0 auto;
+    }
+  }
+  &__header {  // heading tag
     margin: 0 auto;
     @include respond(biggerThanVertTablet) {
-      margin: 0;
+      margin-left: 0;
     }
   }
   &__memoji {
-    overflow: hidden;
-    position: absolute;
-    width: 40rem;
-    bottom: 0;   
-    translate: -50%;
-    @media screen and (max-width: 62.5em) {
-      left: 50%;
+    max-width: 25rem;
+    margin: 0 auto;
+    translate: 0 0.5rem;
+    @include respond(biggerThanPhone) {
+      max-width: 35rem;
     }
     @include respond(biggerThanVertTablet) {
-      right: 0;
-      bottom: 50%;
-      translate: 0 50%;
+      max-width: 25rem;
       rotate: 270deg;
+      margin-right: 0;
+      translate: -2rem;
     }
-    &-img {
-      translate: 0 3.6rem;
-      @include respond(biggerThanVertTablet) {
-      }
+    @include respond(biggerThanTablet) {
+      max-width: 35rem;
+    }
+    @include respond(biggerThanDesktop) {
+      max-width: 40rem;
     }
   }
 }
