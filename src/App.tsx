@@ -7,6 +7,7 @@ import Footer from './components/layout/Footer/Footer';
 import Switch from './components/utilities/Switch/Switch';
 import Herobox from './components/layout/Herobox/Herobox';
 import Skills from './components/layout/Skills/Skills';
+import Projects from './components/layout/Projects/Projects';
 import About from './components/layout/About/About';
 import Contact from './components/layout/Contact/Contact';
 
@@ -24,6 +25,7 @@ function App() {
       <main className={isDarkMode ? 'bg-color--black-90' : 'bg-color--black-15'}>
         <Herobox />
         <Skills />
+        <Projects />
         <About />
         <Contact />
       </main>

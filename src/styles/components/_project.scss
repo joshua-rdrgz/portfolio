@@ -1,0 +1,163 @@
+.project {
+  padding: 1.5rem;
+  margin: 0 2rem;
+  text-align: center;
+  border-radius: 1rem;
+  translate: 0 -8rem;
+  @include respond(biggerThanSmallPhone) {
+    translate: 0 -10rem;
+  }
+  @include respond(biggerThanPhone) {
+    margin: 3rem;
+    translate: 0;
+    position: absolute;
+    top: 50%;
+  }
+  @include respond(biggerThanBigPhone) {
+    top: 30%;
+  }
+  @include respond(biggerThanSmallTablet) {
+    margin: 7rem;
+    top: 0;
+  }
+  @include respond(biggerThanVertTablet) {
+    margin: 10rem;
+  }
+  @include respond(biggerThanTablet) {
+    position: static;
+    margin: 0;
+    grid-row: 2 / 3;
+  }
+  &--even {
+    @include respond(biggerThanPhone) {
+      text-align: right;
+      & .project__title {
+        margin-left: auto;
+      }
+      & .project__skill-container {
+        justify-content: flex-end;
+        margin-right: 2rem;
+      }
+      & .project__btn-container {
+        margin-right: 1rem;
+      }
+    }
+    @include respond(biggerThanTablet) {
+      grid-column: 2 / -1;
+    }
+  }
+  &--odd {
+    @include respond(biggerThanPhone) {
+      text-align: start;
+      & .project__title {
+        margin-right: auto;
+      }
+      & .project__skill-container {
+        justify-content: start;
+        margin-left: 2rem;
+      }
+      & .project__btn-container {
+        margin-left: 1rem;
+      }
+    }
+    @include respond(biggerThanTablet) {
+      grid-column: 1 / 3;
+    }
+  }
+  &__container {
+    position: relative;
+    z-index: 0;
+    @include respond(biggerThanPhone) {
+      padding-top: 1rem;
+      margin-bottom: 25rem;
+    }
+    @include respond(biggerThanBigPhone) {
+      margin-bottom: 30rem;
+    }
+    @include respond(biggerThanSmallTablet) {
+      margin-bottom: 10rem;
+    }
+    @include respond(biggerThanTablet) {
+      max-height: max-content;
+      margin: 0 10% 5rem;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      grid-template-rows: .1fr .8fr .1fr;
+    }
+  }
+  &__heading-wrapper {
+    @include respond(biggerThanPhone) {
+      margin-top: 1rem;
+    }
+  }
+  &__title {
+    margin: 0 auto;
+    @include respond(biggerThanPhone) {
+      margin: 0 2rem;
+    }
+  }
+  &__subtitle {
+    @include respond(biggerThanPhone) {
+      margin: 0 2rem;
+    }
+  }
+  &__text {
+    @include respond(biggerThanPhone) {
+      margin-top: 1rem !important;
+    }
+  }
+  &__skill {
+    &-container {
+      list-style: none;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+      justify-content: center;
+    }
+  }
+  &__btn {
+    &--primary {
+      box-shadow: 2px 2px 3px $color-black-50;
+    }
+    &--secondary {
+      box-shadow: inset 0 2px 3px $color-black-25, 2px 2px 3px $color-black-25;
+      &:hover {
+        box-shadow: 2px 2px 3px $color-black-50;
+      }
+    }
+    &-container {
+      display: flex;
+      flex-wrap: wrap;
+      max-width: max-content;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto;
+      padding: 1rem 0;
+    }
+  }
+  &__bg-img {
+    width: 100%;
+    border-radius: 1rem;
+    &-figure {
+      width: 85vw;
+      margin: 0 auto;
+      position: relative; // to allow z-index
+      z-index: -1;
+      @include respond(biggerThanPhone) {
+        width: 95vw;
+      }
+      @include respond(biggerThanTablet) {
+        width: 100%;
+      }
+      @include respond(biggerThanTablet) {
+        grid-row: 1 / -1;
+        &--even {
+          grid-column: 1 / 3;
+        }
+        &--odd {
+          grid-column: 2 / -1;
+        }
+      }
+    }
+  }
+}
