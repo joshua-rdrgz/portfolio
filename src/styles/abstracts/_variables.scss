@@ -9,6 +9,7 @@ $color-black-15: #d6dada;
 $color-black-10: #e2e7e7;
 $color-black-5: #eef3f3;
 $color-white: #faffff;
+$color-white-opaque: rgba($color-white, 0.85);
 $color-accentLM: #008337;
 $color-accent-mediumLM: #00662b;
 $color-accent-medium-opaqueLM: rgba(0, 77, 32, 0.7);
@@ -21,13 +22,13 @@ $color-accent-darkDM: #003333;
 $color-accent-dark-opaqueDM: rgba($color-accent-darkDM, 0.9);
 $color-gradient-heroLM: linear-gradient(180deg, $color-white, $color-black-50);
 $color-gradient-projectLM: linear-gradient(
-  90deg,
+  180deg,
   $color-black-15,
   $color-black-75
 );
 $color-gradient-heroDM: linear-gradient(180deg, $color-black, $color-black-50);
 $color-gradient-projectDM: linear-gradient(
-  90deg,
+  180deg,
   $color-black-90,
   $color-black-25
 );

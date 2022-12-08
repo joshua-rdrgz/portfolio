@@ -28,6 +28,9 @@
   }
   &--white {
     background-color: $color-white;
+    &-opaque {
+      background-color: $color-white-opaque;
+    }
   }
   &__light {
     &--accent {

@@ -34,6 +34,7 @@ export type backgroundColors =
   | 'bg-color--black-10'
   | 'bg-color--black-5'
   | 'bg-color--white'
+  | 'bg-color--white-opaque'
   | 'bg-color__light--accent'
   | 'bg-color__light--accent-medium'
   | 'bg-color__light--accent-medium-opaque'
