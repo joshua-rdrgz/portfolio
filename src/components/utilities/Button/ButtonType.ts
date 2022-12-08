@@ -25,6 +25,7 @@ export default interface BtnType {
   Tag: 'a' | 'button';
   href?: string;
   ref?: React.MutableRefObject<HTMLButtonElement | null>;
+  onClickFn?: () => void;
   customClasses?: string;
   btnInfo: PrimaryBtn | SecondaryBtn;
   isDisabled?: boolean;
