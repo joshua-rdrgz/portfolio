@@ -93,6 +93,7 @@ const Header: React.FC<HeaderType> = ({
             <li className='modal-nav__item'>
               <a
                 target='_blank'
+                rel='noreferrer'
                 href={links.liveSite}
                 className={`modal-nav__link ${
                   isDarkMode
@@ -106,6 +107,7 @@ const Header: React.FC<HeaderType> = ({
             <li className='modal-nav__item'>
               <a
                 target='_blank'
+                rel='noreferrer'
                 href={links.gitHub}
                 className={`modal-nav__link ${
                   isDarkMode
