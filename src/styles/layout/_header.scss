@@ -7,6 +7,17 @@
   align-items: center;
   justify-content: space-between;
   z-index: 1000;
+  &--modal {
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    padding: 1.5rem 0;
+    @include respond(biggerThanVertTablet) {
+      flex-direction: row;
+      padding: 1.5rem 5%;
+    }
+  }
   &__logo {
     min-width: max-content;
     margin-left: 5.5%;
@@ -16,6 +27,15 @@
     color: $color-white;
     @include respond(biggerThanSmallPhone) {
       font-size: $font-heading-5;
+    }
+    &--modal {
+      display: flex;
+      flex-direction: column;
+      text-align: center;
+      margin-left: 0;
+      @include respond(biggerThanVertTablet) {
+        text-align: left;
+      }
     }
   }
 }

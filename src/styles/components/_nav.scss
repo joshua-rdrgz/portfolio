@@ -182,3 +182,37 @@
     }
   }
 }
+
+.modal-nav {
+  &__container {
+    display: flex;
+    gap: 2rem;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  &__item {
+    list-style: none;
+    cursor: pointer;
+  }
+  &__link {
+    display: inline-block;
+    padding: 1rem 2rem;
+    text-decoration: none;
+    &, &:link, &:visited {
+      background-color: $color-black-5;
+      color: inherit;
+      font-size: $font-heading-5;
+      font-weight: $font-weight-heading-bold;
+      font-family: $font-family-heading;
+      border-radius: 1rem;
+    }
+    &:hover {
+      background-color: $color-black-50;
+      color: $color-white;
+      transform: translateY(-1px);
+    }
+    &:active {
+      transform: translateY(0);
+    }
+  }
+}

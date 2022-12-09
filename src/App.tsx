@@ -20,7 +20,7 @@ function App() {
 
   return (
     <>
-      <Header backgroundColor={headerFooterBGColor} />
+      <Header backgroundColor={headerFooterBGColor} isModal={false} />
       <Socials type='sticky' backgroundColor={headerFooterBGColor} />
       <main className={isDarkMode ? 'bg-color--black-90' : 'bg-color--black-15'}>
         <Herobox />
