@@ -1,6 +1,7 @@
-import { useContext } from 'react';
+import { useContext, useState } from 'react';
 import ThemeContext from '../../../store/theme-context';
 import useStandardMQueries from '../../../hooks/useStandardMQueries';
+import ProjectModal from '../../layout/ProjectModal/ProjectModal';
 import Heading from '../Heading/Heading';
 import HeadingType from '../Heading/HeadingType';
 import Text from '../Text/Text';
@@ -10,15 +11,18 @@ import ButtonType from '../Button/ButtonType';
 import ProjectType from './ProjectType';
 
 const Project: React.FC<ProjectType> = ({
-  heading: { title, subtitle },
+  heading,
   summary,
   techStack,
   links,
   bgImg: { src, alt },
   idx,
+  modal,
 }) => {
   const { isDarkMode } = useContext(ThemeContext);
+  const [modalIsOpen, setModalIsOpen] = useState(false);
   const { biggerThanBigPhone } = useStandardMQueries();
+  const { title, subtitle } = heading;
 
   const HEADING_PROPS: HeadingType = {
     Tag: 'h3',
@@ -44,7 +48,10 @@ const Project: React.FC<ProjectType> = ({
   const BUTTON_PRIMARY_PROPS: ButtonType = {
     Tag: 'button',
     onClickFn: () => {
-      console.log('button clicked');
+      setModalIsOpen(true);
+      if (typeof window != 'undefined' && window.document) {
+        document.body.style.overflow = 'hidden';
+      }
     },
     customClasses: 'project__btn project__btn--primary',
     btnInfo: {
@@ -110,6 +117,16 @@ const Project: React.FC<ProjectType> = ({
           </Button>
         </div>
       </article>
+      <ProjectModal
+        content={modal}
+        heading={heading}
+        links={links}
+        isOpen={modalIsOpen}
+        closeModal={() => {
+          setModalIsOpen(false);
+          document.body.style.overflow = 'unset';
+        }}
+      />
     </section>
   );
 };
