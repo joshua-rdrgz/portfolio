@@ -6,6 +6,7 @@ import Heading from '../Heading/Heading';
 import HeadingType from '../Heading/HeadingType';
 import Text from '../Text/Text';
 import TextType from '../Text/TextType';
+import TechStack from '../TechStack/TechStack';
 import Button from '../Button/Button';
 import ButtonType from '../Button/ButtonType';
 import ProjectType from './ProjectType';
@@ -93,20 +94,13 @@ const Project: React.FC<ProjectType> = ({
       >
         <Heading {...HEADING_PROPS}>{title}</Heading>
         <Text {...TEXT_PROPS}>{summary}</Text>
-        <ul className='project__skill-container'>
-          {techStack.map((skill) => (
-            <li
-              className={`project__skill color__${
-                isDarkMode ? 'dark' : 'light'
-              }--accent-medium-opaque text-size--${
-                biggerThanBigPhone ? 'medium' : 'regular'
-              }`}
-              key={skill}
-            >
-              {skill}
-            </li>
-          ))}
-        </ul>
+        <TechStack
+          classNames={{
+            container: 'project__skill-container',
+            item: 'project__skill',
+          }}
+          techStack={techStack}
+        />
         <div className='project__btn-container'>
           <Button {...BUTTON_PRIMARY_PROPS}>More Info</Button>
           <Button {...BUTTON_SECONDARY_PROPS} href={links.liveSite}>
