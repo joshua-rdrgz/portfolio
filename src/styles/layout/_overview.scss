@@ -1,0 +1,44 @@
+.overview {
+  display: flex;
+  flex-direction: column;
+  @include respond(biggerThanVertTablet) {
+    flex-direction: row;
+    padding: 1rem;
+  }
+  &__figure {
+    margin: 0 5%;
+    @include respond(biggerThanVertTablet) {
+      max-width: 40%;
+      margin: auto 2.5%;
+    }
+  }
+  &__img {
+    width: 100%;
+    border-radius: 1rem;
+  }
+  &__content {
+    text-align: center;
+    @include respond(biggerThanPhone) {
+      text-align: right;
+    }
+  }
+  &__heading-wrapper {
+    @include respond(biggerThanPhone) {
+      margin: 0 5% 2rem;
+    }
+  }
+  &__skills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    margin: 0 5%;
+    padding-bottom: 3rem;
+    justify-content: center;
+    @include respond(biggerThanPhone) {
+      justify-content: flex-end;
+    }
+  }
+  &__skill {
+    list-style: none;
+  }
+}

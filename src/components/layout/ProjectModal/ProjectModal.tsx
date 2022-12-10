@@ -3,6 +3,7 @@ import ThemeContext from '../../../store/theme-context';
 import ProjectType from '../../utilities/Project/ProjectType';
 import Modal from '../../utilities/Modal/Modal';
 import Header from '../Header/Header';
+import Overview from '../ProjectComponents/Overview/Overview';
 
 interface ProjectModalProps {
   isOpen: boolean;
@@ -33,8 +34,8 @@ const ProjectModal: React.FC<ProjectModalProps> = ({
         heading={heading}
         links={links}
       />
-      <button onClick={closeModal}>Close</button>
-      <p>{overview.text}</p>
+      <Overview overview={overview} />
+      <button onClick={closeModal}>Close</button> { /* Placeholder */}
     </Modal>
   );
 };
