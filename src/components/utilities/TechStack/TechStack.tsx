@@ -21,7 +21,7 @@ const TechStack: React.FC<TechStackProps> = ({ classNames, techStack }) => {
         <li
           className={`${itemClass} color__${
             isDarkMode ? 'dark' : 'light'
-          }--accent-medium-opaque text-size--${
+          }--accent${isDarkMode ? '' : '-medium'}-opaque text-size--${
             biggerThanVertTablet ? 'medium' : 'regular'
           }`}
           key={skill}
