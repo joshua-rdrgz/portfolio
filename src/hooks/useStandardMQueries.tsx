@@ -1,4 +1,4 @@
-import useMQuery from "./useMQuery";
+import useMQuery from './useMQuery';
 
 const useStandardMQueries = () => {
   const biggerThanSmallPhone = useMQuery({
@@ -11,6 +11,11 @@ const useStandardMQueries = () => {
     mediaQueryExp: '(min-width: 40.625em)',
   });
 
+  const biggerThanVertTablet = useMQuery({
+    initMatch: window.innerWidth >= 1000 ? true : false,
+    mediaQueryExp: '(min-width: 62.5em)',
+  });
+
   const biggerThanBigDesktop = useMQuery({
     initMatch: window.innerWidth >= 2000 ? true : false,
     mediaQueryExp: '(min-width: 125em)',
@@ -19,8 +24,9 @@ const useStandardMQueries = () => {
   return {
     biggerThanSmallPhone,
     biggerThanBigPhone,
+    biggerThanVertTablet,
     biggerThanBigDesktop,
-  }
-}
+  };
+};
 
 export default useStandardMQueries;
