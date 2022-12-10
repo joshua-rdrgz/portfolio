@@ -1,0 +1,39 @@
+.approach {
+  text-align: center;
+  padding: 0 5%;
+  padding-bottom: 4rem;
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0 97%);
+  @include respond(biggerThanVertTablet) {
+    text-align: left;
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 95%);
+  }
+  &__heading {
+    @include respond(biggerThanPhone) {
+      min-width: max-content;
+    }
+    &-wrapper {
+      padding: 2rem 0;
+    }
+  }
+  &__content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    @include respond(biggerThanVertTablet) {
+      flex-direction: row-reverse;
+    }
+  }
+  &__figure {
+    margin: 0 5%;
+    @include respond(biggerThanVertTablet) {
+      margin: auto 2.5%;
+    }
+  }
+  &__img {
+    width: 100%;
+    border-radius: 1rem;
+  }
+  &__text {
+    margin-left: 0;
+  }
+}
