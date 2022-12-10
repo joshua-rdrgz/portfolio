@@ -1,7 +1,10 @@
 import React from "react";
 
-type Image = `./assets/${string}.webp`;
-type Text = React.ReactNode | string;
+type Text = string;
+interface Image {
+  src: `./assets/${string}.webp`,
+  alt: string;
+};
 interface Challenge {
   img: Image;
   summary: Text;

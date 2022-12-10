@@ -23,7 +23,10 @@ const PROJECTS_INFO: Omit<ProjectType, 'idx'>[] = [
     },
     modal: {
       overview: {
-        img: './assets/pcb/herobox-component.webp',
+        img: {
+          src: './assets/pcb/herobox-component.webp',
+          alt: `Performance Clear Bra's main website, showcasing the herobox section.`
+        },
         text: `This project included the creation of a marketing website for Performance Clear Bra, Inc. in Fort Worth, Texas.  It was built using Frontity, a React framework that combines React as a frontend with WordPress as a headless CMS.  The project in its entirety helped reduce page load speeds by 56%, creating a fantastic user experience for all of the company's customers.`,
         skills: [
           'HTML (JSX)',
@@ -38,7 +41,10 @@ const PROJECTS_INFO: Omit<ProjectType, 'idx'>[] = [
         ],
       },
       approach: {
-        img: './assets/pcb/contact-component-landing-page.webp',
+        img: {
+          src: './assets/pcb/contact-component-landing-page.webp',
+          alt: `Performance Clear Bra's landing page, where users can contact the company.`
+        },
         text: [
           `The owner of Performance Clear Bra wanted a website that was easily maintainable, easy to use, fast, and strategically designed to answer all of his customer's questions.`,
 
@@ -47,7 +53,10 @@ const PROJECTS_INFO: Omit<ProjectType, 'idx'>[] = [
       },
       challenges: [
         {
-          img: './assets/pcb/header.webp',
+          img: {
+            src: './assets/pcb/header.webp',
+            alt: `The header portion of the Performance Clear Bra website.`
+          },
           summary: `One challenge was building the Header component that dynamically takes in a menu from the WordPress Rest API, and displaying it in the appropriate manner.  There were several aspects that made this difficult, but I was able to overcome those challenges with some research and creativity.`,
           details: [
             `By default, the WP Rest API blocks attempts to fetch menus due to the risk of attacks, as menu links are vulnerable information.  That being said, I used Enrique Chavez's JWT Authentication plugin to fetch a JWT token, and using that token I was able to successfully fetch the menu from the WP Rest API.`,
@@ -58,7 +67,10 @@ const PROJECTS_INFO: Omit<ProjectType, 'idx'>[] = [
           ],
         },
         {
-          img: './assets/pcb/tabbed-component-ppf.webp',
+          img: {
+            src: './assets/pcb/tabbed-component-ppf.webp',
+            alt: `A two-dimensional tabbed component showcasing the services Performance Clear Bra has to offer.`,
+          },
           summary: `Another challenge was creating the two-dimensional tabbed components for customers to select their specific type of vehicle.  A lot of factors went into this component, and overall everything came together to make a seamless experience for the user.`,
           details: [
             `The first big hurdle with this component was how to store all of this information in a scalable way.  The solution I came up with was to store all the data points in a table, where the rows were the type of information, and the columns were one dimension of the component.  The other dimension of buttons I allocated as an additional set of buttons.`,
@@ -69,8 +81,14 @@ const PROJECTS_INFO: Omit<ProjectType, 'idx'>[] = [
       ],
       updates: {
         imgs: [
-          './assets/pcb/gallery-component.webp',
-          './assets/pcb/testimonial-component.webp',
+          {
+            src: './assets/pcb/gallery-component.webp',
+            alt: `Performance Clear Bra's gallery, where they showcase the work they've done on other customer's cars.`
+          },
+          {
+            src: './assets/pcb/testimonial-component.webp',
+            alt: `Performance Clear Bra's testimonials, where they showcase all of the good reviews customers have gave them.`
+          },
         ],
         items: [
           'Conversion to TypeScript',
@@ -97,7 +115,10 @@ const PROJECTS_INFO: Omit<ProjectType, 'idx'>[] = [
     },
     modal: {
       overview: {
-        img: './assets/goldfox/blank-slate.webp',
+        img: {
+          src: './assets/goldfox/blank-slate.webp',
+          alt: `The blank starting page for the Goldfox net worth projector application.`
+        },
         text: `This project is a simple net worth calculator that takes in any number of monthly incomes or expenses you have, as well as your starting net worth, and uses that information to give you your projected net worth over the next six months.  This first version of GoldFox is the start of something big — over the years, I plan to expand and develop this software to be the perfect tool for anyone to handle the entirety of their finances.`,
         skills: [
           'HTML (JSX)',
@@ -111,7 +132,10 @@ const PROJECTS_INFO: Omit<ProjectType, 'idx'>[] = [
         ],
       },
       approach: {
-        img: './assets/goldfox/editing.webp',
+        img: {
+          src: './assets/goldfox/editing.webp',
+          alt: `Showcasing what it is like when the user is editing an existing income or expense item.`,
+        },
         text: [
           `I wanted this project to have the core functionality of taking in any number of items, whether income or expenses, and spit out a projection of your net worth.  Income and Expense items can be added with the “item”, “category”, and “amount” properties, and any one of them can be edited or deleted after creation.`,
 
@@ -120,7 +144,10 @@ const PROJECTS_INFO: Omit<ProjectType, 'idx'>[] = [
       },
       challenges: [
         {
-          img: './assets/goldfox/example-top.webp',
+          img: {
+            src: './assets/goldfox/example-top.webp',
+            alt: `Showcasing how the Goldfox Application looks with various income and expenses in the application.`
+          },
           summary: `Surprisingly, the real challenge of the site wasn't with the net worth calculations (it proved to be quite a simple coding challenge) — it was creating the ability for items to be edited after creation, and making sure all of the forms present on the page had validation checks, so for example you couldn't enter an empty attribute for any item, or something that would break the calculations.`,
           details: [
             `I created a custom React validity hook that took care of handling the validation code.`,
@@ -131,8 +158,14 @@ const PROJECTS_INFO: Omit<ProjectType, 'idx'>[] = [
       ],
       updates: {
         imgs: [
-          './assets/goldfox/negatives.webp',
-          './assets/goldfox/adding-error.webp',
+          {
+            src: './assets/goldfox/negatives.webp',
+            alt: `Showcasing what the application will tell you if your net worth goes into the negatives.`,
+          },
+          {
+            src: './assets/goldfox/adding-error.webp',
+            alt: `Showcasing the form validity functionality of submitting an income or expense item: error messages show you what you have not completed.`,
+          },
         ],
         items: [
           `Income/Expense Items 'n' times per week/month/year`,
