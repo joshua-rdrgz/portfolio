@@ -1,9 +1,9 @@
 .overview {
   display: flex;
   flex-direction: column;
+  padding: 2rem 5%;
   @include respond(biggerThanVertTablet) {
     flex-direction: row;
-    padding: 1rem;
   }
   &__figure {
     margin: 0 5%;
@@ -24,14 +24,16 @@
   }
   &__heading-wrapper {
     @include respond(biggerThanPhone) {
-      margin: 0 5% 2rem;
+      margin-bottom: 2rem;
     }
+  }
+  &__text {
+    margin-right: 0;
   }
   &__skills {
     display: flex;
     flex-wrap: wrap;
     gap: 2rem;
-    margin: 0 5%;
     padding-bottom: 3rem;
     justify-content: center;
     @include respond(biggerThanPhone) {

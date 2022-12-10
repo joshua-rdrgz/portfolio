@@ -34,6 +34,7 @@ const Overview: React.FC<OverviewProps> = ({
   const TEXT_PROPS: TextType = {
     fontSize: 'text-size--regular',
     color: isDarkMode ? 'color--black-10' : 'color--black',
+    textClass: 'overview__text',
   };
 
   return (
