@@ -5,10 +5,13 @@ const Textbox: React.FC<TextboxType> = ({
   children,
   backgroundColor,
   borderColor,
+  textBoxClass,
 }) => {
   return (
     <figure
-      className={`textbox ${backgroundColor} ${borderColor}`}
+      className={`textbox ${backgroundColor} ${borderColor}${
+        textBoxClass ? ' ' + textBoxClass : ''
+      }`}
       data-testid='textbox-figure'
     >
       {children}

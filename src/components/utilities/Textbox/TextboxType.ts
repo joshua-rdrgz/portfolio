@@ -4,4 +4,5 @@ export default interface TextboxType {
   children?: React.ReactNode;
   backgroundColor: backgroundColors;
   borderColor: borderColors;
+  textBoxClass?: string;
 }
