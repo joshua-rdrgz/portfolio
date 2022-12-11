@@ -1,0 +1,50 @@
+.challenges {
+  padding: 2rem 5% 10rem;
+  clip-path: polygon(0 0, 100% 0, 100% 99%, 0 100%);
+  &__heading {
+    &-wrapper {
+      margin-bottom: 1rem;
+    }
+  }
+  &__content {
+    text-align: center;
+  }
+}
+
+.challenge {
+  &__summary {
+    font-weight: normal;
+  }
+  &__figure {
+    margin: 2rem 0;
+    padding: 0 2rem;
+  }
+  &__img {
+    width: 100%;
+    border-radius: 0.5rem;
+    border: 2px solid $color-black-90;
+  }
+  &__text-container {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    @include respond(biggerThanVertTablet) {
+      text-align: left;
+    }
+  }
+  &__textbox {
+    @include respond(biggerThanVertTablet) {
+      max-width: 70%;
+    }
+    &--right {
+      @include respond(biggerThanVertTablet) {
+        margin-left: auto;
+      }
+    }
+    &--left {
+      @include respond(biggerThanVertTablet) {
+        margin-right: auto;
+      }
+    }
+  }
+}

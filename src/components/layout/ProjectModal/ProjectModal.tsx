@@ -5,6 +5,7 @@ import Modal from '../../utilities/Modal/Modal';
 import Header from '../Header/Header';
 import Overview from '../ProjectComponents/Overview/Overview';
 import Approach from '../ProjectComponents/Approach/Approach';
+import Challenges from '../ProjectComponents/Challenges/Challenges';
 
 interface ProjectModalProps {
   isOpen: boolean;
@@ -37,7 +38,8 @@ const ProjectModal: React.FC<ProjectModalProps> = ({
       />
       <Overview overview={overview} />
       <Approach approach={approach} />
-      <button onClick={closeModal}>Close</button> { /* Placeholder */}
+      <Challenges challenges={challenges} />
+      <button onClick={closeModal}>Close</button> {/* Placeholder */}
     </Modal>
   );
 };
