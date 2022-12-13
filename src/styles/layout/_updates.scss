@@ -1,0 +1,53 @@
+.updates {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  padding: 0 5%;
+  margin-top: 4rem;
+  &__heading-wrapper {
+    margin: 0 auto;
+  }
+  &__text-container {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    margin: 2rem 0;
+  }
+  &__text {
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+  &__img-container {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  &__figure {
+    width: 80%;
+    margin: 0 auto;
+    margin-top: 3rem;
+    @include respond(biggerThanVertTablet) {
+      max-width: 45%;
+    }
+  }
+  &__img {
+    width: 100%;
+    border-radius: 1rem;
+    border: 2px solid $color-black;
+  }
+  &__close-btn {
+    display: inline-block;
+    margin: 3rem auto;
+    padding: 1rem 0;
+    border-radius: 1rem;
+    border: none;
+    color: $color-white;
+    cursor: pointer;
+    width: 50%;
+    &:hover {
+      transform: translateY(-1px);
+    }
+    &:active {
+      transform: none;
+    }
+  }
+}
