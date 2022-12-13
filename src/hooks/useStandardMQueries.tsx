@@ -16,6 +16,11 @@ const useStandardMQueries = () => {
     mediaQueryExp: '(min-width: 62.5em)',
   });
 
+  const biggerThanTablet = useMQuery({
+    initMatch: window.innerWidth > 1200 ? true : false,
+    mediaQueryExp: '(min-width: 75em)',
+  });
+
   const biggerThanBigDesktop = useMQuery({
     initMatch: window.innerWidth >= 2000 ? true : false,
     mediaQueryExp: '(min-width: 125em)',
@@ -25,6 +30,7 @@ const useStandardMQueries = () => {
     biggerThanSmallPhone,
     biggerThanBigPhone,
     biggerThanVertTablet,
+    biggerThanTablet,
     biggerThanBigDesktop,
   };
 };
