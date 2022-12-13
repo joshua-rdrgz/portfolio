@@ -26,7 +26,6 @@ const Challenges: React.FC<ChallengesProps> = ({
     headingColor: isDarkMode
       ? 'color__dark--accent-medium'
       : 'color__light--accent',
-    headingClassName: 'challenges__heading',
     wrapperClassName: 'challenges__heading-wrapper',
     decor: 'line-center',
   };
