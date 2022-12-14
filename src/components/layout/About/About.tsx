@@ -14,7 +14,9 @@ const About = () => {
 
   const HEADING_PROPS: HeadingType = {
     Tag: 'h2',
-    headingSize: biggerThanBigDesktop ? 'heading-size__2' : 'heading-size__3--bold',
+    headingSize: biggerThanBigDesktop
+      ? 'heading-size__2'
+      : 'heading-size__3--bold',
     headingColor: `color__${isDarkMode ? 'dark' : 'light'}--accent${
       isDarkMode ? '-medium' : ''
     }`,
@@ -30,7 +32,10 @@ const About = () => {
   };
 
   return (
-    <section className={`about bg-color--black-${isDarkMode ? '25' : '75'}`}>
+    <section
+      className={`about bg-color--black-${isDarkMode ? '25' : '75'}`}
+      id='about'
+    >
       <Icon
         type='memoji'
         svg='./assets/memoji/memoji-lightbulb.svg'

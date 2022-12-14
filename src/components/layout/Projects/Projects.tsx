@@ -23,6 +23,7 @@ const Projects = () => {
       className={`projects__container bg-color__${
         isDarkMode ? 'dark' : 'light'
       }--gradient-project`}
+      id='projects'
     >
       <Heading {...HEADING_PROPS}>{`<Projects />`}</Heading>
       <section className='projects'>

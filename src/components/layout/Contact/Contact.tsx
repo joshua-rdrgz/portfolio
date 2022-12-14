@@ -13,7 +13,9 @@ const Contact = () => {
 
   const HEADING_PROPS: HeadingType = {
     Tag: 'h2',
-    headingSize: biggerThanBigDesktop ? 'heading-size__2' : 'heading-size__3--bold',
+    headingSize: biggerThanBigDesktop
+      ? 'heading-size__2'
+      : 'heading-size__3--bold',
     headingColor: `color__${isDarkMode ? 'dark' : 'light'}--accent`,
     headingClassName: 'contact__heading',
   };
@@ -27,8 +29,8 @@ const Contact = () => {
   };
 
   return (
-    <section className='contact'>
-      <div className="contact__content">
+    <section className='contact' id='contact'>
+      <div className='contact__content'>
         <Heading {...HEADING_PROPS}>{'<Contact />'}</Heading>
         <Form formClassName='contact__form' />
       </div>
