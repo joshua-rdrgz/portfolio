@@ -33,12 +33,7 @@ const Header: React.FC<HeaderType> = ({
     mediaQueryExp: '(min-width: 50em)',
   });
 
-  const biggerThanTablet = useMQuery({
-    initMatch: window.innerWidth >= 1200 ? true : false,
-    mediaQueryExp: '(min-width: 75em)',
-  });
-
-  const { biggerThanSmallPhone } = useStandardMQueries();
+  const { biggerThanSmallPhone, biggerThanTablet } = useStandardMQueries();
 
   return (
     <header
