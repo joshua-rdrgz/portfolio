@@ -14,18 +14,13 @@ import {
 const Skills = () => {
   const { isDarkMode } = useContext(ThemeContext);
 
-  const { biggerThanSmallPhone, biggerThanBigPhone, biggerThanBigDesktop } =
-    useStandardMQueries();
+  const { biggerThanBigPhone, biggerThanBigDesktop } = useStandardMQueries();
 
   const BG_COLOR = isDarkMode ? 'bg-color--black-15' : 'bg-color--black-90';
 
-  const HEADING_SIZE = biggerThanSmallPhone
-    ? biggerThanBigPhone
-      ? biggerThanBigDesktop
-        ? 'heading-size__2'
-        : 'heading-size__3--bold'
-      : 'heading-size__4'
-    : 'heading-size__5';
+  const HEADING_SIZE = biggerThanBigDesktop
+    ? 'heading-size__2'
+    : 'heading-size__3--bold';
 
   const HEADING_PROPS: HeadingType = {
     Tag: 'h2',
