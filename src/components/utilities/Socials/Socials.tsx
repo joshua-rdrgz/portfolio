@@ -45,7 +45,7 @@ const Socials: React.FC<SocialsType> = ({ type, backgroundColor }) => {
             </a>
           </li>
           <li className={`${type}-socials__icon`}>
-            <a href='./resume'>
+            <a href='./assets/joshua_rodriguez_resume.pdf' download>
               <Icon
                 type='social'
                 svg='./assets/socials/resume.svg'
