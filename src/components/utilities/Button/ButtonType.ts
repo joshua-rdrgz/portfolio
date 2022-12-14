@@ -24,6 +24,8 @@ export default interface BtnType {
   children?: string;
   Tag: 'a' | 'button';
   href?: string;
+  target?: string;
+  rel?: string;
   ref?: React.MutableRefObject<HTMLButtonElement | null>;
   onClickFn?: () => void;
   customClasses?: string;

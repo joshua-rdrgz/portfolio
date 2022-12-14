@@ -103,10 +103,10 @@ const Project: React.FC<ProjectType> = ({
         />
         <div className='project__btn-container'>
           <Button {...BUTTON_PRIMARY_PROPS}>More Info</Button>
-          <Button {...BUTTON_SECONDARY_PROPS} href={links.liveSite}>
+          <Button {...BUTTON_SECONDARY_PROPS} href={links.liveSite} target='_blank' rel='noreferrer'>
             View Live
           </Button>
-          <Button {...BUTTON_SECONDARY_PROPS} href={links.gitHub}>
+          <Button {...BUTTON_SECONDARY_PROPS} href={links.gitHub} target='_blank' rel='noreferrer'>
             GitHub
           </Button>
         </div>

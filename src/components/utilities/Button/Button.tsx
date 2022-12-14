@@ -4,7 +4,7 @@ import BtnType from './ButtonType';
 type RefType = HTMLAnchorElement | HTMLButtonElement;
 
 const Button = forwardRef<RefType, BtnType>(
-  ({ btnInfo, Tag, href, customClasses, children, isDisabled, onClickFn }, ref) => {
+  ({ btnInfo, Tag, href, target, rel, customClasses, children, isDisabled, onClickFn }, ref) => {
     const { type } = btnInfo;
     const primaryClasses =
       type === 'primary'
@@ -24,6 +24,8 @@ const Button = forwardRef<RefType, BtnType>(
     return (
       <Tag
         href={href}
+        target={target}
+        rel={rel}
         className={`btn${primaryClasses}${secondaryClasses}${
           customClasses ? ' ' + customClasses : ''
         }`}
