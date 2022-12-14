@@ -25,7 +25,8 @@
       margin-right: 1rem;
       margin-bottom: 1rem;
       border-radius: 50%;
-      border-color: $color-black-10
+      border-color: $color-black-10;
+      cursor: pointer;
       & img {
         animation: switchMode 0.1s linear;
       }
