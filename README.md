@@ -1,46 +1,46 @@
-# Getting Started with Create React App
+# Joshua Rodriguez Portfolio
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+![Portfolio Herobox](./public/assets/portfolio-pics/herobox.webp)
+![Portfolio Herobox Dark](./public/assets/portfolio-pics/herobox-dark.webp)
 
-## Available Scripts
+This project contains the code for Joshua Rodriguez's portfolio website.  It was built using [TypeScript](https://www.typescriptlang.org/) and [React](https://reactjs.org/), using React's [Context API](https://reactjs.org/docs/context.html/) as a state management tool.  
 
-In the project directory, you can run:
+#### Table of Contents
 
-### `npm start`
+- [How It's Built](#how-its-built)
+  - [Utility Components](#utility-components)
+  - [Layout Components](#layout-components)
+  - [Custom Hooks](#custom-hooks)
+  - [Light and Dark Theme](#light-and-dark-theme)
+- [Updates For The Future](#updates-for-the-future)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## How It's Built
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+Overall, the project was broken down into very simple and reusable utility components; these component's only purpose was to display a certain item onto the screen (a heading, or an icon, for example).  These utility components would then be used by layout components, whose purpose was to display a section of the website.  A simple use of the React Context API (useContext hook) was used to toggle between a light and dark theme, and multiple hooks were made to be able to control components responsively using JavaScript media queries.
 
-### `npm test`
+### Utility Components
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+In total, there were 15 different utility components that covered basic user interface materials, everything from buttons to forms to icons and navigation bars.  Each was designed in such a way that when using the utility component, the user could have granular control over the details of said component -- the text size, font colors, and much more were available to be specified, as well as the ability to add any extra CSS classes if needed.  This was done because several of the components were indeed reusable, but had varying properties unique to their specific occurrence.
 
-### `npm run build`
+The overall effect of building these utility components was the speed in which the project put itself together after they were built.  A big portion of otherwise reused CSS rules and HTML structures were avoided, allowing for a seamless dev experience where I could focus mostly on positioning elements instead of directly styling them.  This also assures that in the future, the process of adding to the portfolio will be as effortless as possible.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Layout Components
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+The main layout components regarded dealing with the header and footer of the site, as well as the herobox, the skills section, the project section, each project modal section (that appears when the user clicks the 'More Info' button), the about section, and the contact section.  They fully utilize the created utility components to their fullest extent, allowing them to be put together very quickly and seamlessly.  The process of building these components was aided greatly by the existence of all the utility components!
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### Custom Hooks
 
-### `npm run eject`
+Whenever creating the utility components and with their granular control capabilities in mind, it was necessary to create some media queries that created JavaScript media queries.  The two hooks were named useMQuery and useStandardMQueries, respectively.
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+The useMQuery hook returns a boolean value that tells the user whether or not the viewport meets the given media query.  For example, if the hook was fed `(min-width: 37.5em)` (600px), the boolean value would be true if the viewport was 600 pixels or higher, and would return false if the viewport did not meet the 600 pixel requirement.  These boolean values I used to plug ternary conditions into various options of different utility components (such as text-size options).  This allowed me to create simple statments that acted as media queries.
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Throughout the development process, I came to rely on a specific few media queries in a vast amount of layout components.  In order to avoid code duplication, the useStandardMQueries hook was born, where the most commonly used useMQuery calls were stored into specific variable names.  Whenever I needed to use them, I would simply pull out the boolean values from this useStandardMQueries hook, and I was good to go.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+### Light and Dark Theme
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+The Light and Dark Theme was created using the React Context API.  After creating a simple context that provided a boolean value that stated whether or not the Dark Theme was activated, as well as a toggle function that toggled this boolean value, I was able to bring it into every component that needed to know about the Light / Dark Theme and use that boolean to conditionally render certain colors based on the theme.  
 
-## Learn More
+## Updates For The Future
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+- Light / Dark Theme Refactor
+  - At the current moment, I'd like to refactor the way that the light and dark mode themes function.  I think it would be a lot more efficient if instead of giving a boolean value, the context were to give components a set of color variables that would be used throughout the entire application.  Then, a function could be used to toggle the definitions of these variables.  For example, the context could provide a 'BACKGROUND_COLOR' variable, and the definition of that variable would change when the function was called.  This would allow the components to not worry about it's definition, and instead just plug the variable where it needs it.  I think the advantage to this approach would be that it would make editing these colors a lot more efficient and seamless.
