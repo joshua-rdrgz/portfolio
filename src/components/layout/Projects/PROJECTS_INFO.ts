@@ -25,7 +25,7 @@ const PROJECTS_INFO: Omit<ProjectType, 'idx'>[] = [
       overview: {
         img: {
           src: './assets/pcb/herobox-component.webp',
-          alt: `Performance Clear Bra's main website, showcasing the herobox section.`
+          alt: `Performance Clear Bra's main website, showcasing the herobox section.`,
         },
         text: `This project included the creation of a marketing website for Performance Clear Bra, Inc. in Fort Worth, Texas.  It was built using Frontity, a React framework that combines React as a frontend with WordPress as a headless CMS.  The project in its entirety helped reduce page load speeds by 56%, creating a fantastic user experience for all of the company's customers.`,
         skills: [
@@ -43,7 +43,7 @@ const PROJECTS_INFO: Omit<ProjectType, 'idx'>[] = [
       approach: {
         img: {
           src: './assets/pcb/contact-component-landing-page.webp',
-          alt: `Performance Clear Bra's landing page, where users can contact the company.`
+          alt: `Performance Clear Bra's landing page, where users can contact the company.`,
         },
         text: [
           `The owner of Performance Clear Bra wanted a website that was easily maintainable, easy to use, fast, and strategically designed to answer all of his customer's questions.`,
@@ -55,7 +55,7 @@ const PROJECTS_INFO: Omit<ProjectType, 'idx'>[] = [
         {
           img: {
             src: './assets/pcb/header.webp',
-            alt: `The header portion of the Performance Clear Bra website.`
+            alt: `The header portion of the Performance Clear Bra website.`,
           },
           summary: `One challenge was building the Header component that dynamically takes in a menu from the WordPress Rest API, and displaying it in the appropriate manner.  There were several aspects that made this difficult, but I was able to overcome those challenges with some research and creativity.`,
           details: [
@@ -83,11 +83,11 @@ const PROJECTS_INFO: Omit<ProjectType, 'idx'>[] = [
         imgs: [
           {
             src: './assets/pcb/gallery-component.webp',
-            alt: `Performance Clear Bra's gallery, where they showcase the work they've done on other customer's cars.`
+            alt: `Performance Clear Bra's gallery, where they showcase the work they've done on other customer's cars.`,
           },
           {
             src: './assets/pcb/testimonial-component.webp',
-            alt: `Performance Clear Bra's testimonials, where they showcase all of the good reviews customers have gave them.`
+            alt: `Performance Clear Bra's testimonials, where they showcase all of the good reviews customers have gave them.`,
           },
         ],
         items: [
@@ -117,7 +117,7 @@ const PROJECTS_INFO: Omit<ProjectType, 'idx'>[] = [
       overview: {
         img: {
           src: './assets/goldfox/blank-slate.webp',
-          alt: `The blank starting page for the Goldfox net worth projector application.`
+          alt: `The blank starting page for the Goldfox net worth projector application.`,
         },
         text: `This project is a simple net worth calculator that takes in any number of monthly incomes or expenses you have, as well as your starting net worth, and uses that information to give you your projected net worth over the next six months.  This first version of GoldFox is the start of something big — over the years, I plan to expand and develop this software to be the perfect tool for anyone to handle the entirety of their finances.`,
         skills: [
@@ -146,7 +146,7 @@ const PROJECTS_INFO: Omit<ProjectType, 'idx'>[] = [
         {
           img: {
             src: './assets/goldfox/example-top.webp',
-            alt: `Showcasing how the Goldfox Application looks with various income and expenses in the application.`
+            alt: `Showcasing how the Goldfox Application looks with various income and expenses in the application.`,
           },
           summary: `Surprisingly, the real challenge of the site wasn't with the net worth calculations (it proved to be quite a simple coding challenge) — it was creating the ability for items to be edited after creation, and making sure all of the forms present on the page had validation checks, so for example you couldn't enter an empty attribute for any item, or something that would break the calculations.`,
           details: [
@@ -172,6 +172,82 @@ const PROJECTS_INFO: Omit<ProjectType, 'idx'>[] = [
           `Net Worth Projection 'n' weeks/months/years`,
           'Budget Tracking Functionality',
         ],
+      },
+    },
+  },
+  {
+    heading: {
+      title: 'Aruba Landing Page',
+      subtitle: 'HTML/CSS Clone',
+    },
+    summary: `This project is a raw HTML/CSS recreation of a landing page by the company Aruba.  It includes the use of cleverly positioned background images to create a unique and custom design.  Although the clone doesn't contain the functionality of the original site, it is an exact 1-to-1 recreation of the site using pure HTML and CSS, and nothing else.`,
+    techStack: ['HTML', 'CSS'],
+    bgImg: {
+      src: `./assets/aruba-clone/aruba-clone-herobox.webp`,
+      alt: `A picture of the herobox of my Aruba landing page clone.`,
+    },
+    links: {
+      liveSite: 'https://joshuardrgz-aruba-clone.netlify.app',
+      gitHub: 'https://github.com/joshua-rdrgz/aruba-landing-page-clone',
+    },
+    modal: {
+      overview: {
+        img: {
+          src: './assets/aruba-clone/aruba-clone-calculator.webp',
+          alt: `The calculator portion of the Aruba landing page clone.`,
+        },
+        text: `This project is a recreation of a landing page by the company Aruba.  It includes the use of cleverly positioned background images to create a unique and custom design.  Although the clone doesn't contain the functionality of the original site, it is an exact 1-to-1 recreation of the site using pure HTML and CSS.  I took this project on in order to test my ability to turn designs into functional front-end code using nothing but HTML and CSS.`,
+        skills: ['HTML', 'CSS', 'Vite'],
+      },
+      approach: {
+        img: {
+          src: './assets/aruba-clone/aruba-clone-footer.webp',
+          alt: `The footer portion of the Aruba landing page clone.`,
+        },
+        text: [
+          `All that was required for this project was that no other technologies would be used besides HTML and CSS.  This meant that no CSS pre-processors were used, nor were any UI frameworks.  The project was meant to test my ability to recreate a design with nothing but HTML and CSS.`,
+
+          `Using this approach, I decided to simply build the HTML into one big 'index.html' file, and separate all the CSS files into components, combining them all together into 'style.css' using imports.  The project was then bundled together using Vite.`,
+        ],
+      },
+      challenges: [
+        {
+          img: {
+            src: './assets/aruba-clone/aruba-clone-results.webp',
+            alt: `The benefits portion of the Aruba landing page clone.`,
+          },
+          summary: `The most difficult part of this project was implementing the background designs, which included images that needed to be cleverly manipulated in a responsive way in order to more accurately accentuate the text above it.  This involved applying z-index properties to position the image elements behind the text, and the correct CSS properties in order to responsively react to the user's viewport width and height.`,
+          details: [
+            `I was able to position the image elements according to their HTML containers, specifying in CSS their width in terms of percentages so that they adjust appropriately to the user's viewport height and width.`,
+
+            `I was able to manipulate the images using CSS's z-index property in order to position the images underneath the primary content being displayed.`,
+          ],
+        },
+        {
+          img: {
+            src: './assets/aruba-clone/aruba-clone-benefits.webp',
+            alt: `The benefits portion of the Aruba landing page clone.`,
+          },
+          summary: `The other challenge of this project was creating a 1-1 creation taking into consideration all possible viewport widths and heights: in other words, the responsiveness of the site.`,
+          details: [
+            `I used a variety of approaches to create the site's responsiveness, alternating between CSS Flexbox and CSS Grid for different components at different viewport widths and heights.`,
+
+            `When possible, I took advantage of CSS's capabilities in order to apply styles that were naturally responsive; for example, using CSS Grid's fractional units to have elements position themselves relative to the user's viewport.`,
+          ],
+        },
+      ],
+      updates: {
+        imgs: [
+          {
+            src: './assets/aruba-clone/aruba-clone-phone-herobox.webp',
+            alt: `Showcasing what the application will tell you if your net worth goes into the negatives.`,
+          },
+          {
+            src: './assets/aruba-clone/aruba-clone-phone-results.webp',
+            alt: `Showcasing the form validity functionality of submitting an income or expense item: error messages show you what you have not completed.`,
+          },
+        ],
+        items: [`Separate 'results.css' into smaller components`],
       },
     },
   },
