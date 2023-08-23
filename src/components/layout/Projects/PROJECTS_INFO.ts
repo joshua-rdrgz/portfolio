@@ -1,6 +1,9 @@
 import ProjectType from '../../utilities/Project/ProjectType';
 
 const PROJECTS_INFO: Omit<ProjectType, 'idx'>[] = [
+  /**
+   * PERFORMANCE CLEAR BRA PROJECT
+   */
   {
     heading: {
       title: 'Performance Clear Bra, Inc.',
@@ -33,7 +36,7 @@ const PROJECTS_INFO: Omit<ProjectType, 'idx'>[] = [
           'CSS in JS (Styled Components)',
           'CSS Sprites',
           'JavaScript',
-          'React (Isomorphic)',
+          'React (Full Stack)',
           'Frontity',
           'JWT Tokens',
           'WordPress (Rest API)',
@@ -90,14 +93,170 @@ const PROJECTS_INFO: Omit<ProjectType, 'idx'>[] = [
             alt: `Performance Clear Bra's testimonials, where they showcase all of the good reviews customers have gave them.`,
           },
         ],
-        items: [
-          'Conversion to TypeScript',
-          'Addition of Blog',
-          'Tabbed Services Update',
-        ],
+        items: ['Conversion to TypeScript'],
       },
     },
   },
+  /**
+   * AIRBNB CLONE PROJECT
+   */
+  {
+    heading: {
+      title: 'Airbnb Web App Clone',
+      subtitle: 'Full Stack Application Clone',
+    },
+    summary:
+      'This project is a fully featured clone of the Airbnb web applicaton.  It is complete with functionality to create properties and listings, make reservations, manage your trips, favorites, properties, and reservations from other guests.',
+    techStack: [
+      'NextJS 13',
+      'MongoDB',
+      'Tailwind',
+      'TypeScript',
+      'React Hook Form',
+    ],
+    bgImg: {
+      src: './assets/airbnb-clone/background.webp',
+      alt: 'Background image of the Airbnb Clone app.',
+    },
+    links: {
+      liveSite: 'https://rent-home-example.vercel.app/',
+      gitHub: 'https://github.com/joshua-rdrgz/airbnb-clone',
+    },
+    modal: {
+      overview: {
+        img: {
+          src: './assets/airbnb-clone/trips.webp',
+          alt: 'Trips page of the Airbnb Clone app',
+        },
+        text: 'This Airbnb Clone is a highly personalized and modified version of an original tutorial.  It features all the functionality of the Airbnb web application, such as creating listings, letting other users make trips on listings, and managing reservations and favorites.  The project utilized advanced React patterns such as the render props pattern, compound components, and more.  It was built with the Next framework and a MongoDB database.',
+        skills: [
+          'NextJS',
+          'Tailwind',
+          'TypeScript',
+          'React',
+          'React Hook Form',
+          'MongoDB',
+          'Prisma',
+          'NextAuth',
+        ],
+      },
+      approach: {
+        img: {
+          src: './assets/airbnb-clone/date-picker.webp',
+          alt: 'A Date Picker for a filter in the Airbnb Clone',
+        },
+        text: [
+          'The initial steps were to create the layout of the app, mainly the navbar and the base modal infrastructure.  The modal was created using a compound component that keeps all of the modal state and functionality completely within itself.  Using the modal is as easy as using HTML.',
+          'With that, we populated the different kinds of modals.  Namely, the register, login, search, and listing modals.  To complete the search and listing modals, a Form compound component was created to handle form structure and submit requests.',
+          'From there, listing pages were created so that the user could see more information about a listing when they clicked on it.  It came with detailed information about a listing, as well as a date picker component that lets users reserve the listing for specific dates.',
+          'Finally, the menus for managing trips, favorites, reservations, and properties were created.  These page utilize the render props pattern to render all of their contents in one single reusable component.',
+        ],
+      },
+      challenges: [
+        {
+          img: {
+            src: './assets/airbnb-clone/filter-modal.webp',
+            alt: 'The filter modal of the Airbnb Clone app',
+          },
+          summary:
+            "The original tutorial included components that had multiple responsibilites, and single responsibilites delegated to multiple components.  I did'nt like this structure, so I opted to use compound components to isolate responsibilities into single components.  This kept everything organized.",
+          details: [
+            'I used a compound component to create a Modal component with 2 children components -- Modal.Open and Modal.Window.  The two connect like how HTML inputs and labels connect, and the Modal.Open contains the button to show the Modal.Window.',
+            'I also included a Form compound component that had numerous child components.  These were used to capture uncontrolled and controlled inputs, as well as provide features for a form, such as a map showing the location the user has chosen.',
+          ],
+        },
+      ],
+      updates: {
+        imgs: [
+          {
+            src: './assets/airbnb-clone/login-modal.webp',
+            alt: 'Login modal of the Airbnb clone app',
+          },
+        ],
+        items: ['Edit functionality for listings, reservations, and trips.'],
+      },
+    },
+  },
+  /**
+   * THE WILD OASIS PROJECT
+   */
+  {
+    heading: {
+      title: 'The Wild Oasis',
+      subtitle: 'Web Application for Cabin-Renting Company',
+    },
+    summary:
+      'This is a front end web application for a fictional cabin-renting company called The Wild Oasis.  It comples fully featured with a dashboard for valuable metrics, as well as tables to manage bookings and cabins.  It is complete with filters, sorting, pagination, authentication, and a dark mode.',
+    techStack: ['React', 'React Query', 'JavaScript', 'Supabase'],
+    bgImg: {
+      src: './assets/the-wild-oasis/dashboard-light.webp',
+      alt: 'Dashboard of The Wild Oasis app',
+    },
+    links: {
+      liveSite: 'https://the-wild-oasis-lime.vercel.app/',
+      gitHub: 'https://github.com/joshua-rdrgz/the-wild-oasis',
+    },
+    modal: {
+      overview: {
+        img: {
+          src: './assets/the-wild-oasis/dashboard-dark.webp',
+          alt: 'Dashboard in Dark Mode of The Wild Oasis app',
+        },
+        text: 'This web app was built following a tutorial, and it was used to master advanced React patterns and learn real world project architecture and feature implementations.  The app manages bookings and cabins that the fictional company has, and allows the user to see meaningful metrics about the bookings and cabins.  Users can check guests in and out, add cabins, and establish other users as well.',
+        skills: [
+          'React',
+          'React Query',
+          'Recharts',
+          'Web application development',
+          'JavaScript',
+          'Supabase',
+        ],
+      },
+      approach: {
+        img: {
+          src: './assets/the-wild-oasis/bookings.webp',
+          alt: 'Bookings page of The Wild Oasis app',
+        },
+        text: [
+          'We first built out the cabins table, learning about compound components to build out modals that display forms to add cabins, as well as menu dropdowns to edit, duplicate, and delete cabins.',
+          'Then, the bookings table was built utilizing the components built for the cabins.',
+          'The users and settings pages were added to allow for authentication features and general settings.',
+          "User authentication was added using Supabase's integrated auth features",
+          'Finally, the dashboard was created to gather and display data in a meaningful way to the user.',
+        ],
+      },
+      challenges: [
+        {
+          img: {
+            src: './assets/the-wild-oasis/cabins.webp',
+            alt: 'Cabins table of The Wild Oasis app',
+          },
+          summary:
+            "Overall, the project's dashboard was easily the biggest challenge, as the data from the Supabase backend had to be manipulated to fit what our charting library expected.",
+          details: [
+            'The cabin table was utilized to learn all sorts of advanced React patterns, like render props, higher order components, and compound components.',
+            'The menu dropdowns for each row of the table was implemented using a compound component, and had to be used in conjunction with other compound components that all work together.',
+          ],
+        },
+      ],
+      updates: {
+        imgs: [
+          {
+            src: './assets/the-wild-oasis/users.webp',
+            alt: 'Users page of The Wild Oasis app',
+          },
+          {
+            src: './assets/the-wild-oasis/add-cabin.webp',
+            alt: 'Add cabin modal form of The Wild Oasis app',
+          },
+        ],
+        items: ['Edit bookings'],
+      },
+    },
+  },
+  /**
+   * GOLDFOX PROJECT
+   */
   {
     heading: {
       title: 'GoldFox',
@@ -175,6 +334,9 @@ const PROJECTS_INFO: Omit<ProjectType, 'idx'>[] = [
       },
     },
   },
+  /**
+   * ARUBA LANDING PAGE PROJECT
+   */
   {
     heading: {
       title: 'Aruba Landing Page',
