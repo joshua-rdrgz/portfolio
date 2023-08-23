@@ -45,7 +45,7 @@ const Herobox: React.FC = () => {
             <strong
               className={`color__${isDarkMode ? 'dark' : 'light'}--accent`}
             >
-              Front End Developer
+              Full Stack Developer
             </strong>
             , a lifelong{' '}
             <strong
