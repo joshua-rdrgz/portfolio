@@ -6,7 +6,7 @@ import HeadingType from '../../utilities/Heading/HeadingType';
 import Skill from '../../utilities/Skill/Skill';
 import Icon from '../../utilities/Icon/Icon';
 import {
-  FRONT_END_SKILLS,
+  FULL_STACK_SKILLS,
   TOOLS_AND_DESIGN_SKILLS,
   OTHER_SKILLS,
 } from './skill-items';
@@ -47,37 +47,27 @@ const Skills = () => {
   return (
     <section className={`skills ${BG_COLOR}`} id='skills'>
       <Heading {...HEADING_PROPS}>{`<Skills />`}</Heading>
-      <Skill heading='Front End' classExtension='front-end'>
-        {FRONT_END_SKILLS.map((skillBase) => {
-          const skillArray = skillBase.split('%');
-          const skillLink = skillArray[0].toLowerCase();
-          const skillPresentation = skillArray.join(' ');
-          return (
-            <Icon
-              key={skillPresentation}
-              type='skill'
-              svg={`./assets/skills/${skillLink}.svg`}
-              alt={skillPresentation}
-              caption={skillPresentation}
-              wrappingClassName='skill__item'
-            />
-          );
-        })}
+      <Skill heading='Full Stack' classExtension='front-end'>
+        {FULL_STACK_SKILLS.map((fullStackSkill) => (
+          <Icon
+            key={fullStackSkill.name}
+            type='react-icon'
+            svg={fullStackSkill.icon}
+            wrappingClassName='skill__item'
+            caption={fullStackSkill.name}
+          />
+        ))}
       </Skill>
       <Skill heading='Tools and Design' classExtension='tools'>
-        {TOOLS_AND_DESIGN_SKILLS.map((skillPresentation) => {
-          const skillLink = skillPresentation.toLowerCase().split(' ').join('');
-          return (
-            <Icon
-              key={skillPresentation}
-              type='skill'
-              svg={`./assets/skills/${skillLink}.svg`}
-              alt={skillPresentation}
-              caption={skillPresentation}
-              wrappingClassName='skill__item'
-            />
-          );
-        })}
+        {TOOLS_AND_DESIGN_SKILLS.map((toolDesignSkill) => (
+          <Icon
+            key={toolDesignSkill.name}
+            type='react-icon'
+            svg={toolDesignSkill.icon}
+            wrappingClassName='skill__item'
+            caption={toolDesignSkill.name}
+          />
+        ))}
       </Skill>
       <Skill
         heading='Other'
