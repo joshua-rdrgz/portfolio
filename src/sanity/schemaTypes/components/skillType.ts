@@ -1,6 +1,6 @@
-import { defineField, defineType } from 'sanity';
-import { createImageField } from '../utils/createImageField';
+import { InlineSvgPreviewItem } from '@focus-reactive/sanity-plugin-inline-svg-input';
 import { HighlightIcon } from '@sanity/icons';
+import { defineField, defineType } from 'sanity';
 
 export const skillType = defineType({
   name: 'skill',
@@ -8,7 +8,11 @@ export const skillType = defineType({
   type: 'document',
   icon: HighlightIcon,
   fields: [
-    createImageField('icon', 'Icon'),
+    defineField({
+      name: 'svgIcon',
+      title: 'SVG Icon',
+      type: 'inlineSvg',
+    }),
     defineField({
       name: 'label',
       title: 'Skill',

@@ -17,6 +17,7 @@
     "typegen": "sanity schema extract --path=./src/sanity/extract.json && sanity typegen generate"
   },
   "dependencies": {
+    "@focus-reactive/sanity-plugin-inline-svg-input": "^1.1.0",
     "@sanity/icons": "^3.4.0",
     "@sanity/image-url": "^1.0.2",
     "@sanity/vision": "^3.59.1",

@@ -1,6 +1,5 @@
-import { defineField, defineType } from 'sanity';
 import { LinkIcon } from '@sanity/icons';
-import { createImageField } from '../utils/createImageField';
+import { defineField, defineType } from 'sanity';
 
 export const linkType = defineType({
   name: 'link',
@@ -8,7 +7,11 @@ export const linkType = defineType({
   type: 'document',
   icon: LinkIcon,
   fields: [
-    createImageField('icon', 'Icon'),
+    defineField({
+      name: 'svgIcon',
+      title: 'SVG Icon',
+      type: 'inlineSvg',
+    }),
     defineField({
       name: 'label',
       title: 'Label',

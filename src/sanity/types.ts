@@ -348,18 +348,7 @@ export type Skill = {
   _createdAt: string;
   _updatedAt: string;
   _rev: string;
-  icon?: {
-    asset?: {
-      _ref: string;
-      _type: "reference";
-      _weak?: boolean;
-      [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
-    };
-    hotspot?: SanityImageHotspot;
-    crop?: SanityImageCrop;
-    alt?: string;
-    _type: "image";
-  };
+  svgIcon?: string;
   label?: string;
 };
 
@@ -481,18 +470,7 @@ export type Link = {
   _createdAt: string;
   _updatedAt: string;
   _rev: string;
-  icon?: {
-    asset?: {
-      _ref: string;
-      _type: "reference";
-      _weak?: boolean;
-      [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
-    };
-    hotspot?: SanityImageHotspot;
-    crop?: SanityImageCrop;
-    alt?: string;
-    _type: "image";
-  };
+  svgIcon?: string;
   label?: string;
   url?: string;
 };
@@ -720,7 +698,9 @@ export type Slug = {
   source?: string;
 };
 
-export type AllSanitySchemaTypes = SanityImagePaletteSwatch | SanityImagePalette | SanityImageDimensions | SanityFileAsset | Geopoint | TimelineSection | SkillSection | ProjectSection | ProjectList | HeroboxSection | ContactSection | AboutSection | Sidebar | NavList | PageBuilder | Skill | Project | LinkList | SkillList | NavItem | Link | JobProperties | BlockContent | Post | Category | Author | SanityImageCrop | SanityImageHotspot | SanityImageAsset | SanityAssetSourceData | SanityImageMetadata | Slug;
+export type InlineSvg = string;
+
+export type AllSanitySchemaTypes = SanityImagePaletteSwatch | SanityImagePalette | SanityImageDimensions | SanityFileAsset | Geopoint | TimelineSection | SkillSection | ProjectSection | ProjectList | HeroboxSection | ContactSection | AboutSection | Sidebar | NavList | PageBuilder | Skill | Project | LinkList | SkillList | NavItem | Link | JobProperties | BlockContent | Post | Category | Author | SanityImageCrop | SanityImageHotspot | SanityImageAsset | SanityAssetSourceData | SanityImageMetadata | Slug | InlineSvg;
 export declare const internalGroqTypeReferenceTo: unique symbol;
 // Source: ./src/sanity/lib/queries.ts
 // Variable: POSTS_QUERY
