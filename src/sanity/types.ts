@@ -278,6 +278,7 @@ export type Sidebar = {
   _createdAt: string;
   _updatedAt: string;
   _rev: string;
+  sidebarName?: string;
   profilePic?: {
     asset?: {
       _ref: string;
@@ -702,7 +703,7 @@ export type InlineSvg = string;
 
 export type AllSanitySchemaTypes = SanityImagePaletteSwatch | SanityImagePalette | SanityImageDimensions | SanityFileAsset | Geopoint | TimelineSection | SkillSection | ProjectSection | ProjectList | HeroboxSection | ContactSection | AboutSection | Sidebar | NavList | PageBuilder | Skill | Project | LinkList | SkillList | NavItem | Link | JobProperties | BlockContent | Post | Category | Author | SanityImageCrop | SanityImageHotspot | SanityImageAsset | SanityAssetSourceData | SanityImageMetadata | Slug | InlineSvg;
 export declare const internalGroqTypeReferenceTo: unique symbol;
-// Source: ./src/sanity/lib/queries.ts
+// Source: ./src/sanity/lib/queries/exPostQueries.ts
 // Variable: POSTS_QUERY
 // Query: *[_type == "post" && defined(slug.current)][0...12]{  _id, title, slug}
 export type POSTS_QUERYResult = Array<{
@@ -729,11 +730,37 @@ export type POST_QUERYResult = {
   } | null;
 } | null;
 
+// Source: ./src/sanity/lib/queries/sidebarQuery.ts
+// Variable: SidebarQuery
+// Query: *[_type == "sidebar" && _id == "c94fb9ee-d1af-42fc-9d9c-0f4e791dff0a"]{    "profilePic": {      "url": profilePic.asset->url,      "alt": profilePic.alt    },    navList->{      navListName,      list[]->{        label,        slug      }    },    linkList->{      linkListName,      list[]->{        label,        svgIcon,        url      }    }  }
+export type SidebarQueryResult = Array<{
+  profilePic: {
+    url: string | null;
+    alt: string | null;
+  };
+  navList: {
+    navListName: string | null;
+    list: Array<{
+      label: string | null;
+      slug: Slug | null;
+    }> | null;
+  } | null;
+  linkList: {
+    linkListName: string | null;
+    list: Array<{
+      label: string | null;
+      svgIcon: string | null;
+      url: string | null;
+    }> | null;
+  } | null;
+}>;
+
 // Query TypeMap
 import "@sanity/client";
 declare module "@sanity/client" {
   interface SanityQueries {
     "*[_type == \"post\" && defined(slug.current)][0...12]{\n  _id, title, slug\n}": POSTS_QUERYResult;
     "*[_type == \"post\" && slug.current == $slug][0]{\n  title, body, mainImage\n}": POST_QUERYResult;
+    "\n  *[_type == \"sidebar\" && _id == \"c94fb9ee-d1af-42fc-9d9c-0f4e791dff0a\"]{\n    \"profilePic\": {\n      \"url\": profilePic.asset->url,\n      \"alt\": profilePic.alt\n    },\n    navList->{\n      navListName,\n      list[]->{\n        label,\n        slug\n      }\n    },\n    linkList->{\n      linkListName,\n      list[]->{\n        label,\n        svgIcon,\n        url\n      }\n    }\n  }\n": SidebarQueryResult;
   }
 }
