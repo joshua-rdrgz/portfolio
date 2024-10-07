@@ -1,5 +1,6 @@
 import { DocumentTextIcon } from '@sanity/icons';
 import { defineArrayMember, defineField, defineType } from 'sanity';
+import { createImageField } from '../utils/createImageField';
 
 export const postType = defineType({
   name: 'post',
@@ -23,28 +24,7 @@ export const postType = defineType({
       type: 'reference',
       to: { type: 'author' },
     }),
-    defineField({
-      name: 'mainImage',
-      type: 'image',
-      options: {
-        hotspot: true,
-      },
-      fields: [
-        defineField({
-          name: 'alt',
-          type: 'string',
-          title: 'Alternative text',
-          validation: (rule) =>
-            rule.custom((value, context) => {
-              const parent = context?.parent as { asset?: { _ref?: string } };
-
-              return !value && parent?.asset?._ref
-                ? 'Alt text is required when an image is present'
-                : true;
-            }),
-        }),
-      ],
-    }),
+    createImageField('mainImage'),
     defineField({
       name: 'categories',
       type: 'array',

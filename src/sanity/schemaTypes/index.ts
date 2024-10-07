@@ -1,16 +1,61 @@
 import { type SchemaTypeDefinition } from 'sanity';
 
-import { blockContentType } from './blockContentType';
 import { authorType, categoryType, postType } from './blog';
+import {
+  blockContentType,
+  jobPropertiesType,
+  linkType,
+  navItemType,
+  projectType,
+  skillType,
+} from './components';
+import { pageBuilderType, sidebarType } from './layout';
+import {
+  aboutSectionType,
+  contactSectionType,
+  heroboxSectionType,
+  projectSectionType,
+  skillSectionType,
+  timelineSectionType,
+} from './layout/sections';
+import {
+  linkListType,
+  navListType,
+  projectListType,
+  skillListType,
+} from './lists';
 
 export const schema: { types: SchemaTypeDefinition[] } = {
   types: [
-    // UI
-    blockContentType,
-
     // BLOG
+    authorType,
     categoryType,
     postType,
-    authorType,
+
+    // COMPONENTS
+    blockContentType,
+    jobPropertiesType,
+    linkType,
+    navItemType,
+    projectType,
+    skillType,
+
+    // LAYOUT
+    pageBuilderType,
+    sidebarType,
+
+    // LAYOUT SECTIONS,
+    aboutSectionType,
+    contactSectionType,
+    heroboxSectionType,
+    projectSectionType,
+    skillSectionType,
+    timelineSectionType,
+
+    // LISTS
+    linkListType,
+    navListType,
+    projectListType,
+    skillListType,
   ],
 };
