@@ -8,6 +8,11 @@ export const sidebarType = defineType({
   type: 'document',
   icon: MenuIcon,
   fields: [
+    defineField({
+      name: 'sidebarName',
+      title: 'Sidebar Name',
+      type: 'string',
+    }),
     createImageField('profilePic', 'Profile Picture'),
     defineField({
       name: 'navList',
