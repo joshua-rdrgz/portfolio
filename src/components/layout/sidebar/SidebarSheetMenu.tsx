@@ -2,6 +2,7 @@
 
 import { Button } from '@/components/ui/button';
 import * as SH from '@/components/ui/sheet';
+import * as SA from '@/components/ui/scroll-area';
 import { SidebarQueryResult } from '@/sanity/types';
 import { MenuIcon } from 'lucide-react';
 import SidebarHeader from './SidebarHeader';
@@ -28,12 +29,17 @@ export default function SidebarSheetMenu({
           <MenuIcon size={20} />
         </Button>
       </SH.Trigger>
-      <SH.Content className='w-72 px-3 h-full flex flex-col' side='left'>
-        <div className='h-full flex flex-col gap-5 justify-between py-16 text-center'>
-          <SidebarHeader profilePic={profilePic} />
-          <SidebarNavigation navProperties={navProperties} />
-          <SidebarLinks linkProperties={linkProperties} />
-        </div>
+      <SH.Content
+        className='w-72 px-3 h-full flex flex-col border-2'
+        side='left'
+      >
+        <SA.Root>
+          <div className='h-full flex flex-col gap-5 justify-between py-16 text-center'>
+            <SidebarHeader profilePic={profilePic} />
+            <SidebarNavigation navProperties={navProperties} />
+            <SidebarLinks linkProperties={linkProperties} />
+          </div>
+        </SA.Root>
       </SH.Content>
     </SH.Root>
   );
