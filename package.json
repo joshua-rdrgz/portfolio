@@ -14,7 +14,8 @@
     "lint": "next lint",
     "predev": "npm run typegen",
     "prebuild": "npm run typegen",
-    "typegen": "sanity schema extract --path=./src/sanity/extract.json && sanity typegen generate"
+    "typegen": "sanity schema extract --path=./src/sanity/extract.json && sanity typegen generate",
+    "check:types": "tsc --noEmit"
   },
   "dependencies": {
     "@focus-reactive/sanity-plugin-inline-svg-input": "^1.1.0",
