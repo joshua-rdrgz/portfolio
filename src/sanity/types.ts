@@ -291,13 +291,13 @@ export type Sidebar = {
     alt?: string;
     _type: "image";
   };
-  navList?: {
+  navListProperties?: {
     _ref: string;
     _type: "reference";
     _weak?: boolean;
     [internalGroqTypeReferenceTo]?: "navList";
   };
-  linkList?: {
+  linkListProperties?: {
     _ref: string;
     _type: "reference";
     _weak?: boolean;
@@ -379,13 +379,13 @@ export type Project = {
     _type: "block";
     _key: string;
   }>;
-  skillList?: {
+  skillListProperties?: {
     _ref: string;
     _type: "reference";
     _weak?: boolean;
     [internalGroqTypeReferenceTo]?: "skillList";
   };
-  linkList?: {
+  linkListProperties?: {
     _ref: string;
     _type: "reference";
     _weak?: boolean;
@@ -421,6 +421,18 @@ export type Project = {
     _type: "image";
     _key: string;
   }>;
+  mainProjectImage?: {
+    asset?: {
+      _ref: string;
+      _type: "reference";
+      _weak?: boolean;
+      [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+    };
+    hotspot?: SanityImageHotspot;
+    crop?: SanityImageCrop;
+    alt?: string;
+    _type: "image";
+  };
 };
 
 export type LinkList = {
@@ -732,20 +744,20 @@ export type POST_QUERYResult = {
 
 // Source: ./src/sanity/lib/queries/sidebarQuery.ts
 // Variable: SidebarQuery
-// Query: *[_type == "sidebar" && _id == "c94fb9ee-d1af-42fc-9d9c-0f4e791dff0a"]{    "profilePic": {      "url": profilePic.asset->url,      "alt": profilePic.alt    },    navList->{      navListName,      list[]->{        label,        slug      }    },    linkList->{      linkListName,      list[]->{        label,        svgIcon,        url      }    }  }
+// Query: *[_type == "sidebar" && _id == "c94fb9ee-d1af-42fc-9d9c-0f4e791dff0a"]{    "profilePic": {      "url": profilePic.asset->url,      "alt": profilePic.alt    },    navListProperties->{      navListName,      list[]->{        label,        slug      }    },    linkListProperties->{      linkListName,      list[]->{        label,        svgIcon,        url      }    }  }
 export type SidebarQueryResult = Array<{
   profilePic: {
     url: string | null;
     alt: string | null;
   };
-  navList: {
+  navListProperties: {
     navListName: string | null;
     list: Array<{
       label: string | null;
       slug: Slug | null;
     }> | null;
   } | null;
-  linkList: {
+  linkListProperties: {
     linkListName: string | null;
     list: Array<{
       label: string | null;
@@ -761,6 +773,6 @@ declare module "@sanity/client" {
   interface SanityQueries {
     "*[_type == \"post\" && defined(slug.current)][0...12]{\n  _id, title, slug\n}": POSTS_QUERYResult;
     "*[_type == \"post\" && slug.current == $slug][0]{\n  title, body, mainImage\n}": POST_QUERYResult;
-    "\n  *[_type == \"sidebar\" && _id == \"c94fb9ee-d1af-42fc-9d9c-0f4e791dff0a\"]{\n    \"profilePic\": {\n      \"url\": profilePic.asset->url,\n      \"alt\": profilePic.alt\n    },\n    navList->{\n      navListName,\n      list[]->{\n        label,\n        slug\n      }\n    },\n    linkList->{\n      linkListName,\n      list[]->{\n        label,\n        svgIcon,\n        url\n      }\n    }\n  }\n": SidebarQueryResult;
+    "\n  *[_type == \"sidebar\" && _id == \"c94fb9ee-d1af-42fc-9d9c-0f4e791dff0a\"]{\n    \"profilePic\": {\n      \"url\": profilePic.asset->url,\n      \"alt\": profilePic.alt\n    },\n    navListProperties->{\n      navListName,\n      list[]->{\n        label,\n        slug\n      }\n    },\n    linkListProperties->{\n      linkListName,\n      list[]->{\n        label,\n        svgIcon,\n        url\n      }\n    }\n  }\n": SidebarQueryResult;
   }
 }

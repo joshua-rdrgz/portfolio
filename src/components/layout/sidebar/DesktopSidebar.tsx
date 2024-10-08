@@ -13,8 +13,8 @@ export default function DesktopSidebar({ sidebarData }: DesktopSidebarProps) {
   const [theSidebarData] = sidebarData;
 
   const profilePic = theSidebarData.profilePic;
-  const navProperties = theSidebarData.navList;
-  const linkProperties = theSidebarData.linkList;
+  const navProperties = theSidebarData.navListProperties;
+  const linkProperties = theSidebarData.linkListProperties;
 
   return (
     <aside className='sticky top-0 left-0 h-screen w-72 px-3 bg-background/95 text-foreground border-r border-border shadow-xl'>

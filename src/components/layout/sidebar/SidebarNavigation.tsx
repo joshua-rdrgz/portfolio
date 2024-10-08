@@ -5,7 +5,7 @@ import Link from 'next/link';
 import React from 'react';
 
 interface SidebarNavigationProps {
-  navProperties: NonNullable<SidebarQueryResult>[0]['navList'];
+  navProperties: NonNullable<SidebarQueryResult>[0]['navListProperties'];
 }
 
 export default function SidebarNavigation({

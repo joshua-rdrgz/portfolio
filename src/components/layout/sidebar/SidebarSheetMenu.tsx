@@ -19,8 +19,8 @@ export default function SidebarSheetMenu({
   const [theSidebarData] = sidebarData;
 
   const profilePic = theSidebarData.profilePic;
-  const navProperties = theSidebarData.navList;
-  const linkProperties = theSidebarData.linkList;
+  const navProperties = theSidebarData.navListProperties;
+  const linkProperties = theSidebarData.linkListProperties;
 
   return (
     <SH.Root>

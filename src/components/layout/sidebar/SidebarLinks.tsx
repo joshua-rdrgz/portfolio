@@ -6,7 +6,7 @@ import Link from 'next/link';
 import styled from 'styled-components';
 
 interface SidebarLinksProps {
-  linkProperties: NonNullable<SidebarQueryResult>[0]['linkList'];
+  linkProperties: NonNullable<SidebarQueryResult>[0]['linkListProperties'];
 }
 
 export default function SidebarLinks({ linkProperties }: SidebarLinksProps) {

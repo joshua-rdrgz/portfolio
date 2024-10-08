@@ -15,13 +15,13 @@ export const sidebarType = defineType({
     }),
     createImageField('profilePic', 'Profile Picture'),
     defineField({
-      name: 'navList',
+      name: 'navListProperties',
       title: 'NavigationList',
       type: 'reference',
       to: { type: 'navList' },
     }),
     defineField({
-      name: 'linkList',
+      name: 'linkListProperties',
       title: 'List of Links',
       type: 'reference',
       to: { type: 'linkList' },

@@ -1,5 +1,6 @@
 import { ProjectsIcon } from '@sanity/icons';
 import { defineArrayMember, defineField, defineType } from 'sanity';
+import { createImageField } from '../utils/createImageField';
 
 export const projectType = defineType({
   name: 'project',
@@ -28,13 +29,13 @@ export const projectType = defineType({
       ],
     }),
     defineField({
-      name: 'skillList',
+      name: 'skillListProperties',
       title: 'List of Skills',
       type: 'reference',
       to: { type: 'skillList' },
     }),
     defineField({
-      name: 'linkList',
+      name: 'linkListProperties',
       title: 'List of Links',
       type: 'reference',
       to: { type: 'linkList' },
@@ -46,5 +47,6 @@ export const projectType = defineType({
         'This will be presented in the project\'s "More Info" modal.',
       type: 'blockContent',
     }),
+    createImageField('mainProjectImage', 'Main Project Image'),
   ],
 });

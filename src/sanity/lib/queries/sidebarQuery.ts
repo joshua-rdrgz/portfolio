@@ -6,14 +6,14 @@ export const SidebarQuery = defineQuery(`
       "url": profilePic.asset->url,
       "alt": profilePic.alt
     },
-    navList->{
+    navListProperties->{
       navListName,
       list[]->{
         label,
         slug
       }
     },
-    linkList->{
+    linkListProperties->{
       linkListName,
       list[]->{
         label,
