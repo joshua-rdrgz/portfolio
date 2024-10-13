@@ -13,7 +13,7 @@ export const projectSectionType = defineType({
       type: 'string',
     }),
     defineField({
-      name: 'projects',
+      name: 'projectListProperties',
       title: 'Projects',
       description: "Choose which project list you'd like to showcase",
       type: 'reference',
