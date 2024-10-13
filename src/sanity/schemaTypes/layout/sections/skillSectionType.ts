@@ -19,7 +19,7 @@ export const skillSectionType = defineType({
       of: [defineArrayMember({ type: 'block' })],
     }),
     defineField({
-      name: 'skillList',
+      name: 'skillListProperties',
       title: 'Skill List',
       description: 'Choose which skill list you would like to use.',
       type: 'reference',
