@@ -23,7 +23,8 @@ export default function Skills({ data }: SkillsProps) {
         <ul>
           {data.skillListProperties?.list?.map((skill, idx) => (
             <li key={`${skill.label}-${idx}`}>
-              <SvgRenderer svg={skill.svgIcon!} />
+              {/* TODO: Fix SVG Issues! */}
+              {/* <SvgRenderer svg={skill.svgIcon!} /> */}
               <div>{skill.label}</div>
             </li>
           ))}
