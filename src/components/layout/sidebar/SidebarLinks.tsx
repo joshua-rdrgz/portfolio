@@ -1,9 +1,8 @@
 'use client';
 
+import SvgRenderer from '@/components/ui/SvgRenderer';
 import { SidebarQueryResult } from '@/sanity/types';
-import DOMPurify from 'dompurify';
 import Link from 'next/link';
-import styled from 'styled-components';
 
 interface SidebarLinksProps {
   linkProperties: NonNullable<SidebarQueryResult>[0]['linkListProperties'];
@@ -25,13 +24,7 @@ export default function SidebarLinks({ linkProperties }: SidebarLinksProps) {
                   target='_blank'
                   className='flex items-center justify-center gap-2'
                 >
-                  <SvgWrapper>
-                    <div
-                      dangerouslySetInnerHTML={{
-                        __html: DOMPurify.sanitize(linkItem.svgIcon!),
-                      }}
-                    />
-                  </SvgWrapper>
+                  <SvgRenderer svg={linkItem.svgIcon!} />
                   <div className='text-lg font-medium'>{linkItem.label}</div>
                 </Link>
               </li>
@@ -42,27 +35,3 @@ export default function SidebarLinks({ linkProperties }: SidebarLinksProps) {
     </section>
   );
 }
-
-const SvgWrapper = styled.div`
-  display: flex;
-  max-height: 320px;
-  width: 2.5rem;
-  height: 2.5rem;
-
-  > div {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    height: 100%;
-  }
-
-  svg {
-    max-height: 80%;
-    max-width: 80%;
-    display: flex;
-    margin: auto;
-    width: 100%;
-    height: 100%;
-  }
-`;

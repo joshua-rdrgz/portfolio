@@ -651,7 +651,7 @@
           },
           "optional": true
         },
-        "skillList": {
+        "skillListProperties": {
           "type": "objectAttribute",
           "value": {
             "type": "object",
@@ -734,7 +734,7 @@
           },
           "optional": true
         },
-        "projects": {
+        "projectListProperties": {
           "type": "objectAttribute",
           "value": {
             "type": "object",

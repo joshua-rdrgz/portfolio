@@ -113,7 +113,7 @@ export type SkillSection = {
     _type: "block";
     _key: string;
   }>;
-  skillList?: {
+  skillListProperties?: {
     _ref: string;
     _type: "reference";
     _weak?: boolean;
@@ -130,7 +130,7 @@ export type ProjectSection = {
     [internalGroqTypeReferenceTo]?: "navItem";
   };
   header?: string;
-  projects?: {
+  projectListProperties?: {
     _ref: string;
     _type: "reference";
     _weak?: boolean;
@@ -742,6 +742,252 @@ export type POST_QUERYResult = {
   } | null;
 } | null;
 
+// Source: ./src/sanity/lib/queries/portfolioContentQuery.ts
+// Variable: PortfolioContentQuery
+// Query: *[_type == "pageBuilder"][0]{    title,    pageContent[]{      _type,      header,      navItemRef->{        label,        "slug": slug.current      },      (_type == "heroboxSection")=>{        prefix,        tagline,        heroboxImage{          alt,          "src": asset->url        }      },      (_type == "skillSection")=>{        description,        skillListProperties->{          skillListName,          list[]->{            label,            svgIcon          }        }      },      (_type == "timelineSection")=>{        timeline[]->{          title,          dates,          companyName,          location,          description        }      },      (_type == "projectSection")=>{        projectListProperties->{          projectListName,          list[]->{            title,            subtitle,            description,            skillListProperties->{              skillListName,              list[]->{                label,                svgIcon              }            },            linkListProperties->{              linkListName,              list[]->{                label,                svgIcon,                url              }            },            modalContent,            mainProjectImage{              alt,              "src": asset->url            }          }        }      },      (_type == "aboutSection")=>{        content,        aboutImage{          alt,          "src": asset->url        }      },      (_type == "contactSection")=>{        contactImage{          alt,           "src": asset->url        }      }    }  }
+export type PortfolioContentQueryResult = {
+  title: string | null;
+  pageContent: Array<{
+    _type: "aboutSection";
+    header: string | null;
+    navItemRef: {
+      label: string | null;
+      slug: string | null;
+    } | null;
+    content: Array<{
+      children?: Array<{
+        marks?: Array<string>;
+        text?: string;
+        _type: "span";
+        _key: string;
+      }>;
+      style?: "blockquote" | "h1" | "h2" | "h3" | "h4" | "normal";
+      listItem?: "bullet";
+      markDefs?: Array<{
+        href?: string;
+        _type: "link";
+        _key: string;
+      }>;
+      level?: number;
+      _type: "block";
+      _key: string;
+    } | {
+      asset?: {
+        _ref: string;
+        _type: "reference";
+        _weak?: boolean;
+        [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+      };
+      hotspot?: SanityImageHotspot;
+      crop?: SanityImageCrop;
+      alt?: string;
+      _type: "image";
+      _key: string;
+    }> | null;
+    aboutImage: {
+      alt: string | null;
+      src: string | null;
+    } | null;
+  } | {
+    _type: "contactSection";
+    header: string | null;
+    navItemRef: {
+      label: string | null;
+      slug: string | null;
+    } | null;
+    contactImage: {
+      alt: string | null;
+      src: string | null;
+    } | null;
+  } | {
+    _type: "heroboxSection";
+    header: string | null;
+    navItemRef: {
+      label: string | null;
+      slug: string | null;
+    } | null;
+    prefix: string | null;
+    tagline: Array<{
+      children?: Array<{
+        marks?: Array<string>;
+        text?: string;
+        _type: "span";
+        _key: string;
+      }>;
+      style?: "blockquote" | "h1" | "h2" | "h3" | "h4" | "h5" | "h6" | "normal";
+      listItem?: "bullet" | "number";
+      markDefs?: Array<{
+        href?: string;
+        _type: "link";
+        _key: string;
+      }>;
+      level?: number;
+      _type: "block";
+      _key: string;
+    }> | null;
+    heroboxImage: {
+      alt: string | null;
+      src: string | null;
+    } | null;
+  } | {
+    _type: "projectSection";
+    header: string | null;
+    navItemRef: {
+      label: string | null;
+      slug: string | null;
+    } | null;
+    projectListProperties: {
+      projectListName: string | null;
+      list: Array<{
+        title: string | null;
+        subtitle: string | null;
+        description: Array<{
+          children?: Array<{
+            marks?: Array<string>;
+            text?: string;
+            _type: "span";
+            _key: string;
+          }>;
+          style?: "blockquote" | "h1" | "h2" | "h3" | "h4" | "h5" | "h6" | "normal";
+          listItem?: "bullet" | "number";
+          markDefs?: Array<{
+            href?: string;
+            _type: "link";
+            _key: string;
+          }>;
+          level?: number;
+          _type: "block";
+          _key: string;
+        }> | null;
+        skillListProperties: {
+          skillListName: string | null;
+          list: Array<{
+            label: string | null;
+            svgIcon: string | null;
+          }> | null;
+        } | null;
+        linkListProperties: {
+          linkListName: string | null;
+          list: Array<{
+            label: string | null;
+            svgIcon: string | null;
+            url: string | null;
+          }> | null;
+        } | null;
+        modalContent: Array<{
+          children?: Array<{
+            marks?: Array<string>;
+            text?: string;
+            _type: "span";
+            _key: string;
+          }>;
+          style?: "blockquote" | "h1" | "h2" | "h3" | "h4" | "normal";
+          listItem?: "bullet";
+          markDefs?: Array<{
+            href?: string;
+            _type: "link";
+            _key: string;
+          }>;
+          level?: number;
+          _type: "block";
+          _key: string;
+        } | {
+          asset?: {
+            _ref: string;
+            _type: "reference";
+            _weak?: boolean;
+            [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+          };
+          hotspot?: SanityImageHotspot;
+          crop?: SanityImageCrop;
+          alt?: string;
+          _type: "image";
+          _key: string;
+        }> | null;
+        mainProjectImage: {
+          alt: string | null;
+          src: string | null;
+        } | null;
+      }> | null;
+    } | null;
+  } | {
+    _type: "skillSection";
+    header: string | null;
+    navItemRef: {
+      label: string | null;
+      slug: string | null;
+    } | null;
+    description: Array<{
+      children?: Array<{
+        marks?: Array<string>;
+        text?: string;
+        _type: "span";
+        _key: string;
+      }>;
+      style?: "blockquote" | "h1" | "h2" | "h3" | "h4" | "h5" | "h6" | "normal";
+      listItem?: "bullet" | "number";
+      markDefs?: Array<{
+        href?: string;
+        _type: "link";
+        _key: string;
+      }>;
+      level?: number;
+      _type: "block";
+      _key: string;
+    }> | null;
+    skillListProperties: {
+      skillListName: string | null;
+      list: Array<{
+        label: string | null;
+        svgIcon: string | null;
+      }> | null;
+    } | null;
+  } | {
+    _type: "timelineSection";
+    header: string | null;
+    navItemRef: {
+      label: string | null;
+      slug: string | null;
+    } | null;
+    timeline: Array<{
+      title: string | null;
+      dates: string | null;
+      companyName: string | null;
+      location: string | null;
+      description: Array<{
+        children?: Array<{
+          marks?: Array<string>;
+          text?: string;
+          _type: "span";
+          _key: string;
+        }>;
+        style?: "blockquote" | "h1" | "h2" | "h3" | "h4" | "normal";
+        listItem?: "bullet";
+        markDefs?: Array<{
+          href?: string;
+          _type: "link";
+          _key: string;
+        }>;
+        level?: number;
+        _type: "block";
+        _key: string;
+      } | {
+        asset?: {
+          _ref: string;
+          _type: "reference";
+          _weak?: boolean;
+          [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+        };
+        hotspot?: SanityImageHotspot;
+        crop?: SanityImageCrop;
+        alt?: string;
+        _type: "image";
+        _key: string;
+      }> | null;
+    }> | null;
+  }> | null;
+} | null;
+
 // Source: ./src/sanity/lib/queries/sidebarQuery.ts
 // Variable: SidebarQuery
 // Query: *[_type == "sidebar" && _id == "c94fb9ee-d1af-42fc-9d9c-0f4e791dff0a"]{    "profilePic": {      "url": profilePic.asset->url,      "alt": profilePic.alt    },    navListProperties->{      navListName,      list[]->{        label,        slug      }    },    linkListProperties->{      linkListName,      list[]->{        label,        svgIcon,        url      }    }  }
@@ -773,6 +1019,7 @@ declare module "@sanity/client" {
   interface SanityQueries {
     "*[_type == \"post\" && defined(slug.current)][0...12]{\n  _id, title, slug\n}": POSTS_QUERYResult;
     "*[_type == \"post\" && slug.current == $slug][0]{\n  title, body, mainImage\n}": POST_QUERYResult;
+    "\n  *[_type == \"pageBuilder\"][0]{\n    title,\n    pageContent[]{\n      _type,\n      header,\n      navItemRef->{\n        label,\n        \"slug\": slug.current\n      },\n      (_type == \"heroboxSection\")=>{\n        prefix,\n        tagline,\n        heroboxImage{\n          alt,\n          \"src\": asset->url\n        }\n      },\n      (_type == \"skillSection\")=>{\n        description,\n        skillListProperties->{\n          skillListName,\n          list[]->{\n            label,\n            svgIcon\n          }\n        }\n      },\n      (_type == \"timelineSection\")=>{\n        timeline[]->{\n          title,\n          dates,\n          companyName,\n          location,\n          description\n        }\n      },\n      (_type == \"projectSection\")=>{\n        projectListProperties->{\n          projectListName,\n          list[]->{\n            title,\n            subtitle,\n            description,\n            skillListProperties->{\n              skillListName,\n              list[]->{\n                label,\n                svgIcon\n              }\n            },\n            linkListProperties->{\n              linkListName,\n              list[]->{\n                label,\n                svgIcon,\n                url\n              }\n            },\n            modalContent,\n            mainProjectImage{\n              alt,\n              \"src\": asset->url\n            }\n          }\n        }\n      },\n      (_type == \"aboutSection\")=>{\n        content,\n        aboutImage{\n          alt,\n          \"src\": asset->url\n        }\n      },\n      (_type == \"contactSection\")=>{\n        contactImage{\n          alt, \n          \"src\": asset->url\n        }\n      }\n    }\n  }  \n": PortfolioContentQueryResult;
     "\n  *[_type == \"sidebar\" && _id == \"c94fb9ee-d1af-42fc-9d9c-0f4e791dff0a\"]{\n    \"profilePic\": {\n      \"url\": profilePic.asset->url,\n      \"alt\": profilePic.alt\n    },\n    navListProperties->{\n      navListName,\n      list[]->{\n        label,\n        slug\n      }\n    },\n    linkListProperties->{\n      linkListName,\n      list[]->{\n        label,\n        svgIcon,\n        url\n      }\n    }\n  }\n": SidebarQueryResult;
   }
 }

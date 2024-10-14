@@ -34,7 +34,7 @@ export default async function RootLayout({
         <ThemeProvider attribute='class' defaultTheme='system'>
           <div className='lg:flex'>
             <Sidebar sidebarData={sidebarData} />
-            <main>{children}</main>
+            <main className='px-7'>{children}</main>
           </div>
         </ThemeProvider>
       </body>
