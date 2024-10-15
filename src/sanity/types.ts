@@ -350,6 +350,18 @@ export type Skill = {
   _updatedAt: string;
   _rev: string;
   svgIcon?: string;
+  skillIcon?: {
+    asset?: {
+      _ref: string;
+      _type: "reference";
+      _weak?: boolean;
+      [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+    };
+    hotspot?: SanityImageHotspot;
+    crop?: SanityImageCrop;
+    alt?: string;
+    _type: "image";
+  };
   label?: string;
 };
 
@@ -484,6 +496,18 @@ export type Link = {
   _updatedAt: string;
   _rev: string;
   svgIcon?: string;
+  linkIcon?: {
+    asset?: {
+      _ref: string;
+      _type: "reference";
+      _weak?: boolean;
+      [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+    };
+    hotspot?: SanityImageHotspot;
+    crop?: SanityImageCrop;
+    alt?: string;
+    _type: "image";
+  };
   label?: string;
   url?: string;
 };
