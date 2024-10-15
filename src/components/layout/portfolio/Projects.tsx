@@ -7,6 +7,7 @@ import Link from 'next/link';
 import * as D from '@/components/ui/dialog';
 import * as SA from '@/components/ui/scroll-area';
 import AppImage from '@/components/ui/AppImage';
+import { components } from '@/sanity/portableTextComponents';
 
 type NonNullablePortfolioContent = NonNullable<PortfolioContentQueryResult>;
 
@@ -46,7 +47,10 @@ export default function Projects({ data }: ProjectsProps) {
                 <D.Title>{project.title}</D.Title>
                 <SA.Root className='max-w-[600px] max-h-[750px]'>
                   {/* TODO: Images (they exist but aren't rendered) */}
-                  <PortableText value={project.modalContent!} />
+                  <PortableText
+                    value={project.modalContent!}
+                    components={components}
+                  />
                 </SA.Root>
               </D.Content>
             </D.Root>
