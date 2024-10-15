@@ -23,6 +23,8 @@ export default function Herobox({ data }: HeroboxProps) {
         src={data.heroboxImage?.src}
         alt={data.heroboxImage?.alt}
         priority
+        wrapperClassName='w-full h-full'
+        className='w-auto'
       />
     </section>
   );

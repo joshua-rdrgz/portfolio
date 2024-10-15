@@ -8,26 +8,38 @@ interface ImageProps {
   src?: string | null;
   alt?: string | null;
   priority?: boolean;
+  width?: number;
+  height?: number;
+  className?: string;
+  wrapperClassName?: string;
 }
 
-export default function AppImage({ src, alt, priority = false }: ImageProps) {
+export default function AppImage({
+  src,
+  alt,
+  priority = false,
+  width = 800,
+  height = 400,
+  className,
+  wrapperClassName,
+}: ImageProps) {
   return (
-    <>
+    <div className={wrapperClassName}>
       {src ? (
         <Image
-          className='w-full aspect-[800/400]'
+          className={className}
           src={urlFor(src)
-            .width(800)
-            .height(400)
+            .width(width)
+            .height(height)
             .quality(80)
             .auto('format')
             .url()}
           alt={alt!}
-          width='800'
-          height='400'
+          width={width}
+          height={height}
           priority={priority}
         />
       ) : null}
-    </>
+    </div>
   );
 }

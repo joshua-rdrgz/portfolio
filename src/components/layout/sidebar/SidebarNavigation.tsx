@@ -23,7 +23,7 @@ export default function SidebarNavigation({
               key={idx}
               className='cursor-pointer hover:bg-secondary text-2xl font-medium py-1'
             >
-              <Link href={`#${navItem.slug?.current}`}>{navItem.label}</Link>
+              <Link href={`#${navItem.slug}`}>{navItem.label}</Link>
             </li>
           ))}
         </ul>

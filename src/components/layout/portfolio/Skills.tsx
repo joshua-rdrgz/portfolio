@@ -1,9 +1,8 @@
 'use client';
 
-import SvgRenderer from '@/components/ui/SvgRenderer';
+import AppImage from '@/components/ui/AppImage';
 import { PortfolioContentQueryResult } from '@/sanity/types';
 import { PortableText } from 'next-sanity';
-import React from 'react';
 
 type NonNullablePortfolioContent = NonNullable<PortfolioContentQueryResult>;
 
@@ -23,8 +22,14 @@ export default function Skills({ data }: SkillsProps) {
         <ul>
           {data.skillListProperties?.list?.map((skill, idx) => (
             <li key={`${skill.label}-${idx}`}>
-              {/* TODO: Fix SVG Issues! */}
-              {/* <SvgRenderer svg={skill.svgIcon!} /> */}
+              <AppImage
+                src={skill.skillIcon?.src}
+                alt={skill.skillIcon?.alt}
+                width={25}
+                height={25}
+                wrapperClassName='w-8 h-8'
+                className='w-auto'
+              />
               <div>{skill.label}</div>
             </li>
           ))}

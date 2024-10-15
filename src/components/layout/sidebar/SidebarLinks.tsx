@@ -1,5 +1,6 @@
 'use client';
 
+import AppImage from '@/components/ui/AppImage';
 import SvgRenderer from '@/components/ui/SvgRenderer';
 import { SidebarQueryResult } from '@/sanity/types';
 import Link from 'next/link';
@@ -24,7 +25,14 @@ export default function SidebarLinks({ linkProperties }: SidebarLinksProps) {
                   target='_blank'
                   className='flex items-center justify-center gap-2'
                 >
-                  <SvgRenderer svg={linkItem.svgIcon!} />
+                  <AppImage
+                    src={linkItem.linkIcon?.src}
+                    alt={linkItem.linkIcon?.alt}
+                    width={25}
+                    height={25}
+                    wrapperClassName='w-8 h-8'
+                    className='w-auto'
+                  />
                   <div className='text-lg font-medium'>{linkItem.label}</div>
                 </Link>
               </li>

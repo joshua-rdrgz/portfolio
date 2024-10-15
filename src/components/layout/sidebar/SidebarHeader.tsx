@@ -12,7 +12,12 @@ interface SidebarHeaderProps {
 export default function SidebarHeader({ profilePic }: SidebarHeaderProps) {
   return (
     <section className='flex flex-col gap-4'>
-      <AppImage src={profilePic.url} alt={profilePic.alt} priority />
+      <AppImage
+        src={profilePic.url}
+        alt={profilePic.alt}
+        className='w-full aspect-[800/400]'
+        priority
+      />
       <div className='font-bold text-5xl text-wrap'>Joshua Rodriguez</div>
     </section>
   );
