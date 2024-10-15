@@ -10,15 +10,18 @@ export const SidebarQuery = defineQuery(`
       navListName,
       list[]->{
         label,
-        slug
+        "slug": slug.current
       }
     },
     linkListProperties->{
       linkListName,
       list[]->{
         label,
-        svgIcon,
-        url
+        url,
+        linkIcon{
+          alt,
+          "src": asset->url
+        }
       }
     }
   }

@@ -24,7 +24,10 @@ export const PortfolioContentQuery = defineQuery(`
           skillListName,
           list[]->{
             label,
-            svgIcon
+            skillIcon{
+              alt,
+              "src": asset->url
+            }
           }
         }
       },
@@ -48,15 +51,21 @@ export const PortfolioContentQuery = defineQuery(`
               skillListName,
               list[]->{
                 label,
-                svgIcon
+                skillIcon{
+                  alt,
+                  "src": asset->url
+                }
               }
             },
             linkListProperties->{
               linkListName,
               list[]->{
                 label,
-                svgIcon,
-                url
+                url,
+                linkIcon{
+                  alt,
+                  "src": asset->url
+                }
               }
             },
             modalContent,
