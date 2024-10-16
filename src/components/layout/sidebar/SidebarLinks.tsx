@@ -1,7 +1,6 @@
 'use client';
 
 import AppImage from '@/components/ui/AppImage';
-import SvgRenderer from '@/components/ui/SvgRenderer';
 import { SidebarQueryResult } from '@/sanity/types';
 import Link from 'next/link';
 
