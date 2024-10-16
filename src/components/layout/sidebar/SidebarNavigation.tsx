@@ -6,11 +6,40 @@ import React from 'react';
 
 interface SidebarNavigationProps {
   navProperties: NonNullable<SidebarQueryResult>[0]['navListProperties'];
+  onNavItemClick?: () => void;
 }
 
 export default function SidebarNavigation({
   navProperties,
+  onNavItemClick,
 }: SidebarNavigationProps) {
+  const handleNavClick = (e: React.MouseEvent, slug: string | null) => {
+    e.preventDefault();
+
+    const targetElement = document.querySelector(`#${slug}`);
+    if (targetElement) {
+      const isMobile = window.innerWidth < 1024;
+
+      if (isMobile) {
+        const mobileHeader = document.querySelector('header');
+        const headerHeight = mobileHeader ? mobileHeader.offsetHeight : 0;
+
+        const elementPosition =
+          targetElement.getBoundingClientRect().top + window.pageYOffset;
+        window.scrollTo({
+          top: elementPosition - headerHeight,
+          behavior: 'smooth',
+        });
+      } else {
+        targetElement.scrollIntoView({ behavior: 'smooth' });
+      }
+
+      if (onNavItemClick) {
+        onNavItemClick();
+      }
+    }
+  };
+
   return (
     <section className='flex flex-col gap-3'>
       <div className='font-raleway underline text-sm'>
@@ -23,7 +52,13 @@ export default function SidebarNavigation({
               key={idx}
               className='cursor-pointer hover:bg-secondary text-2xl font-medium py-1'
             >
-              <Link href={`#${navItem.slug}`}>{navItem.label}</Link>
+              <Link
+                href={`#${navItem.slug}`}
+                className='block'
+                onClick={(e) => handleNavClick(e, navItem.slug)}
+              >
+                {navItem.label}
+              </Link>
             </li>
           ))}
         </ul>
