@@ -2,6 +2,7 @@
 
 import { SidebarQueryResult } from '@/sanity/types';
 import { ModeToggle } from '@/components/theme/mode-toggle';
+import * as SA from '@/components/ui/scroll-area';
 import * as SH from '@/components/ui/sheet';
 import { Button } from '@/components/ui/button';
 import { MenuIcon } from 'lucide-react';
@@ -41,14 +42,16 @@ export default function MobileSidebar({ sidebarData }: MobileSidebarProps) {
               side='left'
             >
               <SH.Title className='sr-only'>Navigation Menu</SH.Title>
-              <div className='h-full flex flex-col gap-5 justify-between py-16 text-center'>
-                <SidebarHeader profilePic={profilePic} />
-                <SidebarNavigation
-                  navProperties={navProperties}
-                  onNavItemClick={() => setIsOpen(false)}
-                />
-                <SidebarLinks linkProperties={linkProperties} />
-              </div>
+              <SA.Root className='w-full h-full'>
+                <div className='h-full flex flex-col gap-5 justify-between py-16 text-center'>
+                  <SidebarHeader profilePic={profilePic} />
+                  <SidebarNavigation
+                    navProperties={navProperties}
+                    onNavItemClick={() => setIsOpen(false)}
+                  />
+                  <SidebarLinks linkProperties={linkProperties} />
+                </div>
+              </SA.Root>
             </SH.Content>
           </SH.Root>
           <h1 className='font-bold'>Joshua Rodriguez</h1>
