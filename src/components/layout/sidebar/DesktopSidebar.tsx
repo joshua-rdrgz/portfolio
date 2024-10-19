@@ -4,7 +4,6 @@ import { SidebarQueryResult } from '@/sanity/types';
 import SidebarHeader from './SidebarHeader';
 import SidebarLinks from './SidebarLinks';
 import SidebarNavigation from './SidebarNavigation';
-import { ModeToggle } from '@/components/theme/mode-toggle';
 
 interface DesktopSidebarProps {
   sidebarData: SidebarQueryResult;
@@ -24,9 +23,6 @@ export default function DesktopSidebar({ sidebarData }: DesktopSidebarProps) {
           <SidebarHeader profilePic={profilePic} />
           <SidebarNavigation navProperties={navProperties} />
           <SidebarLinks linkProperties={linkProperties} />
-        </div>
-        <div className='mt-auto mb-4 flex justify-center'>
-          <ModeToggle />
         </div>
       </div>
     </aside>

@@ -1,6 +1,5 @@
 import '@/app/globals.css';
 import Sidebar from '@/components/layout/sidebar';
-import { ThemeProvider } from '@/components/theme/theme-provider';
 import { client } from '@/sanity/lib/client';
 import { SidebarQuery } from '@/sanity/lib/queries';
 import { League_Spartan, Raleway } from 'next/font/google';
@@ -31,12 +30,10 @@ export default async function RootLayout({
       className={`${raleway.variable} ${leagueSpartan.variable}`}
     >
       <body className='font-raleway'>
-        <ThemeProvider attribute='class' defaultTheme='system'>
-          <div className='lg:flex'>
-            <Sidebar sidebarData={sidebarData} />
-            <main className='px-7'>{children}</main>
-          </div>
-        </ThemeProvider>
+        <div className='lg:flex'>
+          <Sidebar sidebarData={sidebarData} />
+          <main className='px-7'>{children}</main>
+        </div>
       </body>
     </html>
   );

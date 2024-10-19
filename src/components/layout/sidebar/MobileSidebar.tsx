@@ -1,7 +1,6 @@
 'use client';
 
 import { SidebarQueryResult } from '@/sanity/types';
-import { ModeToggle } from '@/components/theme/mode-toggle';
 import * as SA from '@/components/ui/scroll-area';
 import * as SH from '@/components/ui/sheet';
 import { Button } from '@/components/ui/button';
@@ -55,9 +54,6 @@ export default function MobileSidebar({ sidebarData }: MobileSidebarProps) {
             </SH.Content>
           </SH.Root>
           <h1 className='font-bold'>Joshua Rodriguez</h1>
-        </div>
-        <div className='flex flex-1 items-center justify-end'>
-          <ModeToggle />
         </div>
       </div>
     </header>
