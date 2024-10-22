@@ -45,7 +45,7 @@ export default function Projects({ data }: ProjectsProps) {
               <D.Trigger asChild>
                 <Button>More Info</Button>
               </D.Trigger>
-              <D.Content className=' max-w-max'>
+              <D.Content className='max-w-max'>
                 <D.Title>{project.title}</D.Title>
                 <SA.Root className='max-w-[600px] max-h-[750px]'>
                   {/* TODO: Images (they exist but aren't rendered) */}
@@ -57,11 +57,7 @@ export default function Projects({ data }: ProjectsProps) {
               </D.Content>
             </D.Root>
             {project.linkListProperties?.list?.map((link, linkIdx) => (
-              <Button
-                key={`${link.label}-${linkIdx}`}
-                variant='secondary'
-                asChild
-              >
+              <Button key={`${link.label}-${linkIdx}`} asChild>
                 <Link href={link.url!} target='_blank'>
                   {link.label}
                 </Link>

@@ -50,7 +50,7 @@ export default function SidebarNavigation({
           {navProperties?.list?.map((navItem, idx) => (
             <li
               key={idx}
-              className='cursor-pointer hover:bg-secondary text-2xl font-medium py-1'
+              className='cursor-pointer rounded-sm hover:bg-accent hover:text-accent-foreground transition-colors text-2xl font-medium py-1'
             >
               <Link
                 href={`#${navItem.slug}`}

@@ -57,8 +57,8 @@ const config: Config = {
         },
       },
       fontFamily: {
-        'league-spartan': ['var(--font-league-spartan)'],
-        raleway: ['var(--font-raleway)'],
+        'dm-mono': ['var(--font-dm-mono)'],
+        'dm-sans': ['var(--font-dm-sans)'],
       },
     },
   },

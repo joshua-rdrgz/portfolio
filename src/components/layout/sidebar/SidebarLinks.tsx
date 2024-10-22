@@ -18,7 +18,10 @@ export default function SidebarLinks({ linkProperties }: SidebarLinksProps) {
         {linkProperties?.list?.map((linkItem, idx) => {
           return (
             linkItem.url && (
-              <li key={idx} className='cursor-pointer hover:bg-secondary'>
+              <li
+                key={idx}
+                className='cursor-pointer rounded-sm hover:bg-accent hover:text-accent-foreground p-1 transition-colors'
+              >
                 <Link
                   href={`${linkItem.url}`}
                   target='_blank'

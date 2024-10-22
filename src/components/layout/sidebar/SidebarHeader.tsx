@@ -15,10 +15,12 @@ export default function SidebarHeader({ profilePic }: SidebarHeaderProps) {
       <AppImage
         src={profilePic.url}
         alt={profilePic.alt}
-        className='w-full aspect-[800/400]'
+        className='ml-auto mr-auto rounded-sm w-[200px] shadow-lg'
+        width={400}
+        height={400}
         priority
       />
-      <div className='font-bold text-5xl text-wrap'>Joshua Rodriguez</div>
+      <div className='font-bold text-wrap text-4xl'>Joshua Rodriguez</div>
     </section>
   );
 }
