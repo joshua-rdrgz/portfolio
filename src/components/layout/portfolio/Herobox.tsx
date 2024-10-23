@@ -36,7 +36,7 @@ export default function Herobox({ data }: HeroboxProps) {
         <h2 className='text-4xl md:text-6xl lg:text-7xl py-4 text-foreground'>
           {data.header}
         </h2>
-        <div className='text-lg md:text-xl lg:text-2xl max-w-lg text-foreground'>
+        <div className='text-lg max-w-lg mx-auto md:text-xl md:mx-0 lg:text-2xl text-foreground'>
           <PortableText
             value={data.tagline!}
             components={{
