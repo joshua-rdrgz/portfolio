@@ -16,35 +16,41 @@ interface SkillsProps {
 
 export default function Skills({ data }: SkillsProps) {
   return (
-    <section id={data.navItemRef?.slug!}>
-      <h2 className='text-4xl font-bold'>{data.header}</h2>
-      <div className='text-md'>
-        <PortableText
-          value={data.description!}
-          components={{
-            marks: {
-              strong: ({ children }) => <strong>{children}</strong>,
-            },
-          }}
-        />
+    <section id={data.navItemRef?.slug!} className='mt-8'>
+      <div className='flex flex-col text-center md:text-left mb-12 md:gap-6 gap-4'>
+        <h2 className='text-4xl md:text-5xl font-bold'>{data.header}</h2>
+        <div className='text-lg md:text-xl'>
+          <PortableText
+            value={data.description!}
+            components={{
+              marks: {
+                strong: ({ children }) => <strong>{children}</strong>,
+              },
+            }}
+          />
+        </div>
       </div>
-      <ul className='flex flex-wrap w-full gap-4 justify-center items-center'>
+      <ul className='flex flex-wrap gap-4 justify-center'>
         {data.skillListProperties?.list?.map((skill, idx) => (
           <C.Root
             key={`${skill.label}-${idx}`}
-            className='max-w-[200px] hover:bg-accent hover:text-accent-foreground hover:scale-105 transition-transform text-center'
+            className='w-[150px] md:w-[200px] hover:bg-accent hover:text-accent-foreground hover:scale-105 transition-transform'
           >
             <C.Content>
               <li>
-                <AppImage
-                  src={skill.skillIcon?.src}
-                  alt={skill.skillIcon?.alt}
-                  width={25}
-                  height={25}
-                  wrapperClassName='w-full h-auto p-4'
-                  className='w-full h-auto'
-                />
-                <C.Title>{skill.label}</C.Title>
+                <div className='flex items-center justify-center p-4'>
+                  <AppImage
+                    src={skill.skillIcon?.src}
+                    alt={skill.skillIcon?.alt}
+                    width={25}
+                    height={25}
+                    wrapperClassName='w-16 md:w-24 h-16 md:h-24'
+                    className='w-full h-full object-contain'
+                  />
+                </div>
+                <C.Title className='text-base md:text-lg text-center'>
+                  {skill.label}
+                </C.Title>
               </li>
             </C.Content>
           </C.Root>
