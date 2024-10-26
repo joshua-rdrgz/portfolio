@@ -18,8 +18,10 @@ export default function Skills({ data }: SkillsProps) {
   return (
     <section id={data.navItemRef?.slug!} className='mt-8'>
       <div className='flex flex-col text-center md:text-left mb-12 md:gap-6 gap-4'>
-        <h2 className='text-4xl md:text-5xl font-bold'>{data.header}</h2>
-        <div className='text-lg md:text-xl'>
+        <h2 className='text-4xl md:text-5xl font-bold text-center'>
+          {data.header}
+        </h2>
+        <div className='text-lg md:text-xl text-center'>
           <PortableText
             value={data.description!}
             components={{
