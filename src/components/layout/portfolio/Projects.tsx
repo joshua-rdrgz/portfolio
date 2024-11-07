@@ -31,7 +31,7 @@ export default function Projects({ data }: ProjectsProps) {
         {data.projectListProperties?.list?.map((project, projectIdx) => (
           <li
             key={`${project.title}-${projectIdx}`}
-            className={`relative md:grid md:grid-cols-3 md:grid-rows-[0.1fr_0.8fr_0.1fr] md:gap-8`}
+            className={`relative md:grid md:grid-cols-3 md:grid-rows-[0.1fr_0.8fr_0.1fr] md:gap-8 last:-mb-10`}
           >
             <div
               className={`relative z-0 w-full md:row-span-full ${
