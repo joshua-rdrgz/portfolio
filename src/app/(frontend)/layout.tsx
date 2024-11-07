@@ -1,5 +1,6 @@
 import '@/app/globals.css';
 import Sidebar from '@/components/layout/sidebar';
+import { Toaster } from '@/components/ui/toaster';
 import { client } from '@/sanity/lib/client';
 import { SidebarQuery } from '@/sanity/lib/queries';
 import { DM_Mono } from 'next/font/google';
@@ -24,6 +25,7 @@ export default async function RootLayout({
         <div className='lg:flex'>
           <Sidebar sidebarData={sidebarData} />
           <main className='px-7'>{children}</main>
+          <Toaster />
         </div>
       </body>
     </html>
