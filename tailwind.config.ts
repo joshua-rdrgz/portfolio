@@ -57,8 +57,7 @@ const config: Config = {
         },
       },
       fontFamily: {
-        'dm-mono': ['var(--font-dm-mono)'],
-        'dm-sans': ['var(--font-dm-sans)'],
+        athiti: ['var(--font-athiti)'],
       },
     },
   },

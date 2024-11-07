@@ -3,12 +3,12 @@ import Sidebar from '@/components/layout/sidebar';
 import { Toaster } from '@/components/ui/toaster';
 import { client } from '@/sanity/lib/client';
 import { SidebarQuery } from '@/sanity/lib/queries';
-import { DM_Mono } from 'next/font/google';
+import { Athiti } from 'next/font/google';
 
-const dmMono = DM_Mono({
+const dmMono = Athiti({
   subsets: ['latin'],
   display: 'swap',
-  variable: '--font-dm-mono',
+  variable: '--font-athiti',
   weight: '400',
 });
 
@@ -21,7 +21,7 @@ export default async function RootLayout({
 
   return (
     <html lang='en' suppressHydrationWarning className={`${dmMono.variable}`}>
-      <body className='font-dm-mono'>
+      <body className='font-athiti'>
         <div className='lg:flex'>
           <Sidebar sidebarData={sidebarData} />
           <main className='px-7'>{children}</main>
