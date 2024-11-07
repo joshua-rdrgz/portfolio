@@ -5,7 +5,7 @@ import { client } from '@/sanity/lib/client';
 import { SidebarQuery } from '@/sanity/lib/queries';
 import { Athiti } from 'next/font/google';
 
-const dmMono = Athiti({
+const athiti = Athiti({
   subsets: ['latin'],
   display: 'swap',
   variable: '--font-athiti',
@@ -20,7 +20,7 @@ export default async function RootLayout({
   const sidebarData = await client.fetch(SidebarQuery);
 
   return (
-    <html lang='en' suppressHydrationWarning className={`${dmMono.variable}`}>
+    <html lang='en' suppressHydrationWarning className={`${athiti.variable}`}>
       <body className='font-athiti'>
         <div className='lg:flex'>
           <Sidebar sidebarData={sidebarData} />
