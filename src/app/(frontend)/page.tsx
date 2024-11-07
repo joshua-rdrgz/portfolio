@@ -6,15 +6,6 @@ import Projects from '@/components/layout/portfolio/Projects';
 import Skills from '@/components/layout/portfolio/Skills';
 import { client } from '@/sanity/lib/client';
 import { PortfolioContentQuery } from '@/sanity/lib/queries/portfolioContentQuery';
-import { Metadata } from 'next';
-
-export const metadata: Metadata = {
-  title: 'Joshua Rodriguez - Portfolio',
-  description: 'This is the portfolio of software developer Joshua Rodriguez.',
-  icons: {
-    icon: '/favicon.svg',
-  },
-};
 
 export default async function Page() {
   const portfolioData = await client.fetch(PortfolioContentQuery);
