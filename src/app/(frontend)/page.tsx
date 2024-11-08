@@ -11,7 +11,16 @@ import { PortfolioContentQueryResult } from '@/sanity/types';
 export default async function Page() {
   const portfolioData = await sanityFetch<PortfolioContentQueryResult>({
     query: portfolioContentQuery,
-    tags: ['pageBuilder'],
+    tags: [
+      'pageBuilder',
+      'skillList',
+      'skill',
+      'jobProperties',
+      'projectList',
+      'project',
+      'linkList',
+      'link',
+    ],
   });
 
   return (

@@ -29,7 +29,7 @@ export default async function RootLayout({
 }>) {
   const sidebarData = await sanityFetch<SidebarQueryResult>({
     query: sidebarQuery,
-    tags: ['sidebar'],
+    tags: ['sidebar', 'navList', 'navItem', 'linkList', 'link'],
   });
 
   return (
