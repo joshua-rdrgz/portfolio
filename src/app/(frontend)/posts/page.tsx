@@ -1,11 +1,15 @@
 import Link from 'next/link';
-import { client } from '@/sanity/lib/client';
+import { sanityFetch } from '@/sanity/lib/client';
 import { POSTS_QUERY } from '@/sanity/lib/queries';
+import { POSTS_QUERYResult } from '@/sanity/types';
 
 const options = { next: { revalidate: 60 } };
 
 export default async function Page() {
-  const posts = await client.fetch(POSTS_QUERY, {}, options);
+  const posts = await sanityFetch<POSTS_QUERYResult>({
+    query: POSTS_QUERY,
+    tags: ['post'],
+  });
 
   return (
     <main className='container mx-auto grid grid-cols-1 gap-6 p-12'>
