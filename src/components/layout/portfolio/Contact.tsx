@@ -26,7 +26,7 @@ export default function Contact({ data }: ContactProps) {
           wrapperClassName='w-full h-full'
           className='object-cover w-full h-full'
         />
-        <div className='absolute inset-0 bg-background/90' />
+        <div className='absolute inset-0 bg-background/95' />
       </div>
       <div className='relative z-[1] text-center md:text-left p-8 md:pl-16'>
         <h2 className='mb-8 text-center text-4xl font-bold md:text-5xl'>
