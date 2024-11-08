@@ -1,6 +1,6 @@
-import { defineQuery } from 'next-sanity';
+import { groq } from 'next-sanity';
 
-export const SidebarQuery = defineQuery(`
+export const sidebarQuery = groq`
   *[_type == "sidebar" && _id == "c94fb9ee-d1af-42fc-9d9c-0f4e791dff0a"]{
     "profilePic": {
       "url": profilePic.asset->url,
@@ -25,4 +25,4 @@ export const SidebarQuery = defineQuery(`
       }
     }
   }
-`);
+`;

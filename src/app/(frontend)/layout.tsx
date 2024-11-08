@@ -1,8 +1,9 @@
 import '@/app/globals.css';
 import Sidebar from '@/components/layout/sidebar';
 import { Toaster } from '@/components/ui/toaster';
-import { client } from '@/sanity/lib/client';
-import { SidebarQuery } from '@/sanity/lib/queries';
+import { sanityFetch } from '@/sanity/lib/client';
+import { sidebarQuery } from '@/sanity/lib/queries';
+import { SidebarQueryResult } from '@/sanity/types';
 import { Metadata } from 'next';
 import { Athiti } from 'next/font/google';
 
@@ -26,7 +27,10 @@ export default async function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  const sidebarData = await client.fetch(SidebarQuery);
+  const sidebarData = await sanityFetch<SidebarQueryResult>({
+    query: sidebarQuery,
+    tags: ['sidebar'],
+  });
 
   return (
     <html lang='en' suppressHydrationWarning className={`${athiti.variable}`}>

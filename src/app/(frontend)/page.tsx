@@ -4,11 +4,15 @@ import Experience from '@/components/layout/portfolio/Experience';
 import Herobox from '@/components/layout/portfolio/Herobox';
 import Projects from '@/components/layout/portfolio/Projects';
 import Skills from '@/components/layout/portfolio/Skills';
-import { client } from '@/sanity/lib/client';
-import { PortfolioContentQuery } from '@/sanity/lib/queries/portfolioContentQuery';
+import { sanityFetch } from '@/sanity/lib/client';
+import { portfolioContentQuery } from '@/sanity/lib/queries';
+import { PortfolioContentQueryResult } from '@/sanity/types';
 
 export default async function Page() {
-  const portfolioData = await client.fetch(PortfolioContentQuery);
+  const portfolioData = await sanityFetch<PortfolioContentQueryResult>({
+    query: portfolioContentQuery,
+    tags: ['pageBuilder'],
+  });
 
   return (
     <>

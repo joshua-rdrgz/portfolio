@@ -1,6 +1,6 @@
-import { defineQuery } from 'next-sanity';
+import { groq } from 'next-sanity';
 
-export const PortfolioContentQuery = defineQuery(`
+export const portfolioContentQuery = groq`
   *[_type == "pageBuilder"][0]{
     title,
     pageContent[]{
@@ -91,4 +91,4 @@ export const PortfolioContentQuery = defineQuery(`
       }
     }
   }  
-`);
+`;
