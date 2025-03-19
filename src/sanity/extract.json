@@ -2410,6 +2410,23 @@
         },
         "optional": true
       },
+      "projectCategory": {
+        "type": "objectAttribute",
+        "value": {
+          "type": "union",
+          "of": [
+            {
+              "type": "string",
+              "value": "project"
+            },
+            {
+              "type": "string",
+              "value": "codepen"
+            }
+          ]
+        },
+        "optional": true
+      },
       "skillListProperties": {
         "type": "objectAttribute",
         "value": {

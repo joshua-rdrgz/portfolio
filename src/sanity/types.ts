@@ -391,6 +391,7 @@ export type Project = {
     _type: "block";
     _key: string;
   }>;
+  projectCategory?: "project" | "codepen";
   skillListProperties?: {
     _ref: string;
     _type: "reference";
@@ -767,8 +768,8 @@ export type POST_QUERYResult = {
 } | null;
 
 // Source: ./src/sanity/lib/queries/portfolioContentQuery.ts
-// Variable: PortfolioContentQuery
-// Query: *[_type == "pageBuilder"][0]{    title,    pageContent[]{      _type,      header,      navItemRef->{        label,        "slug": slug.current      },      (_type == "heroboxSection")=>{        prefix,        tagline,        heroboxImage{          alt,          "src": asset->url        }      },      (_type == "skillSection")=>{        description,        skillListProperties->{          skillListName,          list[]->{            label,            skillIcon{              alt,              "src": asset->url            }          }        }      },      (_type == "timelineSection")=>{        timeline[]->{          title,          dates,          companyName,          location,          description        }      },      (_type == "projectSection")=>{        projectListProperties->{          projectListName,          list[]->{            title,            subtitle,            description,            skillListProperties->{              skillListName,              list[]->{                label,                skillIcon{                  alt,                  "src": asset->url                }              }            },            linkListProperties->{              linkListName,              list[]->{                label,                url,                linkIcon{                  alt,                  "src": asset->url                }              }            },            modalContent,            mainProjectImage{              alt,              "src": asset->url            }          }        }      },      (_type == "aboutSection")=>{        content,        aboutImage{          alt,          "src": asset->url        }      },      (_type == "contactSection")=>{        contactImage{          alt,           "src": asset->url        }      }    }  }
+// Variable: portfolioContentQuery
+// Query: *[_type == "pageBuilder"][0]{    title,    pageContent[]{      _type,      header,      navItemRef->{        label,        "slug": slug.current      },      (_type == "heroboxSection")=>{        prefix,        tagline,        heroboxImage{          alt,          "src": asset->url        }      },      (_type == "skillSection")=>{        description,        skillListProperties->{          skillListName,          list[]->{            label,            skillIcon{              alt,              "src": asset->url            }          }        }      },      (_type == "timelineSection")=>{        timeline[]->{          title,          dates,          companyName,          location,          description        }      },      (_type == "projectSection")=>{        projectListProperties->{          projectListName,          list[]->{            _id,            title,            subtitle,            description,            projectCategory,            skillListProperties->{              skillListName,              list[]->{                label,                skillIcon{                  alt,                  "src": asset->url                }              }            },            linkListProperties->{              linkListName,              list[]->{                label,                url,                linkIcon{                  alt,                  "src": asset->url                }              }            },            modalContent,            mainProjectImage{              alt,              "src": asset->url            }          }        }      },      (_type == "aboutSection")=>{        content,        aboutImage{          alt,          "src": asset->url        }      },      (_type == "contactSection")=>{        contactImage{          alt,           "src": asset->url        }      }    }  }
 export type PortfolioContentQueryResult = {
   title: string | null;
   pageContent: Array<{
@@ -863,6 +864,7 @@ export type PortfolioContentQueryResult = {
     projectListProperties: {
       projectListName: string | null;
       list: Array<{
+        _id: string;
         title: string | null;
         subtitle: string | null;
         description: Array<{
@@ -883,6 +885,7 @@ export type PortfolioContentQueryResult = {
           _type: "block";
           _key: string;
         }> | null;
+        projectCategory: "codepen" | "project" | null;
         skillListProperties: {
           skillListName: string | null;
           list: Array<{
@@ -1022,7 +1025,7 @@ export type PortfolioContentQueryResult = {
 } | null;
 
 // Source: ./src/sanity/lib/queries/sidebarQuery.ts
-// Variable: SidebarQuery
+// Variable: sidebarQuery
 // Query: *[_type == "sidebar" && _id == "c94fb9ee-d1af-42fc-9d9c-0f4e791dff0a"]{    "profilePic": {      "url": profilePic.asset->url,      "alt": profilePic.alt    },    navListProperties->{      navListName,      list[]->{        label,        "slug": slug.current      }    },    linkListProperties->{      linkListName,      list[]->{        label,        url,        linkIcon{          alt,          "src": asset->url        }      }    }  }
 export type SidebarQueryResult = Array<{
   profilePic: {
@@ -1055,7 +1058,7 @@ declare module "@sanity/client" {
   interface SanityQueries {
     "*[_type == \"post\" && defined(slug.current)][0...12]{\n  _id, title, slug\n}": POSTS_QUERYResult;
     "*[_type == \"post\" && slug.current == $slug][0]{\n  title, body, mainImage\n}": POST_QUERYResult;
-    "\n  *[_type == \"pageBuilder\"][0]{\n    title,\n    pageContent[]{\n      _type,\n      header,\n      navItemRef->{\n        label,\n        \"slug\": slug.current\n      },\n      (_type == \"heroboxSection\")=>{\n        prefix,\n        tagline,\n        heroboxImage{\n          alt,\n          \"src\": asset->url\n        }\n      },\n      (_type == \"skillSection\")=>{\n        description,\n        skillListProperties->{\n          skillListName,\n          list[]->{\n            label,\n            skillIcon{\n              alt,\n              \"src\": asset->url\n            }\n          }\n        }\n      },\n      (_type == \"timelineSection\")=>{\n        timeline[]->{\n          title,\n          dates,\n          companyName,\n          location,\n          description\n        }\n      },\n      (_type == \"projectSection\")=>{\n        projectListProperties->{\n          projectListName,\n          list[]->{\n            title,\n            subtitle,\n            description,\n            skillListProperties->{\n              skillListName,\n              list[]->{\n                label,\n                skillIcon{\n                  alt,\n                  \"src\": asset->url\n                }\n              }\n            },\n            linkListProperties->{\n              linkListName,\n              list[]->{\n                label,\n                url,\n                linkIcon{\n                  alt,\n                  \"src\": asset->url\n                }\n              }\n            },\n            modalContent,\n            mainProjectImage{\n              alt,\n              \"src\": asset->url\n            }\n          }\n        }\n      },\n      (_type == \"aboutSection\")=>{\n        content,\n        aboutImage{\n          alt,\n          \"src\": asset->url\n        }\n      },\n      (_type == \"contactSection\")=>{\n        contactImage{\n          alt, \n          \"src\": asset->url\n        }\n      }\n    }\n  }  \n": PortfolioContentQueryResult;
+    "\n  *[_type == \"pageBuilder\"][0]{\n    title,\n    pageContent[]{\n      _type,\n      header,\n      navItemRef->{\n        label,\n        \"slug\": slug.current\n      },\n      (_type == \"heroboxSection\")=>{\n        prefix,\n        tagline,\n        heroboxImage{\n          alt,\n          \"src\": asset->url\n        }\n      },\n      (_type == \"skillSection\")=>{\n        description,\n        skillListProperties->{\n          skillListName,\n          list[]->{\n            label,\n            skillIcon{\n              alt,\n              \"src\": asset->url\n            }\n          }\n        }\n      },\n      (_type == \"timelineSection\")=>{\n        timeline[]->{\n          title,\n          dates,\n          companyName,\n          location,\n          description\n        }\n      },\n      (_type == \"projectSection\")=>{\n        projectListProperties->{\n          projectListName,\n          list[]->{\n            _id,\n            title,\n            subtitle,\n            description,\n            projectCategory,\n            skillListProperties->{\n              skillListName,\n              list[]->{\n                label,\n                skillIcon{\n                  alt,\n                  \"src\": asset->url\n                }\n              }\n            },\n            linkListProperties->{\n              linkListName,\n              list[]->{\n                label,\n                url,\n                linkIcon{\n                  alt,\n                  \"src\": asset->url\n                }\n              }\n            },\n            modalContent,\n            mainProjectImage{\n              alt,\n              \"src\": asset->url\n            }\n          }\n        }\n      },\n      (_type == \"aboutSection\")=>{\n        content,\n        aboutImage{\n          alt,\n          \"src\": asset->url\n        }\n      },\n      (_type == \"contactSection\")=>{\n        contactImage{\n          alt, \n          \"src\": asset->url\n        }\n      }\n    }\n  }  \n": PortfolioContentQueryResult;
     "\n  *[_type == \"sidebar\" && _id == \"c94fb9ee-d1af-42fc-9d9c-0f4e791dff0a\"]{\n    \"profilePic\": {\n      \"url\": profilePic.asset->url,\n      \"alt\": profilePic.alt\n    },\n    navListProperties->{\n      navListName,\n      list[]->{\n        label,\n        \"slug\": slug.current\n      }\n    },\n    linkListProperties->{\n      linkListName,\n      list[]->{\n        label,\n        url,\n        linkIcon{\n          alt,\n          \"src\": asset->url\n        }\n      }\n    }\n  }\n": SidebarQueryResult;
   }
 }

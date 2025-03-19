@@ -1,17 +1,12 @@
 'use client';
 
 import AppImage from '@/components/ui/AppImage';
-import { PortfolioContentQueryResult } from '@/sanity/types';
-import { PortableText } from 'next-sanity';
 import * as C from '@/components/ui/card';
-
-type NonNullablePortfolioContent = NonNullable<PortfolioContentQueryResult>;
+import { SkillSectionType } from '@/types/sanity';
+import { PortableText } from 'next-sanity';
 
 interface SkillsProps {
-  data: Extract<
-    NonNullable<NonNullablePortfolioContent['pageContent']>[number],
-    { _type: 'skillSection' }
-  >;
+  data: SkillSectionType;
 }
 
 export default function Skills({ data }: SkillsProps) {

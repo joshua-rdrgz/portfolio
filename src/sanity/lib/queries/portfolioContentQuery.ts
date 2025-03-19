@@ -44,9 +44,11 @@ export const portfolioContentQuery = groq`
         projectListProperties->{
           projectListName,
           list[]->{
+            _id,
             title,
             subtitle,
             description,
+            projectCategory,
             skillListProperties->{
               skillListName,
               list[]->{

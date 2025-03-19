@@ -1,15 +1,10 @@
 'use client';
 
-import { PortfolioContentQueryResult } from '@/sanity/types';
+import { AboutSectionType } from '@/types/sanity';
 import { PortableText } from 'next-sanity';
 
-type NonNullablePortfolioContent = NonNullable<PortfolioContentQueryResult>;
-
 interface AboutProps {
-  data: Extract<
-    NonNullable<NonNullablePortfolioContent['pageContent']>[number],
-    { _type: 'aboutSection' }
-  >;
+  data: AboutSectionType;
 }
 
 export default function About({ data }: AboutProps) {

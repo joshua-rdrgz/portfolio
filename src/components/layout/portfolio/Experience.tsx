@@ -1,20 +1,15 @@
 'use client';
 
 import * as TL from '@/components/ui/timeline';
-import { PortfolioContentQueryResult } from '@/sanity/types';
+import { TimelineItemType, TimelineSectionType } from '@/types/sanity';
 import { PortableText } from 'next-sanity';
 
-type NonNullablePortfolioContent = NonNullable<PortfolioContentQueryResult>;
-
 interface ExperienceProps {
-  data: Extract<
-    NonNullable<NonNullablePortfolioContent['pageContent']>[number],
-    { _type: 'timelineSection' }
-  >;
+  data: TimelineSectionType;
 }
 
 interface ContentProps {
-  job: NonNullable<ExperienceProps['data']['timeline']>[number];
+  job: TimelineItemType;
 }
 
 const MainContent = ({ job }: ContentProps) => (

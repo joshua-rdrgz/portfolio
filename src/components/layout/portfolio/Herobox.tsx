@@ -1,16 +1,11 @@
 'use client';
 
 import AppImage from '@/components/ui/AppImage';
-import { PortfolioContentQueryResult } from '@/sanity/types';
+import { HeroboxSectionType } from '@/types/sanity';
 import { PortableText } from 'next-sanity';
 
-type NonNullablePortfolioContent = NonNullable<PortfolioContentQueryResult>;
-
 interface HeroboxProps {
-  data: Extract<
-    NonNullable<NonNullablePortfolioContent['pageContent']>[number],
-    { _type: 'heroboxSection' }
-  >;
+  data: HeroboxSectionType;
 }
 
 export default function Herobox({ data }: HeroboxProps) {

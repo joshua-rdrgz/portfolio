@@ -29,6 +29,18 @@ export const projectType = defineType({
       ],
     }),
     defineField({
+      name: 'projectCategory',
+      title: 'Project Category',
+      type: 'string',
+      options: {
+        list: [
+          { title: 'Project', value: 'project' },
+          { title: 'Codepen', value: 'codepen' },
+        ],
+      },
+      validation: (Rule) => Rule.required(),
+    }),
+    defineField({
       name: 'skillListProperties',
       title: 'List of Skills',
       type: 'reference',

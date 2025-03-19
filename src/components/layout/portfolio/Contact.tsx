@@ -2,17 +2,11 @@
 
 import ContactForm from '@/components/ContactForm';
 import AppImage from '@/components/ui/AppImage';
-import { PortfolioContentQueryResult } from '@/sanity/types';
-
-type NonNullablePortfolioContent = NonNullable<PortfolioContentQueryResult>;
+import { ContactSectionType } from '@/types/sanity';
 
 interface ContactProps {
-  data: Extract<
-    NonNullable<NonNullablePortfolioContent['pageContent']>[number],
-    { _type: 'contactSection' }
-  >;
+  data: ContactSectionType;
 }
-
 export default function Contact({ data }: ContactProps) {
   return (
     <section
