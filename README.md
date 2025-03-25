@@ -1,3 +1,24 @@
+This is a portfolio website built using NextJS and Sanity as a CMS. To use it, configure a Sanity application and insert the following ENV variables into `.env.local`:
+
+```
+# Used to connect to Sanity
+NEXT_PUBLIC_SANITY_PROJECT_ID="project-id-here"
+NEXT_PUBLIC_SANITY_DATASET="project-dataset-here"
+
+# Used for sending emails
+MY_EMAIL="email-here"
+MY_PASSWORD="password-here"
+
+# Used for Sanity webhook to revalidate pages
+NEXT_PUBLIC_SANITY_HOOK_SECRET="sanity-hook-secret-here"
+```
+
+You will need to generate a GROQ-powered webhook in the project mapped to the `/api/revalidate` API route. This will allow changes to the Sanity Studio content to automatically reflect in the NextJS application.
+
+You will also need to provide your email and password set up to configure emails being sent via the contact form.
+
+# General NextJS Documentation
+
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/create-next-app).
 
 ## Getting Started
