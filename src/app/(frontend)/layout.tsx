@@ -6,6 +6,7 @@ import { sidebarQuery } from '@/sanity/lib/queries';
 import { SidebarQueryResult } from '@/sanity/types';
 import { Metadata } from 'next';
 import { Athiti } from 'next/font/google';
+import { PostHogProvider } from './providers';
 
 export const metadata: Metadata = {
   title: 'Joshua Rodriguez - Portfolio',
@@ -35,11 +36,13 @@ export default async function RootLayout({
   return (
     <html lang='en' suppressHydrationWarning className={`${athiti.variable}`}>
       <body className='font-athiti'>
-        <div className='lg:flex'>
-          <Sidebar sidebarData={sidebarData} />
-          <main className='px-7'>{children}</main>
-          <Toaster />
-        </div>
+        <PostHogProvider>
+          <div className='lg:flex'>
+            <Sidebar sidebarData={sidebarData} />
+            <main className='px-7'>{children}</main>
+            <Toaster />
+          </div>
+        </PostHogProvider>
       </body>
     </html>
   );
